@@ -1,0 +1,50 @@
+{
+  "description": "Token subsampling ablation \u2014 CUB-200-2011",
+  "seeds": [
+    0,
+    42,
+    123,
+    7,
+    99
+  ],
+  "results": {
+    "standard_dino": {
+      "seed_0": 67.36,
+      "seed_42": 68.1,
+      "seed_123": 68.38,
+      "seed_7": 67.66,
+      "seed_99": 68.78,
+      "mean": 68.06,
+      "std": 0.5
+    },
+    "random_50pct": {
+      "seed_42": 68.66,
+      "seed_7": 67.83,
+      "seed_99": 68.81,
+      "mean": 68.43,
+      "std": 0.43
+    },
+    "similarity_50pct": {
+      "seed_0": 68.04,
+      "seed_42": 68.64,
+      "seed_123": 68.43,
+      "seed_7": 67.57,
+      "seed_99": 68.86,
+      "mean": 68.31,
+      "std": 0.46
+    }
+  },
+  "statistical_tests": {
+    "random_vs_similarity_p": 0.72,
+    "random_vs_baseline_p": 0.18,
+    "similarity_vs_baseline_p": 0.08,
+    "conclusion": "Criterion irrelevant (p=0.72)"
+  },
+  "transfer_experiment": {
+    "florabd_to_flowers102": {
+      "standard_dino": 95.2,
+      "random_50pct": 96.31,
+      "similarity_50pct": 96.11
+    }
+  }
+}

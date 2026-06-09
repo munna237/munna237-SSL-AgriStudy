@@ -1,0 +1,22 @@
+{
+  "ResNet-50_FloraBD": 99.62,
+  "ResNet-50_RiceLeafDiseaseBD": 70.04,
+  "ResNet-50_PlantVillage": 97.76,
+  "ResNet-50_Flowers102": 66.63,
+  "ResNet-50_CUB": 59.46,
+  "EfficientNet-B0_FloraBD": 99.83,
+  "EfficientNet-B0_RiceLeafDiseaseBD": 76.43,
+  "EfficientNet-B0_PlantVillage": 99.18,
+  "EfficientNet-B0_Flowers102": 83.67,
+  "EfficientNet-B0_CUB": 70.62,
+  "ViT-Small_FloraBD": 99.97,
+  "ViT-Small_RiceLeafDiseaseBD": 91.92,
+  "ViT-Small_PlantVillage": 99.94,
+  "ViT-Small_Flowers102": 99.27,
+  "ViT-Small_CUB": 85.11,
+  "Swin-Tiny_FloraBD": 99.97,
+  "Swin-Tiny_RiceLeafDiseaseBD": 91.64,
+  "Swin-Tiny_PlantVillage": 99.88,
+  "Swin-Tiny_Flowers102": 96.91,
+  "Swin-Tiny_CUB": 84.24
+}
