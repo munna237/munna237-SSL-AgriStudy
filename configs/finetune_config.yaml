@@ -1,0 +1,10 @@
+# Full fine-tuning hyperparameters
+epochs: 50
+batch_size: 128
+backbone_lr: 1.0e-5
+head_lr: 1.0e-4
+weight_decay: 1.0e-4
+scheduler: cosine_annealing
+loss: cross_entropy
+label_smoothing: 0.1
+mixed_precision: true

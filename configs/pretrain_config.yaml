@@ -1,0 +1,21 @@
+# Domain-specific DINO pretraining hyperparameters
+arch: vit_small
+patch_size: 16
+epochs: 100
+batch_size_per_gpu: 64
+base_lr: 5.0e-4
+min_lr: 1.0e-6
+warmup_epochs: 10
+optimizer: adamw
+weight_decay_start: 0.04
+weight_decay_end: 0.40
+momentum_teacher: 0.996
+teacher_temp: 0.04
+student_temp: 0.1
+out_dim: 65536
+local_crops_number: 8
+global_crops_scale: [0.40, 1.00]
+local_crops_scale: [0.05, 0.40]
+saveckp_freq: 100
+seed: 42
+use_fp16: true

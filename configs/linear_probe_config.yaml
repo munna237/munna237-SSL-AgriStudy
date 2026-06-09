@@ -1,0 +1,11 @@
+# Linear probe evaluation hyperparameters
+epochs: 100
+batch_size: 512
+optimizer: adamw
+lr: 1.0e-3
+weight_decay: 1.0e-4
+scheduler: cosine_annealing
+loss: cross_entropy
+label_smoothing: 0.0
+feature_caching: true
+mixed_precision: true
