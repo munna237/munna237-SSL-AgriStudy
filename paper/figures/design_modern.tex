@@ -1,0 +1,161 @@
+\documentclass[border=3pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shadows.blur,calc,decorations.pathreplacing}
+% palette (validated categorical order) + tints
+\definecolor{cB}{HTML}{2A78D6}\definecolor{cO}{HTML}{EB6834}\definecolor{cT}{HTML}{1BAF7A}
+\definecolor{cY}{HTML}{EDA100}\definecolor{cV}{HTML}{6250D6}\definecolor{cR}{HTML}{E34948}
+\definecolor{ink}{HTML}{222222}\definecolor{mute}{HTML}{6B6B6B}\definecolor{line}{HTML}{C9CED6}
+\definecolor{bg}{HTML}{F7F8FA}
+\tikzset{
+  card/.style={rounded corners=6pt, fill=white, draw=line, line width=0.4pt,
+               blur shadow={shadow blur steps=6, shadow xshift=0.6pt, shadow yshift=-0.8pt, shadow opacity=18}},
+  chip/.style={rounded corners=3pt, fill=#1!10, draw=#1!55, line width=0.4pt, inner sep=2.2pt, align=center,
+               font=\fontsize{5.6}{6.6}\selectfont, text=ink},
+  lbl/.style={font=\fontsize{5.6}{6.6}\selectfont, text=ink, align=center},
+  sml/.style={font=\fontsize{4.9}{5.8}\selectfont, text=mute, align=center},
+  arr/.style={-{Stealth[length=1.6mm,width=1.3mm]}, line width=0.65pt, draw=mute},
+  flow/.style={-{Stealth[length=2.4mm,width=2.2mm]}, line width=1.6pt, draw=line},
+}
+% \thumb{x,y}{size}{file}
+\newcommand{\thumb}[3]{%
+  \begin{scope}\clip[rounded corners=2pt] ($(#1)-(#2/2,#2/2)$) rectangle ++(#2,#2);
+    \node[inner sep=0] at (#1) {\includegraphics[width=#2 cm,height=#2 cm]{thumbs/#3}};\end{scope}
+  \draw[white, line width=0.8pt, rounded corners=2pt] ($(#1)-(#2/2,#2/2)$) rectangle ++(#2,#2);}
+% \panel{x}{color}{number}{title}{subtitle}
+\newcommand{\panel}[5]{%
+  \node[card, minimum width=4.25cm, minimum height=7.15cm, anchor=south west] at (#1,0) {};
+  \begin{scope}\clip[rounded corners=6pt] (#1,0) rectangle ++(4.25,7.15);
+    \fill[#2!13] (#1,6.35) rectangle ++(4.25,0.8);\fill[#2] (#1,6.33) rectangle ++(4.25,0.05);\end{scope}
+  \node[circle, fill=#2, text=white, font=\bfseries\fontsize{7}{7}\selectfont, inner sep=0, minimum size=4.2mm] at (#1+0.38,6.75) {#3};
+  \node[anchor=west, font=\bfseries\fontsize{7.4}{8}\selectfont, text=ink] at (#1+0.66,6.86) {#4};
+  \node[anchor=west, font=\fontsize{5.4}{6}\selectfont, text=mute] at (#1+0.66,6.56) {#5};}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\fill[bg, rounded corners=8pt] (-0.2,-1.15) rectangle (17.95,7.35);
+
+%================ panel 1: data =================
+\panel{0}{cB}{1}{Pretraining data}{unlabeled images, budget-matched}
+% local photo stack
+\thumb{0.8,5.1}{1.0}{RiceLeaf_0.jpg}\thumb{1.18,5.3}{1.0}{PlantVillage_1.jpg}\thumb{1.56,5.5}{1.0}{FloraBD_0.jpg}
+\node[lbl, anchor=west, text width=1.75cm, align=left] at (2.14,5.35) {\textbf{Local}\\[-0.5pt]FloraBD\\[-0.5pt]RiceLeafDiseaseBD\\[-0.5pt]PlantVillage};
+\node[sml] at (1.45,4.42) {1K -- 31K training images per source};
+% equality badge
+\node[chip=cB, font=\bfseries\fontsize{5.6}{6.6}\selectfont] (eq) at (2.12,3.95) {same $N$ \textbullet{} recipe \textbullet{} steps $S=\lfloor N/B\rfloor E$};
+% imagenet mosaic
+\foreach \i in {0,...,3}{\foreach \j in {0,...,3}{
+  \pgfmathsetmacro{\h}{mod(\i*7+\j*3,6)}
+  \ifcase\numexpr\h\relax \def\cc{cB}\or\def\cc{cO}\or\def\cc{cT}\or\def\cc{cY}\or\def\cc{cV}\else\def\cc{cR}\fi
+  \fill[\cc!45, rounded corners=0.6pt] (0.55+\i*0.27, 2.25+\j*0.27) rectangle ++(0.23,0.23);}}
+\node[lbl, anchor=west, text width=2.1cm, align=left] at (1.75,2.8) {\textbf{Generic control}\\[-0.5pt]ImageNet-1k subsets,\\[-0.5pt]$N\in\{996, 4{,}671,$\\[-0.5pt]$6{,}835, 30{,}829\}$};
+\draw[arr, draw=cB!60] (1.45,4.27) -- (1.45,4.12); \draw[arr, draw=cB!60] (1.45,3.32) -- (1.45,3.75);
+% database icon for released model
+\begin{scope}[shift={(1.0,0.95)}]
+  \fill[mute!35] (-0.32,-0.4) rectangle (0.32,0.25); \fill[mute!35] (0,-0.4) ellipse (0.32 and 0.1);
+  \fill[mute!20] (0,0.25) ellipse (0.32 and 0.1); \draw[white,line width=0.6pt] (-0.32,-0.08) arc (180:360:0.32 and 0.1) (-0.32,0.1) arc (180:360:0.32 and 0.1);
+\end{scope}
+\node[lbl, anchor=west, text width=2.1cm, align=left] at (1.75,0.95) {\textbf{Released ImageNet DINO}\\[-0.5pt]1.28M images\\[-0.5pt]$\approx$1M steps $\times$ 1,024};
+
+%================ panel 2: DINO =================
+\panel{4.55}{cV}{2}{DINO self-distillation}{ViT-S/16, batch 64, one GPU}
+\thumb{5.25,5.55}{0.85}{FloraBD_2.jpg}
+\node[sml] at (5.25,4.97) {image};
+% crops
+\draw[cV, line width=0.5pt, rounded corners=1pt, fill=cV!8] (6.05,5.75) rectangle ++(0.42,0.42);
+\draw[cV, line width=0.5pt, rounded corners=1pt, fill=cV!8] (6.05,5.22) rectangle ++(0.42,0.42);
+\foreach \k in {0,1,2,3}{\draw[cO, line width=0.45pt, rounded corners=0.6pt, fill=cO!10] (6.13+\k*0.0,4.47+\k*0.0) ++(0,0) rectangle ++(0.0,0.0);}
+\foreach \k in {0,...,3}{\draw[cO, line width=0.45pt, rounded corners=0.5pt, fill=cO!10] (6.05+\k*0.11,4.78-\k*0.06) rectangle ++(0.18,0.18);}
+\draw[arr] (5.7,5.55) -- (6.0,5.55);
+\node[sml] at (6.26,5.11) {global $\times$2};\node[sml] at (6.3,4.47) {local $\times n_\ell$};
+% student / teacher trapezoids
+\begin{scope}[shift={(7.35,5.55)}]
+  \draw[fill=cB!14, draw=cB, line width=0.5pt, rounded corners=1.5pt] (-0.35,0.55) -- (0.35,0.42) -- (0.35,0.08) -- (-0.35,-0.05) -- cycle;
+  \node[font=\bfseries\fontsize{5.4}{6}\selectfont, text=cB!80!black] at (0,0.25) {student};
+  \draw[fill=cO!14, draw=cO, line width=0.5pt, rounded corners=1.5pt] (-0.35,-0.35) -- (0.35,-0.48) -- (0.35,-0.82) -- (-0.35,-0.95) -- cycle;
+  \node[font=\bfseries\fontsize{5.4}{6}\selectfont, text=cO!80!black] at (0,-0.65) {teacher};
+\end{scope}
+\draw[arr] (6.55,5.92) -- (6.97,5.84); \draw[arr] (6.55,4.85) -- (6.97,5.7);
+\draw[arr] (6.55,5.42) -- (6.97,4.92);
+\draw[arr, densely dashed, draw=cO] (7.75,5.68) to[bend left=60] node[sml, right, xshift=-2pt, text=cO!80!black] {EMA} (7.75,4.95);
+% output distributions
+\foreach \v [count=\k] in {0.10,0.32,0.18,0.06,0.24}{\fill[cB!70] (8.05+\k*0.09,5.72) rectangle ++(0.065,\v);}
+\foreach \v [count=\k] in {0.06,0.38,0.12,0.04,0.30}{\fill[cO!75] (8.05+\k*0.09,4.72) rectangle ++(0.065,\v);}
+\node[sml] at (8.32,5.56) {$P_s$}; \node[sml] at (8.32,4.56) {$P_t$};
+\node[chip=cV, font=\fontsize{5.6}{6.8}\selectfont, text width=3.75cm] at (6.68,3.98) {$\mathcal{L}=\textstyle\sum -P_t^{\top}\log P_s$\\centring $c$, \ $\tau_s=0.1$, \ $\tau_t=0.04$};
+% arms
+\node[chip=cB, text width=3.75cm] at (6.68,3.25) {\textbf{From scratch, budget-matched}\\local vs.\ ImageNet-$N$ at equal $N$ and $S$};
+\node[chip=cT, text width=3.75cm] at (6.68,2.35) {\textbf{Budget \& recipe controls}\\400 epochs \textbullet{} released recipe \textbullet{} step-matched 1K/5K \textbullet{} seeds 42, 1, 2};
+\node[chip=cV, text width=3.75cm] at (6.68,1.3) {\textbf{Continued from ImageNet DINO}\\standard (3 seeds) \textbullet{} released heads \textbullet{} low learning rate \textbullet{} 50\% replay};
+\node[sml] at (6.68,0.42) {27 laboratory-scale checkpoints \textbullet{} 87.8 L4 GPU-h};
+
+%================ panel 3: evaluation =================
+\panel{9.1}{cT}{3}{Frozen evaluation}{CLS features, test split scored once}
+% feature vector
+\foreach \v [count=\k] in {0.6,0.2,0.9,0.4,0.75,0.3,0.55,0.85,0.25,0.65,0.45,0.8}{\fill[cT!\fpeval{round(25+60*\v)}] (9.55+\k*0.22,5.7) rectangle ++(0.19,0.36);}
+\node[sml] at (11.0,5.47) {frozen 384-d CLS feature};
+% four protocol icons
+\begin{scope}[shift={(9.85,4.45)}]  % linear probe
+  \draw[line, rounded corners=2pt, fill=bg] (-0.42,-0.42) rectangle (0.42,0.42);
+  \foreach \p in {(-0.25,0.2),(-0.12,0.28),(-0.28,0.02),(-0.05,0.12)}{\fill[cB] \p circle (0.045);}
+  \foreach \p in {(0.22,-0.18),(0.1,-0.28),(0.28,-0.02),(0.05,-0.12)}{\fill[cO] \p circle (0.045);}
+  \draw[ink, line width=0.6pt] (-0.32,-0.32) -- (0.32,0.32);
+\end{scope}
+\node[sml] at (9.85,3.86) {linear probe};
+\begin{scope}[shift={(11.22,4.45)}]  % kNN
+  \draw[line, rounded corners=2pt, fill=bg] (-0.42,-0.42) rectangle (0.42,0.42);
+  \draw[cT, line width=0.5pt, densely dotted] (0,0) circle (0.27);
+  \foreach \p in {(0.18,0.12),(-0.15,0.18),(0.08,-0.22),(-0.2,-0.1),(0.33,-0.28),(-0.32,0.3)}{\fill[cB!80] \p circle (0.042);}
+  \fill[cR] (0,0) circle (0.055);
+\end{scope}
+\node[sml] at (11.22,3.86) {k-NN ($k$\,=\,20)};
+\begin{scope}[shift={(12.6,4.45)}]  % label efficiency
+  \draw[line, rounded corners=2pt, fill=bg] (-0.42,-0.42) rectangle (0.42,0.42);
+  \draw[cT, line width=0.8pt] plot[smooth] coordinates {(-0.3,-0.28) (-0.15,0.02) (0.05,0.17) (0.3,0.25)};
+  \draw[mute, line width=0.4pt] (-0.32,-0.32) -- (0.32,-0.32) (-0.32,-0.32) -- (-0.32,0.32);
+\end{scope}
+\node[sml] at (12.6,3.86) {label efficiency};
+\node[chip=cT, text width=3.75cm] at (11.22,3.1) {+ fine-tuning (3 seeds) \textbullet{} paired tests on identical test images};
+% targets
+\node[lbl] at (11.22,2.5) {\textbf{Six targets}};
+\thumb{9.75,1.78}{0.6}{FloraBD_1.jpg}\thumb{10.45,1.78}{0.6}{RiceLeaf_1.jpg}\thumb{11.15,1.78}{0.6}{PlantVillage_0.jpg}
+\thumb{11.85,1.78}{0.6}{PlantDoc_0.jpg}\thumb{12.55,1.78}{0.6}{Flowers102_1.jpg}\thumb{13.25,1.78}{0.6}{CUB_0.jpg}
+\foreach \x/\t in {9.75/FloraBD,10.45/Rice,11.15/PV,11.85/PlantDoc,12.55/Flowers,13.25/CUB}{\node[sml, font=\fontsize{4.6}{5}\selectfont] at (\x,1.36) {\t};}
+\node[chip=cY, text width=3.75cm] at (11.22,0.55) {\textbf{+ 7 released encoders}\\ImageNet DINO \textbullet{} DINOv2-S/B \textbullet{} MAE \textbullet{} CLIP \textbullet{} DeiT-S \textbullet{} ResNet-50};
+
+%================ panel 4: audit & statistics =================
+\panel{13.65}{cR}{4}{Audit \& statistics}{is the test set clean, is the gap real?}
+\thumb{14.35,5.5}{0.85}{RiceLeaf_2.jpg}\thumb{15.6,5.5}{0.85}{RiceLeaf_0.jpg}
+\node[sml] at (14.35,4.92) {test}; \node[sml] at (15.6,4.92) {train};
+\node[font=\bfseries\fontsize{9}{9}\selectfont, text=cR] at (14.975,5.5) {$\approx$};
+\node[chip=cR, anchor=west, text width=1.25cm, align=left, font=\fontsize{5}{6}\selectfont] at (16.18,5.5) {MD5\\cos $\geq$ 0.95\\pHash $\leq$ 8};
+% venn
+\fill[cR!25, opacity=0.8] (14.65,3.95) circle (0.42); \fill[cY!35, opacity=0.8] (15.2,3.95) circle (0.42);
+\node[sml, text=ink] at (14.5,3.95) {cos}; \node[sml, text=ink] at (15.38,3.95) {pHash};
+\node[lbl, anchor=west, text width=1.65cm, align=left] at (15.75,3.95) {de-duplicated test sets, re-scored without refitting};
+% bootstrap histogram + CI
+\foreach \v [count=\k] in {0.04,0.1,0.2,0.34,0.46,0.5,0.42,0.3,0.18,0.08,0.03}{\fill[cB!55] (14.0+\k*0.12,2.55) rectangle ++(0.1,\v);}
+\draw[ink, line width=0.6pt] (14.36,2.42) -- (15.24,2.42); \draw[ink, line width=0.6pt] (14.36,2.37) -- ++(0,0.1) (15.24,2.37) -- ++(0,0.1);
+\fill[ink] (14.8,2.42) circle (0.04); \draw[mute, densely dashed, line width=0.4pt] (14.05,2.55) -- ++(0,0.62); \node[sml] at (14.05,3.28) {0};
+\node[sml] at (14.76,2.12) {paired bootstrap\\95\% CI of $\Delta$};
+% mcnemar 2x2
+\begin{scope}[shift={(16.75,2.95)}]
+  \foreach \i/\j/\c in {0/0/cT!30,1/0/cR!30,0/1/cR!30,1/1/cT!30}{\fill[\c] (\i*0.36-0.36,\j*0.3-0.3) rectangle ++(0.33,0.27);}
+  \node[sml, text=ink] at (0.165,-0.165) {$n_{10}$}; \node[sml, text=ink] at (-0.195,0.135) {$n_{01}$};
+\end{scope}
+\node[sml] at (16.57,2.12) {exact\\McNemar};
+\node[chip=cR, text width=3.75cm] at (15.77,1.35) {\textbf{Holm} within each family \textbullet{} 3 pretraining seeds \textbullet{} findings that change sign across detectors marked \S};
+\node[sml] at (15.77,0.45) {near-duplicates: 64\% FloraBD, 63\% RiceLeaf tests};
+
+%================ flow arrows between panels =================
+\foreach \x in {4.25,8.8,13.35}{\draw[flow] (\x+0.02,3.6) -- (\x+0.28,3.6);}
+
+%================ research-question strip =================
+\foreach \x/\c/\q/\t in {0.0/cB/RQ1/{domain match vs.\ scale}, 4.55/cV/RQ2/{images vs.\ compute (step-matched)}, 9.1/cT/RQ3/{does continued pretraining help?}, 13.65/cR/RQ4/{labels, and is the benchmark clean?}}{
+  \node[rounded corners=3pt, fill=\c!12, draw=\c!50, line width=0.4pt, minimum width=4.25cm, minimum height=0.62cm, anchor=south west] at (\x,-0.98) {};
+  \node[anchor=west, font=\bfseries\fontsize{6.4}{7}\selectfont, text=\c!85!black] at (\x+0.15,-0.67) {\q};
+  \node[anchor=west, font=\fontsize{6}{7}\selectfont, text=ink] at (\x+0.78,-0.67) {\t};}
+\end{tikzpicture}
+\end{document}
