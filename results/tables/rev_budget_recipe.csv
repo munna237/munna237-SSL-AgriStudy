@@ -1,0 +1,8 @@
+run,FloraBD,RiceLeaf,PlantVillage,Flowers102,CUB,RiceLeaf Δ vs ImageNet DINO [95% CI]
+"RiceLeaf-full, default recipe, 100 ep (10,600 steps)",96.54,74.8,96.17,45.16,12.15,"-10.33 [-12.7, -8.1]"
+"RiceLeaf-full, 400 ep (42,400 steps)",98.15,79.48,97.9,57.93,14.84,"-5.64 [-7.7, -3.6]"
+"RiceLeaf-full, released ImageNet recipe, 100 ep",96.05,72.83,95.19,43.44,11.44,"-12.30 [-14.7, -9.9]"
+"RiceLeaf-1k, 100 ep (1,500 steps)",93.93,65.42,91.21,33.0,7.49,"-19.70 [-22.2, -17.2]"
+"RiceLeaf-1k, 10,605 steps",95.92,72.42,95.8,44.61,11.55,"-12.70 [-15.0, -10.3]"
+"RiceLeaf-5k, 100 ep (7,200 steps)",95.57,71.2,95.3,42.41,10.77,"-13.93 [-16.3, -11.7]"
+"RiceLeaf-5k, 10,584 steps",96.3,76.43,96.34,44.82,11.01,"-8.70 [-10.9, -6.5]"

@@ -1,10 +1,17 @@
-torch>=2.0
-torchvision>=0.15
-timm==0.9.16
-umap-learn>=0.5
-scikit-learn>=1.0
-scipy>=1.9
-matplotlib>=3.5
-numpy>=1.23
-Pillow>=9.0
-tqdm>=4.64
+# Versions used for the paper (Google Colab, Nov 2026; printed by every notebook's setup cell).
+# Python 3.13; PyTorch 2.14.1 + CUDA 13.0 on an NVIDIA L4 (CPU build for notebooks 07, 12, 14).
+torch==2.14.1
+torchvision
+timm
+open_clip_torch      # notebook 15 (CLIP ViT-B/16)
+scikit-learn
+scipy
+numpy
+pandas
+matplotlib
+pillow
+imagehash            # notebook 14 (perceptual hash)
+tqdm
+nbformat
+# DINO itself is cloned by the notebooks: https://github.com/facebookresearch/dino (commit 7c446df),
+# then patched by src/patch_dino.py.

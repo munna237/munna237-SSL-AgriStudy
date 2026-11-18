@@ -1,0 +1,4 @@
+target,pretraining source,in-domain,points,images range,pp per 10× images,R²,ImageNet DINO LP,extrapolated images to match (indicative)
+FloraBD,FloraBD,True,4,"990–13,598",4.88,0.985,99.93,"saturated target, not extrapolated"
+RiceLeaf,RiceLeaf,True,3,"996–6,835",10.46,0.959,85.12,"~79,782 (×12 the largest run)"
+PlantVillage,PlantVillage,True,3,"4,920–30,829",2.43,0.822,99.43,"saturated target, not extrapolated"
