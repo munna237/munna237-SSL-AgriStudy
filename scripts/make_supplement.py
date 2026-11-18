@@ -58,21 +58,39 @@ def sens_table(f):
     rows = []
     for c, r in S.iterrows():
         cells = [esc(r[d]).replace('[', '{\\scriptsize[').replace(']', ']}') if d in S.columns and isinstance(r[d], str) else '--' for d in DETS]
-        rows.append(f'{comp_label(c)} & ' + ' & '.join(cells) + f" & {esc(r.iloc[-1])} \\\\")
+        rows.append(f'{comp_label(c)} & ' + ' & '.join(cells) + f" & {sign_code(r.iloc[-1])} \\\\")
     return rows
+# The notebook stored the CI-sign code in alphabetical column order; re-order it to the table's column order
+# (Full, MD5, cos 0.90, cos 0.95, cos 0.98, pHash 4, pHash 8, pHash 12, Union).
+ALPHA_TO_TABLE = [2, 3, 8, 4, 0, 1, 7, 5, 6]
+def sign_code(v):
+    v = str(v)
+    if not v.startswith('NO'): return 'all'
+    t = ['?'] * 9
+    for i, ch in enumerate(v[4:]): t[ALPHA_TO_TABLE[i]] = ch
+    sym = {'0': '0', '\u2212': '$-$', '-': '$-$', '+': '$+$'}
+    return '\\,'.join(sym[ch] for ch in t)
 sens_lp, sens_knn = sens_table('rev_dup_sensitivity_lp.csv'), sens_table('rev_dup_sensitivity_knn.csv')
 SIZES = pd.read_csv(f'{TAB}/rev_dup_test_sizes.csv', index_col=0)
 size_rows = [f'{esc(i)} & ' + ' & '.join(f'{int(SIZES.loc[i, t]):,}' for t in TG) + ' \\\\' for i in SIZES.index]
 
 det_head = ' & '.join(['Full', 'MD5', 'cos 0.90', 'cos 0.95', 'cos 0.98', 'pHash 4', 'pHash 8', 'pHash 12', 'Union'])
 def figure(stem, ds):
-    return f"""\\begin{{figure}}[p]
-\\centering
-\\includegraphics[width=\\textwidth]{{figures/supp/dup_disagree_{stem}.jpg}}
-\\caption{{\\textbf{{{ds}: test--train pairs on which the two detectors disagree most.}} Rows 1--2: flagged only by cosine similarity (cos $\\geq 0.95$, Hamming $> 12$), highest cosine first; rows 3--4: flagged only by pHash (Hamming $\\leq 8$, cos $< 0.95$), lowest Hamming first. Each pair shows the test image and its nearest training or validation image.}}
-\\label{{fig:s-{stem}}}
-\\end{{figure}}
-"""
+    import os
+    parts = [k for k in ('cos', 'pHash') if os.path.exists(f'figures/supp/dup_pairs_{stem}_{k}.jpg')]
+    desc = {'cos': 'flagged only by the feature detector (cos $\\geq 0.95$, Hamming $> 8$), highest cosine first',
+            'pHash': 'flagged only by pHash (Hamming $\\leq 8$, cos $< 0.95$)'}
+    out = ''
+    for n, k in enumerate(parts):
+        cont = '\\ContinuedFloat\n' if n else ''
+        head = (f"\\textbf{{{ds}: test--train pairs on which the two detectors disagree.}} Each numbered pair shows a test image (left) "
+                f"and its nearest training or validation image (right), with the cosine similarity of their ImageNet DINO features and "
+                f"the Hamming distance of their perceptual hashes. Pairs {desc[k]}.") if n == 0 else \
+               f"\\textbf{{{ds} (continued).}} Pairs {desc[k]}."
+        lab = f'\\label{{fig:s-{stem}}}\n' if n == 0 else ''
+        out += (f"\\begin{{figure}}[p]\n{cont}\\centering\n\\includegraphics[width=0.9\\textwidth]{{figures/supp/dup_pairs_{stem}_{k}.jpg}}\n"
+                f"\\caption{{{head}}}\n{lab}\\end{{figure}}\n")
+    return out
 
 tex = r"""\documentclass[10pt]{article}
 \usepackage[a4paper,margin=2cm]{geometry}
@@ -84,7 +102,7 @@ tex = r"""\documentclass[10pt]{article}
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thesubsection}{S\arabic{section}.\arabic{subsection}}
 \title{Supplementary Material for\\ ``Domain Match Helps, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and Near-Duplicate Inflation in Agricultural and Botanical Recognition''}
-\author{[Authors]}
+\author{Mohammad Mehedi Hasan Munna, Acramul Haque Kabir, Reefka Fabliha Tulona, Tanvir Bin Zahid,\\Nahid Hossain Antu, Md.\ Mansur ul Mulk and Arvid Chowdhury}
 \date{}
 \begin{document}
 \maketitle
@@ -96,7 +114,7 @@ All values come from the released notebooks and their result files; the main pap
 \begin{equation}
 \mathcal{L} = \alpha\, T^{2}\, \mathrm{KL}\!\left(p^{T}_{\mathrm{teacher}} \,\|\, p^{T}_{\mathrm{student}}\right) + (1-\alpha)\,\mathcal{L}_{\mathrm{CE}},
 \end{equation}
-where $p^{T}$ is the softmax at temperature $T = 4$ and $\alpha = 0.5$ \cite{hinton2015distilling}, and compared with a plain fine-tuned student, with three seeds each (Welch's $t$-test, Holm over the eight student--teacher pairs). Deployment cost (parameters, fp32 size, MACs, PyTorch CPU latency at batch 1, median of 200 runs) was measured on an Intel Xeon CPU at 2.20~GHz. Distillation methods for rice disease are the subject of a companion manuscript \cite{agrikd}; here distillation only tests whether the pretraining source changes what a deployable student can reach.
+where $p^{T}$ is the softmax at temperature $T = 4$ and $\alpha = 0.5$ \cite{hinton2015distilling}, and compared with a plain fine-tuned student, with three seeds each (Welch's $t$-test, Holm over the eight student--teacher pairs). Deployment cost (parameters, fp32 size, MACs, PyTorch CPU latency at batch 1, median of 200 runs) was measured on an Intel Xeon CPU at 2.20~GHz. Distillation methods for rice disease are the subject of a separate paper \cite{agrikd}; here distillation only tests whether the pretraining source changes what a deployable student can reach.
 
 \textbf{Results.} Students distilled from the ImageNet DINO teacher gained $+1.40$ points (MobileNetV3-Small) and $+1.02$ points (EfficientNet-B0) over plain fine-tuning (Table~\ref{tab:s-kd}); the gains were consistent in direction but not significant after Holm correction with three seeds ($p_{\mathrm{Holm}} = 0.21$ and $0.16$), and each teacher was trained with one seed. The from-scratch RiceLeaf-full teacher (82.81\%) gave no gain. The distilled MobileNetV3-Small came within 0.2 points of the ViT-S/16 teacher at one tenth of its single-thread latency and one fourteenth of its size (Table~\ref{tab:s-deploy}, Fig.~\ref{fig:s-pareto}); the distilled EfficientNet-B0 exceeded its teacher by 0.45 points. Latency was measured on a server CPU, not on a phone or embedded board.
 
@@ -138,7 +156,7 @@ Model & Params (M) & Size (MB) & GMACs & 1 thread (ms) & 12 threads (ms) \\
 \clearpage
 \section{Near-duplicate detector agreement}
 \label{sec:s2}
-Table~\ref{tab:s-agree} reports, for each dataset, how many test images each detector flags and how well the two detectors agree, together with how often a flagged test image shares its label with its nearest training or validation image. A detector that finds true near-duplicates should flag pairs that almost always share a label; the cosine detector did so in 94--100\% of cases on every dataset except PlantDoc, whereas pHash-flagged pairs shared a label in only 47.8\% of cases on PlantVillage and 14.5\% on CUB, because pHash flags different objects on similar uniform backgrounds (Figs.~\ref{fig:s-PlantVillage}--\ref{fig:s-CUB}). Pairs flagged only by the cosine detector were the same scene photographed with a small shift in framing or scale, which changes 14--18 of the 64 hash bits. The six RiceLeafDiseaseBD images flagged only by pHash were same-scene pairs just below the cosine threshold. On PlantDoc, flagged pairs included resized copies of the same stock photograph, and 11 of the 21 cosine-flagged pairs carried different labels in training and test, i.e., the same image appears under two classes. Exact-copy (MD5) counts are included in every de-duplicated set.
+Table~\ref{tab:s-agree} reports, for each dataset, how many test images each detector flags and how well the two detectors agree, together with how often a flagged test image shares its label with its nearest training or validation image. A detector that finds true near-duplicates should flag pairs that almost always share a label; the cosine detector did so in 94--100\% of cases on every dataset except PlantDoc, whereas pHash-flagged pairs did so on FloraBD (100\%) and RiceLeafDiseaseBD (95.8\%) but in only 47.8\% of cases on PlantVillage and 14.5\% on CUB, because there pHash flags different objects on similar uniform backgrounds (Figs.~\ref{fig:s-PlantVillage}--\ref{fig:s-CUB}). Pairs flagged only by the cosine detector were the same scene photographed with a small shift in framing or scale, which changes 14--18 of the 64 hash bits. The six RiceLeafDiseaseBD images flagged only by pHash were same-scene pairs just below the cosine threshold. On PlantDoc, flagged pairs included resized copies of the same stock photograph, and 11 of the 21 cosine-flagged pairs carried different labels in training and test (10 of 21, 47.6\%, shared a label; Table~\ref{tab:s-agree}), i.e., the same image appears under two classes. Exact-copy (MD5) counts are included in every de-duplicated set.
 
 \begin{table}[h]
 \centering\small
@@ -193,7 +211,7 @@ Set & FloraBD & RiceLeaf & PlantVillage & PlantDoc & Flowers-102 & CUB \\
 \begin{landscape}
 \begin{table}
 \centering
-\caption{\textbf{Linear probe}: difference (pp, 95\% CI) under each detector and threshold.}
+\caption{\textbf{Linear probe}: difference (pp, 95\% CI) under each detector and threshold. \emph{Same sign}: `all' if the 95\% CI falls on the same side of zero (or includes zero) under every column; otherwise one symbol per column, in the column order of the table (Full to Union): $-$ interval below zero, 0 interval includes zero, $+$ interval above zero, computed from unrounded bounds.}
 \label{tab:s-sens-lp}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{l*{9}{c}l}
@@ -206,7 +224,7 @@ Comparison & """ + det_head + r""" & Same sign \\
 \end{table}
 \begin{table}
 \centering
-\caption{\textbf{k-NN}: difference (pp, 95\% CI) under each detector and threshold.}
+\caption{\textbf{k-NN}: difference (pp, 95\% CI) under each detector and threshold. \emph{Same sign}: `all' if the 95\% CI falls on the same side of zero (or includes zero) under every column; otherwise one symbol per column, in the column order of the table (Full to Union): $-$ interval below zero, 0 interval includes zero, $+$ interval above zero, computed from unrounded bounds.}
 \label{tab:s-sens-knn}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{l*{9}{c}l}
@@ -218,6 +236,30 @@ Comparison & """ + det_head + r""" & Same sign \\
 \end{tabular}}
 \end{table}
 \end{landscape}
+
+\section{Full fine-tuning on Flowers-102 and CUB}
+\label{sec:s5}
+Table~\ref{tab:s-ft} gives the full fine-tuning results on the two natural-image targets, moved here from Table~14 of the main paper; RiceLeafDiseaseBD remains the headline fine-tuning result there. The recipe and statistics are those of the main paper (30 epochs, AdamW, learning rate $5\times10^{-5}$, three seeds; Welch's $t$-test, Holm over the same 21 tests as Table~14). With this single untuned recipe, fine-tuned ImageNet DINO scored below its own linear probe on Flowers-102 (93.99 vs 95.72\%) and CUB (76.77 vs 81.86\%), a known effect of full fine-tuning on small fine-grained datasets \cite{kumar2022finetuning}, and DINOv2 ViT-S/14 had one unstable CUB seed (53.56\% against 80.05\% and 74.92\%). These results are therefore indicative only. Under this recipe the continued checkpoints trailed ImageNet DINO on CUB by 5.0--6.1 points ($p_{\mathrm{Holm}} < 0.05$); on Flowers-102 their deficits (0.9--2.4 points) were not significant.
+
+\begin{table}[h]
+\centering\small
+\caption{\textbf{Full fine-tuning test accuracy (\%) on Flowers-102 and CUB-200-2011, mean $\pm$ s.d. over three seeds.} $^{*}$Significantly different from ImageNet DINO (Welch, Holm over the 21 tests of Table~14 of the main paper).}
+\label{tab:s-ft}
+\begin{tabular}{lcc}
+\hline
+Backbone & Flowers-102 & CUB-200-2011 \\
+\hline
+ImageNet DINO & 93.99 $\pm$ 1.02 & 76.77 $\pm$ 0.59 \\
+DINOv2 ViT-S/14 & 97.96 $\pm$ 0.27 & 69.51 $\pm$ 14.05 \\
+DINOv2 ViT-B/14 & 99.33 $\pm$ 0.17 & 88.21 $\pm$ 0.05$^{*}$ \\
+MAE ViT-B/16 & 90.81 $\pm$ 0.39 & 76.57 $\pm$ 0.66 \\
+FloraBD-full (scratch) & 62.08 $\pm$ 0.17$^{*}$ & 24.82 $\pm$ 0.48$^{*}$ \\
+RiceLeaf-full (scratch) & 48.92 $\pm$ 0.86$^{*}$ & 18.58 $\pm$ 0.30$^{*}$ \\
+ImageNet$\rightarrow$FloraBD (cont.) & 93.04 $\pm$ 0.71 & 70.69 $\pm$ 1.12$^{*}$ \\
+ImageNet$\rightarrow$RiceLeaf (cont.) & 91.63 $\pm$ 1.03 & 71.74 $\pm$ 0.95$^{*}$ \\
+\hline
+\end{tabular}
+\end{table}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

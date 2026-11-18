@@ -117,7 +117,7 @@ axes[0].set_ylabel('Accuracy (%)')
 h, l = axes[1].get_legend_handles_labels()
 order = [l.index(x) for x in ['RiceLeaf (scratch)', 'FloraBD (scratch)', 'PlantVillage (scratch)',
                                'ImageNet subset, same N (scratch)', 'RiceLeaf, step-matched (≈10.6K steps)', 'ImageNet DINO (1.28M images)']]
-fig.legend([h[i] for i in order], [l[i] for i in order], loc='upper center', ncol=3, bbox_to_anchor=(0.5, 1.0))
+fig.legend([h[i] for i in order], [l[i] for i in order], loc='upper center', ncol=3, bbox_to_anchor=(0.5, 1.0), markerscale=1.5)
 fig.tight_layout(rect=(0, 0.08, 1, 0.86), w_pad=1.6)
 fig.text(0.5, axes[0].get_position().y0 - 0.15, 'Pretraining images (log scale)', ha='center', va='top', fontsize=6.5)
 save(fig, 'rev_scaling_with_generic')
