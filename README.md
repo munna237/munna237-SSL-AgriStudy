@@ -41,7 +41,7 @@ train–test near-duplicates in the evaluation data are audited with two indepen
 | Dataset | Source | Expected images |
 |---|---|---|
 | FloraBD | Mendeley Data, doi: [10.17632/r9whm6nz8n.2](https://doi.org/10.17632/r9whm6nz8n.2) | 19,426 |
-| RiceLeafDiseaseBD | [repository DOI] | 9,769 |
+| RiceLeafDiseaseBD | Mendeley Data, doi: [10.17632/86s4jzj2m4.2](https://doi.org/10.17632/86s4jzj2m4.2) | 9,769 |
 | PlantVillage | Hughes & Salathé (2015) | 44,014 |
 | PlantDoc | [github.com/pratikkayal/PlantDoc-Dataset](https://github.com/pratikkayal/PlantDoc-Dataset) (downloaded by notebook 11) | 2,578 |
 | Oxford Flowers-102 | Nilsback & Zisserman (2008) | 8,189 |
