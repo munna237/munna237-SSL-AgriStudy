@@ -1,0 +1,15 @@
+arm,steps,config,L4 GPU-hours,GPU energy (kWh),total GPU-h,total kWh
+FloraBD-1k / 5k / 10k / full,"1,500 / 7,800 / 15,100 / 21,200",scratch_8local,0.35 / 1.81 / 3.50 / 4.92,0.02 / 0.11 / 0.22 / 0.31,10.582544,0.6571455727908045
+RiceLeaf-1k / 5k / full,"1,500 / 7,200 / 10,600",scratch_8local,0.35 / 1.67 / 2.46,0.02 / 0.10 / 0.15,4.479015333333334,0.27813398146628354
+PlantVillage-5k / 10k / full,"7,600 / 14,700 / 48,100",scratch_8local,1.76 / 3.41 / 11.16,0.11 / 0.21 / 0.69,16.337962666666666,1.0145405334314177
+ImageNet-N subsets,"1,500 / 7,200 / 10,600 / 48,100",scratch_8local,0.35 / 1.67 / 2.46 / 11.16,0.02 / 0.10 / 0.15 / 0.69,15.641742666666666,0.9713072720636016
+"RiceLeaf-full, seeds 1 / 2","10,600 / 10,600",scratch_8local,2.46 / 2.46,0.15 / 0.15,4.919954666666667,0.3055150469992337
+"RiceLeaf-full, 400 epochs","42,400",scratch_8local,9.84,0.61,9.839909333333335,0.6110300939984674
+"RiceLeaf-full, released recipe","10,600",scratch_10local,2.72,0.17,2.715390222222222,0.16978741067944447
+"RiceLeaf-1k / 5k, step-matched","10,605 / 10,584",scratch_8local,2.46 / 2.46,0.15 / 0.15,4.91740186,0.30535652504088506
+ImageNet->FloraBD (cont.),"21,200",continued_8local,4.94,0.31,4.935931222222222,0.309550969443295
+"ImageNet->RiceLeaf (cont.), seeds 42 / 1 / 2","10,600 / 10,600 / 10,600",continued_8local,2.47 / 2.47 / 2.47,0.15 / 0.15 / 0.15,7.403896833333333,0.46432645416494256
+"ImageNet->RiceLeaf, released heads","10,600",scratch_10local,2.72,0.17,2.715390222222222,0.16978741067944447
+"ImageNet->RiceLeaf, released heads, low lr","3,180",scratch_10local,0.81,0.05,0.8146170666666667,0.050936223203833335
+"ImageNet->RiceLeaf, 50% ImageNet replay","10,650",continued_8local,2.48,0.16,2.479606958333333,0.15550555776278738
+"ImageNet DINO (released), L4-equivalent","1,000,800 at batch 1,024",scratch_10local,"4,102",256,4101.981184,256.48791035168

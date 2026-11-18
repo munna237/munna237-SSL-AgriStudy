@@ -1,0 +1,8 @@
+,RiceLeaf,Flowers102,CUB
+DINOv2 ViT-S/14,-0.43,+3.97,-7.26
+DINOv2 ViT-B/14,+0.02,+5.35,+11.44*
+MAE ViT-B/16,+0.20,-3.18,-0.20
+FloraBD-full (scratch),-6.07*,-31.91**,-51.95***
+RiceLeaf-full (scratch),-8.11*,-45.07***,-58.19***
+ImageNet→FloraBD (cont.),+0.07,-0.94,-6.08*
+ImageNet→RiceLeaf (cont.),+0.14,-2.36,-5.03*

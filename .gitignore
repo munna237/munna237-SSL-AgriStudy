@@ -1,14 +1,17 @@
-# Large files — do not commit
-checkpoints/
-features/
-datasets/
-*.pth
-*.pt
-*.pkl
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+*.pth
+*.npz
+*.tar
+datasets/
+features_v2/
+checkpoints/
 .DS_Store
+# Large files — do not commit
+features/
+*.pt
+*.pkl
 *.egg-info/
 dist/
 build/

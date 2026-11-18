@@ -1,0 +1,6 @@
+,classes,train,val,test,val_carved_from_train
+FloraBD,45,13598,2913,2915,False
+RiceLeaf,6,6835,1462,1472,False
+PlantVillage,34,30829,6572,6613,False
+Flowers102,102,1632,408,6149,True
+CUB,200,4794,1200,5794,True

@@ -1,0 +1,9 @@
+target,student,teacher,CE mean,KD mean ± std,gain_pp,p_welch,p_holm
+RiceLeaf,EfficientNet-B0,ImageNet→FloraBD (cont.),90.602,91.01 ± 0.10,0.408,0.026,0.18
+RiceLeaf,EfficientNet-B0,ImageNet DINO,90.602,91.62 ± 0.34,1.019,0.02,0.159
+RiceLeaf,EfficientNet-B0,ImageNet→RiceLeaf (cont.),90.602,91.28 ± 0.46,0.679,0.114,0.571
+RiceLeaf,EfficientNet-B0,RiceLeaf-full (scratch),90.602,90.51 ± 0.17,-0.091,0.536,1.0
+RiceLeaf,MobileNetV3-Small,ImageNet→FloraBD (cont.),89.606,90.31 ± 0.67,0.702,0.25,0.999
+RiceLeaf,MobileNetV3-Small,ImageNet DINO,89.606,91.01 ± 0.41,1.404,0.035,0.211
+RiceLeaf,MobileNetV3-Small,ImageNet→RiceLeaf (cont.),89.606,90.22 ± 0.69,0.611,0.313,0.999
+RiceLeaf,MobileNetV3-Small,RiceLeaf-full (scratch),89.606,89.81 ± 0.35,0.204,0.646,1.0

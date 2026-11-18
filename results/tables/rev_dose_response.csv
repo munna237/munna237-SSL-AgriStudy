@@ -1,0 +1,4 @@
+design,RiceLeaf gain per 10× images (pp),95% CI (test bootstrap)
+epochs fixed (100),10.46,"[7.88, 13.27]"
+"steps matched (≈10,600)",3.74,"[1.40, 5.97]"
+"ImageNet subsets, epochs fixed",4.46,"[2.03, 6.98]"

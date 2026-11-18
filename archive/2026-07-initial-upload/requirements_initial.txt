@@ -1,0 +1,10 @@
+torch>=2.0
+torchvision>=0.15
+timm==0.9.16
+umap-learn>=0.5
+scikit-learn>=1.0
+scipy>=1.9
+matplotlib>=3.5
+numpy>=1.23
+Pillow>=9.0
+tqdm>=4.64
