@@ -67,7 +67,7 @@ a single 100-epoch RiceLeaf run takes 2.5 h.
 ## Pretrained checkpoints
 
 The teacher backbones of all 27 laboratory-scale DINO ViT-S/16 runs (the weights every evaluation uses, ~87 MB each)
-are archived on Zenodo: [Zenodo DOI]. `results/checkpoint_manifest.csv` lists each file's SHA-256, final epoch and
+are archived on Zenodo: [doi:10.5281/zenodo.24347937](https://doi.org/10.5281/zenodo.24347937) (`ssl-agri-scale-checkpoints.zip`, with `checkpoint_manifest.csv` and an archived copy of the results as `ssl-agri-scale-results.zip`). `results/checkpoint_manifest.csv` lists each file's SHA-256, final epoch and
 training arguments. To reuse one with the notebooks, save `<run>_teacher_backbone.pth` as
 `MyDrive/SSL_AgriStudy/checkpoints/domain_dino_v2/<run>/checkpoint.pth` (the nine original runs `florabd_1k`–`pv_full`
 go under `checkpoints/domain_dino/`), and add an empty `COMPLETE` file to each `domain_dino_v2` run folder.
