@@ -175,7 +175,7 @@ Dataset & """ + ' & '.join(h for _, h in agr_cols) + r""" \\
 \label{sec:s3}
 \begin{table}[h]
 \centering\small
-\caption{\textbf{k-NN test accuracy (\%, $k = 20$, $T = 0.07$) on de-duplicated test sets} (cosine $\geq 0.95$ $\cup$ MD5). Test images kept: """ + ', '.join(f"{DS[t]} {int(SIZES.loc['cos ≥ 0.95 (paper)', t]):,}" for t in TG) + r""". The continued-pretraining variants are reported in Table~8 of the main paper.}
+\caption{\textbf{k-NN test accuracy (\%, $k = 20$, $T = 0.07$) on de-duplicated test sets} (cosine $\geq 0.95$ $\cup$ MD5). Test images kept: """ + ', '.join(f"{DS[t]} {int(SIZES.loc['cos ≥ 0.95 (paper)', t]):,}" for t in TG) + r""". The continued-pretraining variants are reported in Table~9 of the main paper.}
 \label{tab:s-knn}
 \begin{tabular}{lrrrrrr}
 \hline
@@ -235,11 +235,11 @@ Comparison & """ + det_head + r""" & Same sign \\
 
 \section{Full fine-tuning on Flowers-102 and CUB}
 \label{sec:s5}
-Table~\ref{tab:s-ft} gives the full fine-tuning results on the two natural-image targets, moved here from Table~14 of the main paper; RiceLeafDiseaseBD remains the headline fine-tuning result there. The recipe and statistics are those of the main paper (30 epochs, AdamW, learning rate $5\times10^{-5}$, three seeds; Welch's $t$-test, Holm over the same 21 tests as Table~14). With this single untuned recipe, fine-tuned ImageNet DINO scored below its own linear probe on Flowers-102 (93.99 vs 95.72\%) and CUB (76.77 vs 81.86\%), a known effect of full fine-tuning on small fine-grained datasets \cite{kumar2022finetuning}, and DINOv2 ViT-S/14 had one unstable CUB seed (53.56\% against 80.05\% and 74.92\%). These results are therefore indicative only. Under this recipe the continued checkpoints trailed ImageNet DINO on CUB by 5.0--6.1 points ($p_{\mathrm{Holm}} < 0.05$); on Flowers-102 their deficits (0.9--2.4 points) were not significant.
+Table~\ref{tab:s-ft} gives the full fine-tuning results on the two natural-image targets, moved here from Table~15 of the main paper; RiceLeafDiseaseBD remains the headline fine-tuning result there. The recipe and statistics are those of the main paper (30 epochs, AdamW, learning rate $5\times10^{-5}$, three seeds; Welch's $t$-test, Holm over the same 21 tests as Table~15). With this single untuned recipe, fine-tuned ImageNet DINO scored below its own linear probe on Flowers-102 (93.99 vs 95.72\%) and CUB (76.77 vs 81.86\%), a known effect of full fine-tuning on small fine-grained datasets \cite{kumar2022finetuning}, and DINOv2 ViT-S/14 had one unstable CUB seed (53.56\% against 80.05\% and 74.92\%). These results are therefore indicative only. Under this recipe the continued checkpoints trailed ImageNet DINO on CUB by 5.0--6.1 points ($p_{\mathrm{Holm}} < 0.05$); on Flowers-102 their deficits (0.9--2.4 points) were not significant.
 
 \begin{table}[h]
 \centering\small
-\caption{\textbf{Full fine-tuning test accuracy (\%) on Flowers-102 and CUB-200-2011, mean $\pm$ s.d. over three seeds.} $^{*}$Significantly different from ImageNet DINO (Welch, Holm over the 21 tests of Table~14 of the main paper).}
+\caption{\textbf{Full fine-tuning test accuracy (\%) on Flowers-102 and CUB-200-2011, mean $\pm$ s.d. over three seeds.} $^{*}$Significantly different from ImageNet DINO (Welch, Holm over the 21 tests of Table~15 of the main paper).}
 \label{tab:s-ft}
 \begin{tabular}{lcc}
 \hline
