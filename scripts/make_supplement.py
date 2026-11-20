@@ -101,7 +101,7 @@ tex = r"""\documentclass[10pt]{article}
 \renewcommand{\theequation}{S\arabic{equation}}
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thesubsection}{S\arabic{section}.\arabic{subsection}}
-\title{Supplementary Material for\\ ``Domain Match Helps Modestly, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and Near-Duplicate Inflation in Agricultural and Botanical Recognition''}
+\title{Supplementary Material for\\ ``Domain Match or Scale? A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and Near-Duplicate Inflation in Agricultural and Botanical Recognition''}
 \author{Mohammad Mehedi Hasan Munna, Acramul Haque Kabir, Reefka Fabliha Tulona, Tanvir Bin Zahid,\\Nahid Hossain Antu, Md.\ Mansur ul Mulk and Arvid Chowdhury}
 \date{}
 \begin{document}
