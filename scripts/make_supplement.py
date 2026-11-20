@@ -101,22 +101,24 @@ tex = r"""\documentclass[10pt]{article}
 \renewcommand{\theequation}{S\arabic{equation}}
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thesubsection}{S\arabic{section}.\arabic{subsection}}
-\title{Supplementary Material for\\ ``Domain Match Helps, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and Near-Duplicate Inflation in Agricultural and Botanical Recognition''}
+\title{Supplementary Material for\\ ``Domain Match Helps Modestly, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and Near-Duplicate Inflation in Agricultural and Botanical Recognition''}
 \author{Mohammad Mehedi Hasan Munna, Acramul Haque Kabir, Reefka Fabliha Tulona, Tanvir Bin Zahid,\\Nahid Hossain Antu, Md.\ Mansur ul Mulk and Arvid Chowdhury}
 \date{}
 \begin{document}
 \maketitle
 All values come from the released notebooks and their result files; the main paper's protocols, splits and statistics apply unless stated. Machine-readable versions of every table are provided as CSV files in the folder \emph{supplementary\_data}.
 
-\section{Distillation and deployment}
+\section{Distillation and deployment (exploratory)}
 \label{sec:s1}
-\textbf{Protocol.} ViT-S/16 teachers are fine-tuned on RiceLeafDiseaseBD (seed 0), one per pretraining source. MobileNetV3-Small \cite{howard2019searching} and EfficientNet-B0 \cite{tan2019efficientnet} students with ImageNet weights are trained for 50 epochs (AdamW, learning rate $10^{-3}$, weight decay $10^{-4}$, batch 64) with
+This section is exploratory: none of its gains is significant, and distillation methods for rice disease are the subject of a separate paper \cite{agrikd}, with which no results are shared. It tests only whether the pretraining source changes what a small deployable student reaches.
+
+\textbf{Protocol.} One ViT-S/16 teacher per pretraining source is fine-tuned on RiceLeafDiseaseBD (one seed). MobileNetV3-Small \cite{howard2019searching} and EfficientNet-B0 \cite{tan2019efficientnet} students with ImageNet weights are trained for 50 epochs (AdamW, learning rate $10^{-3}$, weight decay $10^{-4}$, batch 64) with
 \begin{equation}
 \mathcal{L} = \alpha\, T^{2}\, \mathrm{KL}\!\left(p^{T}_{\mathrm{teacher}} \,\|\, p^{T}_{\mathrm{student}}\right) + (1-\alpha)\,\mathcal{L}_{\mathrm{CE}},
 \end{equation}
-where $p^{T}$ is the softmax at temperature $T = 4$ and $\alpha = 0.5$ \cite{hinton2015distilling}, and compared with a plain fine-tuned student, with three seeds each (Welch's $t$-test, Holm over the eight student--teacher pairs). Deployment cost (parameters, fp32 size, MACs, PyTorch CPU latency at batch 1, median of 200 runs) was measured on an Intel Xeon CPU at 2.20~GHz. Distillation methods for rice disease are the subject of a separate paper \cite{agrikd}; here distillation only tests whether the pretraining source changes what a deployable student can reach.
+where $p^{T}$ is the softmax at temperature $T = 4$ and $\alpha = 0.5$ \cite{hinton2015distilling}, against a plain fine-tuned student, three seeds each (Welch's $t$-test, Holm over the eight student--teacher pairs). Latency is PyTorch fp32 at batch 1 on an Intel Xeon CPU at 2.20~GHz (median of 200 runs).
 
-\textbf{Results.} Students distilled from the ImageNet DINO teacher gained $+1.40$ points (MobileNetV3-Small) and $+1.02$ points (EfficientNet-B0) over plain fine-tuning (Table~\ref{tab:s-kd}); the gains were consistent in direction but not significant after Holm correction with three seeds ($p_{\mathrm{Holm}} = 0.21$ and $0.16$), and each teacher was trained with one seed. The from-scratch RiceLeaf-full teacher (82.81\%) gave no gain. The distilled MobileNetV3-Small came within 0.2 points of the ViT-S/16 teacher at one tenth of its single-thread latency and one fourteenth of its size (Table~\ref{tab:s-deploy}, Fig.~\ref{fig:s-pareto}); the distilled EfficientNet-B0 exceeded its teacher by 0.45 points. Latency was measured on a server CPU, not on a phone or embedded board.
+\textbf{Results.} Distillation from the ImageNet DINO teacher (91.17\%) gave $+1.40$ points for MobileNetV3-Small and $+1.02$ for EfficientNet-B0 over plain fine-tuning, not significant ($p_{\mathrm{Holm}} = 0.21$ and $0.16$); the RiceLeaf-full teacher (82.81\%) gave none (Table~\ref{tab:s-kd}). The distilled MobileNetV3-Small came within 0.2 points of the ViT-S/16 teacher at one tenth of its single-thread server-CPU latency (Table~\ref{tab:s-deploy}); phones and embedded boards were not measured.
 
 \begin{table}[h]
 \centering\small
@@ -146,21 +148,15 @@ Model & Params (M) & Size (MB) & GMACs & 1 thread (ms) & 12 threads (ms) \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.55\textwidth]{figures/supp/fig_pareto.pdf}
-\caption{\textbf{Test accuracy against single-thread CPU latency} for plain fine-tuned (open) and best distilled (filled) students on RiceLeafDiseaseBD, and the ViT-S/16 teacher.}
-\label{fig:s-pareto}
-\end{figure}
 
 \clearpage
 \section{Near-duplicate detector agreement}
 \label{sec:s2}
-Table~\ref{tab:s-agree} reports, for each dataset, how many test images each detector flags and how well the two detectors agree, together with how often a flagged test image shares its label with its nearest training or validation image. A detector that finds true near-duplicates should flag pairs that almost always share a label; the cosine detector did so in 94--100\% of cases on every dataset except PlantDoc, whereas pHash-flagged pairs did so on FloraBD (100\%) and RiceLeafDiseaseBD (95.8\%) but in only 47.8\% of cases on PlantVillage and 14.5\% on CUB, because there pHash flags different objects on similar uniform backgrounds (Figs.~\ref{fig:s-PlantVillage}--\ref{fig:s-CUB}). Pairs flagged only by the cosine detector were the same scene photographed with a small shift in framing or scale, which changes 14--18 of the 64 hash bits. The six RiceLeafDiseaseBD images flagged only by pHash were same-scene pairs just below the cosine threshold. On PlantDoc, flagged pairs included resized copies of the same stock photograph, and 11 of the 21 cosine-flagged pairs carried different labels in training and test (10 of 21, 47.6\%, shared a label; Table~\ref{tab:s-agree}), i.e., the same image appears under two classes. Exact-copy (MD5) counts are included in every de-duplicated set.
+Table~\ref{tab:s-agree} reports, for each dataset, how many test images each detector flags and how well the two detectors agree, together with how often a flagged test image shares its label with its nearest training or validation image. A detector that finds true near-duplicates should flag pairs that almost always share a label; the cosine detector did so in 94--100\% of cases on every dataset except PlantDoc, whereas pHash-flagged pairs did so on FloraBD (100\%) and RiceLeafDiseaseBD (95.8\%) but in only 47.8\% of cases on PlantVillage and 14.5\% on CUB, because there pHash flags different objects on similar uniform backgrounds (Figs.~\ref{fig:s-PlantVillage}--\ref{fig:s-CUB}). Pairs flagged only by the cosine detector were the same scene photographed with a small shift in framing or scale, which changes 14--18 of the 64 hash bits. The six RiceLeafDiseaseBD images flagged only by pHash were same-scene pairs just below the cosine threshold. On PlantDoc, flagged pairs included resized copies of the same stock photograph, and only 10 of the 21 cosine-flagged pairs shared a label (47.6\%, Table~\ref{tab:s-agree}); the other 11 carried different labels in training and test, i.e., the same image appears under two classes. Exact-copy (MD5) counts are included in every de-duplicated set.
 
 \begin{table}[h]
 \centering\small
-\caption{\textbf{Agreement of the two near-duplicate detectors.} Counts of test images flagged at cosine $\geq 0.95$ (ImageNet DINO features) and at pHash Hamming $\leq 8$; Jaccard index and Cohen's $\kappa$ of the two flags; percentage of flagged test images whose nearest training/validation image has the same label.}
+\caption{\textbf{Agreement of the two near-duplicate detectors.} Counts of test images flagged at cosine $\geq 0.95$ (ImageNet DINO features) and at pHash Hamming $\leq 8$; Jaccard index and Cohen's $\kappa$ of the two flags; percentage of flagged test images whose nearest training/validation image has the same label, out of the test images flagged by that detector (for the small sets: PlantDoc 10 of 21 cosine-flagged and 6 of 15 pHash-flagged, Flowers-102 12 of 15 and CUB 11 of 76 pHash-flagged). $\kappa$ also counts the test images that neither detector flags, so it can exceed the Jaccard index; it is highest on PlantDoc because there the two flagged sets largely coincide (14 of the 22 flagged images are flagged by both).}
 \label{tab:s-agree}
 \setlength{\tabcolsep}{3.5pt}
 \resizebox{\linewidth}{!}{%

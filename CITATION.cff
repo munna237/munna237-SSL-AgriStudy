@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or these results, please cite the paper below."
-title: "SSL-AgriStudy: code and results for 'Domain Match Helps, Scale Decides'"
+title: "SSL-AgriStudy: code and results for 'Domain Match Helps Modestly, Scale Decides'"
 repository-code: "https://github.com/munna237/munna237-SSL-AgriStudy"
 license: MIT
 authors:
@@ -33,7 +33,7 @@ authors:
     affiliation: "North South University"
 preferred-citation:
   type: article
-  title: "Domain Match Helps, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and Near-Duplicate Inflation in Agricultural and Botanical Recognition"
+  title: "Domain Match Helps Modestly, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and Near-Duplicate Inflation in Agricultural and Botanical Recognition"
   journal: "IEEE Access"
   year: 2026
   notes: "Under review"

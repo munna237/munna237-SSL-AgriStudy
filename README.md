@@ -2,7 +2,7 @@
 
 Code, splits and results for
 
-> **Domain Match Helps, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and
+> **Domain Match Helps Modestly, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and
 > Near-Duplicate Inflation in Agricultural and Botanical Recognition** (IEEE Access, under review).
 
 The study holds the self-supervised method fixed (DINO, ViT-S/16) and asks whether a laboratory should pretrain on its
