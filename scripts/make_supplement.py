@@ -21,11 +21,35 @@ ORDER = list(NAME)
 # ---- Table S1/S2: distillation and deployment ----
 K = pd.read_csv(f'{TAB}/tab_kd.csv'); D = pd.read_csv(f'{TAB}/tab_deploy.csv'); TT = pd.read_csv(f'{TAB}/tab_kd_teachers.csv')
 TEACH = ['ImageNet DINO', 'ImageNet→RiceLeaf (cont.)', 'ImageNet→FloraBD (cont.)', 'RiceLeaf-full (scratch)']
+import json as _json, os as _os
+RS = _json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'supplementary_data', 'ft_kd_dedup_rescore.json')))
+_SK = {'MobileNetV3-Small': 'mobilenet_v3_small', 'EfficientNet-B0': 'efficientnet_b0'}
+CE_SD = {k: RS['none']['kd_ce'][v]['sd'] for k, v in _SK.items()}
+_FT = [('imagenet_dino', 'ImageNet DINO'), ('dinov2_vits14', 'DINOv2 ViT-S/14'), ('dinov2_vitb14', 'DINOv2 ViT-B/14'),
+       ('mae_vitb16', 'MAE ViT-B/16'), ('florabd_full_scratch', 'FloraBD-full (scratch)'), ('rice_full', 'RiceLeaf-full (scratch)'),
+       ('florabd_cont_in', r'ImageNet$\rightarrow$FloraBD (cont.)'), ('rice_cont_in', r'ImageNet$\rightarrow$RiceLeaf (cont.)')]
+_DET = ['none', 'cos0.95', 'cos0.95+phash8']
+def _ftcell(d, b):
+    v = RS[d]['ft'][b]
+    base = f"{v['mean']:.2f} $\\pm$ {v['sd']:.2f}"
+    return base if b == 'imagenet_dino' else base + f" ({v['diff']:+.2f}; {v['p_holm7']:.3f})"
+ftdd_rows = [r'\multicolumn{4}{l}{\textit{Full fine-tuning}} \\'] + [f"{n} & " + ' & '.join(_ftcell(d, b) for d in _DET) + r' \\' for b, n in _FT]
+_TN = {'imagenet_dino': 'ImageNet DINO', 'rice_cont_in': r'IN$\rightarrow$RiceLeaf', 'florabd_cont_in': r'IN$\rightarrow$FloraBD', 'rice_full': 'RiceLeaf-full'}
+_SN = {'mobilenet_v3_small': 'MobileNetV3-S', 'efficientnet_b0': 'EfficientNet-B0'}
+ftdd_rows.append('\\hline\n' + r'\multicolumn{4}{l}{\textit{Distillation (student $\leftarrow$ teacher)}} \\')
+for st in ('mobilenet_v3_small', 'efficientnet_b0'):
+    ftdd_rows.append(f"{_SN[st]}, plain & " + ' & '.join(f"{RS[d]['kd_ce'][st]['mean']:.2f} $\\pm$ {RS[d]['kd_ce'][st]['sd']:.2f}" for d in _DET) + r' \\')
+    for t in ('imagenet_dino', 'rice_cont_in', 'florabd_cont_in', 'rice_full'):
+        cells = []
+        for d in _DET:
+            v = [r for r in RS[d]['kd'] if r['student'] == st and r['teacher'] == t][0]
+            cells.append(f"{v['mean']:.2f} $\\pm$ {v['sd']:.2f} ({v['gain']:+.2f}; {v['p_holm']:.2f})")
+        ftdd_rows.append(f"{_SN[st]} $\\leftarrow$ {_TN[t]} & " + ' & '.join(cells) + r' \\')
 kd_rows = []
 for st in ['MobileNetV3-Small', 'EfficientNet-B0']:
     k = K[K.student == st].set_index('teacher')
     ce = k['CE mean'].iloc[0]
-    cells = [f'{ce:.2f}'] + [f"{k.loc[t, 'KD mean ± std'].replace('±', '$\\pm$')} ({k.loc[t, 'gain_pp']:+.2f}; {k.loc[t, 'p_holm']:.2f})" for t in TEACH]
+    cells = [f"{ce:.2f} $\\pm$ {CE_SD[st]:.2f}"] + [f"{k.loc[t, 'KD mean ± std'].replace('±', '$\\pm$')} ({k.loc[t, 'gain_pp']:+.2f}; {k.loc[t, 'p_holm']:.2f})" for t in TEACH]
     kd_rows.append(f'{st} & ' + ' & '.join(cells) + ' \\\\')
 teach_row = 'Teacher (fine-tuned ViT-S/16) & & ' + ' & '.join(f"{TT.set_index('teacher').loc[t, 'test_acc']:.2f}" for t in TEACH) + ' \\\\'
 dep_rows = [f"{r.model} & {r.params_M:.2f} & {r.size_MB:.1f} & {r.GMACs:.3f} & {r.cpu_ms_1thread_median:.1f} & {r.cpu_ms_allthreads_median:.1f} \\\\" for r in D.itertuples()]
@@ -232,6 +256,25 @@ Comparison & """ + det_head + r""" & Same sign \\
 \end{tabular}}
 \end{table}
 \end{landscape}
+
+\section{Fine-tuning and distillation on the de-duplicated rice test set}
+\label{sec:s6dd}
+Table~\ref{tab:s-ftdd} re-scores the RiceLeafDiseaseBD fine-tuning and distillation runs from their saved per-image predictions on the de-duplicated test set (cosine $\geq 0.95$ $\cup$ MD5, $n = 539$) and on its union with pHash $\leq 8$ ($n = 533$), with the protocols used on the full test set: Welch's $t$-test over three seeds, Holm over the seven fine-tuning comparisons with ImageNet DINO and, separately, over the eight student--teacher pairs. On the full test set the same code reproduces the published values (e.g., $90.90 \pm 0.49$\% for ImageNet DINO; $p_{\mathrm{Holm}} = 0.21$ and $0.16$ for the two ImageNet DINO students). Label-efficiency runs could not be re-scored, because the per-image predictions of the 20 label subsets were not stored.
+
+\begin{table}[h]
+\centering\small
+\caption{\textbf{RiceLeafDiseaseBD fine-tuning and distillation re-scored on de-duplicated test sets}: test accuracy (\%), mean $\pm$ s.d. over three seeds; in parentheses, the difference from ImageNet DINO (fine-tuning) or from the plain student (distillation), and the Holm-adjusted $p$-value.}
+\label{tab:s-ftdd}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\hline
+ & Full test ($n = 1{,}472$) & cos $\geq 0.95$ ($n = 539$) & cos $\cup$ pHash ($n = 533$) \\
+\hline
+""" + "\n".join(ftdd_rows) + r"""
+\hline
+\end{tabular}}
+\end{table}
 
 \section{Full fine-tuning on Flowers-102 and CUB}
 \label{sec:s5}
