@@ -1,0 +1,22 @@
+test_file,test_label,nearest_train_file,train_label,cosine,same_label,md5_identical
+test/Potato leaf late blight/1421_0.jpeg?itok=FMtmgePj.jpg,Potato leaf late blight,train/Potato leaf early blight/1421_0.jpeg?itok=FMtmgePj.jpg,Potato leaf early blight,1.0,False,True
+test/Potato leaf late blight/5816740026_d42ef24413_Phytophthora-Infestans.jpg,Potato leaf late blight,train/Potato leaf early blight/5816740026_d42ef24413_Phytophthora-Infestans.jpg,Potato leaf early blight,1.0,False,True
+test/Corn Gray leaf spot/IMG_42231.jpg,Corn Gray leaf spot,train/Corn leaf blight/IMG_42231.jpg,Corn leaf blight,1.0,False,True
+test/Tomato leaf bacterial spot/tomato_V8.jpg,Tomato leaf bacterial spot,train/Tomato Septoria leaf spot/tomato_V8.jpg,Tomato Septoria leaf spot,1.0,False,True
+test/Corn leaf blight/2015070295153021.jpg,Corn leaf blight,train/Corn Gray leaf spot/2015070295153021.jpg,Corn Gray leaf spot,1.0,False,True
+test/Potato leaf early blight/backus-056-potato-blight.jpg,Potato leaf early blight,train/Potato leaf late blight/backus-056-potato-blight.jpg,Potato leaf late blight,1.0,False,True
+test/Potato leaf late blight/irish-blight-symptoms-on-potato-leaves-atmf8b.jpg,Potato leaf late blight,val/Potato leaf early blight/irish-blight-symptoms-on-potato-leaves-atmf8b.jpg,Potato leaf early blight,1.0,False,True
+test/Blueberry leaf/blueberry-leaves-normal-above-and-iron-deficient-below-bgahf8.jpg,Blueberry leaf,train/Blueberry leaf/blueberry-leaves-normal-above-and-iron-deficient-below-bgahf8.jpg,Blueberry leaf,1.0,True,True
+test/Tomato Septoria leaf spot/early-blight-septoria-ls-fig-3.jpg,Tomato Septoria leaf spot,train/Tomato Septoria leaf spot/early-blight-septoria-ls-fig-3.jpg,Tomato Septoria leaf spot,1.0,True,True
+test/Tomato leaf yellow virus/tylcv-seminar-1-638.jpg,Tomato leaf yellow virus,train/Tomato leaf yellow virus/tylcv-seminar-1-638.jpg,Tomato leaf yellow virus,1.0,True,True
+test/Potato leaf early blight/earlyblightpotato.jpg,Potato leaf early blight,train/Tomato Early blight leaf/earlyblightpotato.jpg,Tomato Early blight leaf,1.0,False,False
+test/Corn leaf blight/corn-gray-leaf-spot-f4.jpg,Corn leaf blight,train/Corn Gray leaf spot/corn-gray-leaf-spot-f4.jpg,Corn Gray leaf spot,1.0,False,True
+test/Tomato leaf bacterial spot/07.17.18-Common_Tomato_Diseases_Canker-258x300.jpg,Tomato leaf bacterial spot,val/Tomato leaf bacterial spot/bacterial-canker3x2400-2ia1kgd.jpg,Tomato leaf bacterial spot,0.9918,True,False
+test/Potato leaf early blight/early-blight-alternaria-alternata-leaf-spotting-on-potato-leaf-X91XJE.jpg,Potato leaf early blight,train/Potato leaf early blight/early-blight-alternaria-alternata-leaf-spotting-on-potato-leaf-ACG5WF.jpg,Potato leaf early blight,0.9851,True,False
+test/Tomato Septoria leaf spot/55830b60a7cf2.image.jpg,Tomato Septoria leaf spot,train/Tomato Septoria leaf spot/tomato-plant-is-infected-with-septoria-leaf-spot-1.jpg,Tomato Septoria leaf spot,0.9743,True,False
+test/Strawberry leaf/strawberry-leaf--stock-photo-1431216.jpg,Strawberry leaf,train/Strawberry leaf/1534854-a-green-strawberry-leaf-isolated-on-a-white-background.jpg,Strawberry leaf,0.9733,True,False
+test/Squash Powdery mildew leaf/Powdery-Mildew-on-squash.jpg,Squash Powdery mildew leaf,train/Squash Powdery mildew leaf/Powdery-Mildew-on-Cucumber-Leaf.jpg,Squash Powdery mildew leaf,0.9654,True,False
+test/Soyabean leaf/stock-photo-soy-leaf-isolated-on-white-background-120961801.jpg,Soyabean leaf,train/Soyabean leaf/depositphotos_15928367-stock-photo-soy-leaf.jpg,Soyabean leaf,0.9649,True,False
+test/Tomato Early blight leaf/early_blight1-150x150.jpg,Tomato Early blight leaf,train/Potato leaf early blight/early_blight1.jpg,Potato leaf early blight,0.9609,False,False
+test/Tomato leaf late blight/18c.jpg,Tomato leaf late blight,train/Tomato leaf late blight/late_blight1.jpg,Tomato leaf late blight,0.9576,True,False
+test/Corn leaf blight/07c.jpg,Corn leaf blight,train/Corn Gray leaf spot/gray_leaf_spot.jpg,Corn Gray leaf spot,0.9513,False,False

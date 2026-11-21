@@ -3,6 +3,8 @@ import sys, re
 import pandas as pd
 
 TAB = sys.argv[1]
+import os as _os0
+SUPP = _os0.environ.get('SSL_SUPP_DATA', _os0.path.join(_os0.path.dirname(_os0.path.abspath(__file__)), '..', 'results', 'supplementary_data'))
 def esc(s): return str(s).replace('_', '\\_').replace('%', '\\%').replace('→', '$\\rightarrow$').replace('≥', '$\\geq$').replace('≤', '$\\leq$').replace('∪', '$\\cup$').replace('−', '$-$')
 
 NAME = {'imagenet_dino': 'ImageNet DINO', 'dinov2_vits14': 'DINOv2 ViT-S/14', 'dinov2_vitb14': 'DINOv2 ViT-B/14',
@@ -10,7 +12,7 @@ NAME = {'imagenet_dino': 'ImageNet DINO', 'dinov2_vits14': 'DINOv2 ViT-S/14', 'd
         'resnet50_sup': 'ResNet-50 (supervised)', 'florabd_1k': 'FloraBD-1k', 'florabd_5k': 'FloraBD-5k',
         'florabd_10k': 'FloraBD-10k', 'florabd_full_scratch': 'FloraBD-full', 'rice_1k': 'RiceLeaf-1k', 'rice_5k': 'RiceLeaf-5k',
         'rice_full': 'RiceLeaf-full', 'rice_full_s1': 'RiceLeaf-full (seed 1)', 'rice_full_s2': 'RiceLeaf-full (seed 2)',
-        'rice_full_ep400': 'RiceLeaf-full, 400 ep', 'rice_full_inrecipe': 'RiceLeaf-full, IN recipe',
+        'rice_full_ep400': 'RiceLeaf-full, 400 ep', 'rice_full_inrecipe': 'RiceLeaf-full, released recipe',
         'rice_1k_stepmatch': 'RiceLeaf-1k, step-matched', 'rice_5k_stepmatch': 'RiceLeaf-5k, step-matched',
         'pv_5k': 'PlantVillage-5k', 'pv_10k': 'PlantVillage-10k', 'pv_full': 'PlantVillage-full',
         'inet_n996': 'ImageNet-996', 'inet_n4671': 'ImageNet-4,671', 'inet_n6835': 'ImageNet-6,835', 'inet_n30829': 'ImageNet-30,829',
@@ -22,7 +24,7 @@ ORDER = list(NAME)
 K = pd.read_csv(f'{TAB}/tab_kd.csv'); D = pd.read_csv(f'{TAB}/tab_deploy.csv'); TT = pd.read_csv(f'{TAB}/tab_kd_teachers.csv')
 TEACH = ['ImageNet DINO', 'ImageNet→RiceLeaf (cont.)', 'ImageNet→FloraBD (cont.)', 'RiceLeaf-full (scratch)']
 import json as _json, os as _os
-RS = _json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'supplementary_data', 'ft_kd_dedup_rescore.json')))
+RS = _json.load(open(_os.path.join(SUPP, 'ft_kd_dedup_rescore.json')))
 _SK = {'MobileNetV3-Small': 'mobilenet_v3_small', 'EfficientNet-B0': 'efficientnet_b0'}
 CE_SD = {k: RS['none']['kd_ce'][v]['sd'] for k, v in _SK.items()}
 _FT = [('imagenet_dino', 'ImageNet DINO'), ('dinov2_vits14', 'DINOv2 ViT-S/14'), ('dinov2_vitb14', 'DINOv2 ViT-B/14'),
@@ -55,14 +57,50 @@ teach_row = 'Teacher (fine-tuned ViT-S/16) & & ' + ' & '.join(f"{TT.set_index('t
 _LE = pd.read_csv(f'{TAB}/tab_label_efficiency.csv')
 _LEC = ['ImageNet DINO', 'DINOv2 ViT-S/14', 'FloraBD-full (scratch)', 'RiceLeaf-full (scratch)', 'ImageNet→FloraBD (cont.)', 'ImageNet→RiceLeaf (cont.)']
 _TGT = {'FloraBD': 'FloraBD', 'RiceLeaf': 'RiceLeafDiseaseBD', 'Flowers102': 'Flowers-102', 'CUB': 'CUB-200-2011'}
+_LEN = {'ImageNet→FloraBD (cont.)': 'florabd_cont_in', 'ImageNet→RiceLeaf (cont.)': 'rice_cont_in', 'FloraBD-full (scratch)': 'florabd_full_scratch',
+        'RiceLeaf-full (scratch)': 'rice_full', 'DINOv2 ViT-S/14': 'dinov2_vits14'}
+_PUB = _json.load(open(_os.path.join(SUPP, 'label_efficiency_tests_published.json')))
+_NS = {(r['target'], round(r['fraction'], 2), r['backbone']) for r in _PUB if r['p_holm'] >= 0.05}
+def _lecell(t, frac, col, v):
+    v = str(v).replace('±', '$\\pm$')
+    return v + (' n.s.' if (t, frac, _LEN.get(col)) in _NS else '')
 le_rows = []
 for _t, _tn in _TGT.items():
     _d = _LE[_LE.target == _t]
     for _k, (_, _r) in enumerate(_d.iterrows()):
         _lab = str(_r['labels']).replace('%', '\\%').replace('~', '$\\approx$').replace('/class', '')
-        le_rows.append((_tn if _k == 0 else '') + ' & ' + _lab + ' & ' + ' & '.join(str(_r[c]).replace('±', '$\\pm$') for c in _LEC) + ' \\\\')
+        le_rows.append((_tn if _k == 0 else '') + ' & ' + _lab + ' & ' + ' & '.join(_lecell(_t, round(float(str(_r['labels']).split('%')[0]) / 100, 2), c, _r[c]) for c in _LEC) + ' \\\\')
     le_rows.append('\\hline')
 le_rows = le_rows[:-1]
+# ---- Table S11: label efficiency on de-duplicated test sets ----
+LED = _json.load(open(_os.path.join(SUPP, 'label_efficiency_dedup.json')))
+_LEB = ['dinov2_vits14', 'florabd_full_scratch', 'rice_full', 'florabd_cont_in', 'rice_cont_in']
+_LET = {(r['target'], r['fraction'], r['backbone'], d): r for d in ('none', 'cos0.95') for r in LED['tests'][d]}
+def _lec(t, f, b, d):
+    r = _LET.get((t, f, b, d))
+    if r is None: return '--'
+    return f"${r['mean_diff']:+.2f}$" + ('$^{*}$' if r['p_holm'] < 0.05 else '')
+led_rows = []
+for _t in ('RiceLeaf', 'FloraBD'):
+    for _k, _f in enumerate((0.01, 0.05, 0.10, 0.25, 0.50)):
+        led_rows.append((f"{_TGT[_t]} ($n$ = {LED['n_test'][_t]['none']:,} / {LED['n_test'][_t]['cos0.95']:,})" if _k == 0 else '') + f' & {int(_f*100)}\\% & '
+                        + ' & '.join(_lec(_t, _f, b, 'none') + ' & ' + _lec(_t, _f, b, 'cos0.95') for b in _LEB) + ' \\\\')
+    led_rows.append('\\hline')
+led_rows = led_rows[:-1]
+# ---- Section: near-duplicate evidence (notebook 17) ----
+_SD = SUPP
+_BIN = pd.read_csv(f'{_SD}/same_label_by_cosine_bin.csv')
+_BL = ['< 0.90', '0.90–0.95', '0.95–0.98', '≥ 0.98']
+_DSN = {'FloraBD': 'FloraBD', 'RiceLeaf': 'RiceLeafDiseaseBD', 'PlantVillage': 'PlantVillage', 'PlantDoc': 'PlantDoc', 'Flowers102': 'Flowers-102', 'CUB': 'CUB-200-2011'}
+def _bc(r): return f"{r['same label (%)']:.1f} ({int(r['test images']):,})" if r['test images'] else '--'
+bin_rows = [_DSN[d] + ' & ' + ' & '.join(_bc(_BIN[(_BIN.dataset == d) & (_BIN['cosine bin'] == b)].iloc[0]) for b in _BL) + ' \\\\' for d in _DSN]
+_W = pd.read_csv(f'{_SD}/within_train_duplicates.csv')
+within_rows = [f"{_DSN[r.iloc[0]]} & {int(r.iloc[1]):,} & {int(r.iloc[2]):,} & {r.iloc[3]:.1f} & {r.iloc[4]:.1f} & {int(r.iloc[5]):,} ({r.iloc[6]:.1f}) \\\\" for _, r in _W.iterrows()]
+top_figs = []
+for _d, _n in _DSN.items():
+    top_figs.append(f"\\begin{{figure}}[p]\n\\centering\n\\includegraphics[width=\\textwidth]{{figures/supp/top_pairs_{_d}.jpg}}\n"
+                    f"\\caption{{\\textbf{{{_n}: most similar and near-threshold test--train pairs.}} Each pair shows the test image (left) and its nearest training or validation image (right), with cosine similarity, Hamming distance and label agreement (green: same label; red: different). Top: the eight most similar test images. Middle and bottom: eight random test images from nearest cosine 0.93--0.95 and 0.95--0.97 (fewer where the band has fewer images).}}\n"
+                    f"\\label{{fig:s-top-{_d}}}\n\\end{{figure}}")
 dep_rows = [f"{r.model} & {r.params_M:.2f} & {r.size_MB:.1f} & {r.GMACs:.3f} & {r.cpu_ms_1thread_median:.1f} & {r.cpu_ms_allthreads_median:.1f} \\\\" for r in D.itertuples()]
 
 # ---- Table S3: detector agreement ----
@@ -270,7 +308,7 @@ Comparison & """ + det_head + r""" & Same sign \\
 
 \section{Fine-tuning and distillation on the de-duplicated rice test set}
 \label{sec:s6dd}
-Table~\ref{tab:s-ftdd} re-scores the RiceLeafDiseaseBD fine-tuning and distillation runs from their saved per-image predictions on the de-duplicated test set (cosine $\geq 0.95$ $\cup$ MD5, $n = 539$) and on its union with pHash $\leq 8$ ($n = 533$), with the protocols used on the full test set: Welch's $t$-test over three seeds, Holm over the seven fine-tuning comparisons with ImageNet DINO and, separately, over the eight student--teacher pairs. On the full test set the same code reproduces the published values (e.g., $90.90 \pm 0.49$\% for ImageNet DINO; $p_{\mathrm{Holm}} = 0.21$ and $0.16$ for the two ImageNet DINO students). Label-efficiency runs could not be re-scored, because the per-image predictions of the 20 label subsets were not stored.
+Table~\ref{tab:s-ftdd} re-scores the RiceLeafDiseaseBD fine-tuning and distillation runs from their saved per-image predictions on the de-duplicated test set (cosine $\geq 0.95$ $\cup$ MD5, $n = 539$) and on its union with pHash $\leq 8$ ($n = 533$), with the protocols used on the full test set: Welch's $t$-test over three seeds, Holm over the seven fine-tuning comparisons with ImageNet DINO and, separately, over the eight student--teacher pairs. On the full test set the same code reproduces the published values (e.g., $90.90 \pm 0.49$\% for ImageNet DINO; $p_{\mathrm{Holm}} = 0.21$ and $0.16$ for the two ImageNet DINO students). Label-efficiency probes are re-scored in Section S7 (Table~\ref{tab:s-led}).
 
 \begin{table}[h]
 \centering\small
@@ -335,7 +373,7 @@ which counts the student's forward and backward passes ($3\times$ forward) over 
 \label{fig:s-heatmap}
 \end{figure}
 
-\textbf{Label efficiency.} Table~\ref{tab:s-le} gives the values plotted in Fig.~4 of the main paper.
+\textbf{Label efficiency.} Table~\ref{tab:s-le} gives the values plotted in Fig.~4 of the main paper. Table~\ref{tab:s-led} re-scores the same probes on the de-duplicated test sets. The probes were re-fitted from the cached features to obtain per-image predictions: every one of the 2,424 refits was within three test images (at most 0.20 points) of the stored accuracy, 15 of the 24 backbone--target pairs reproduced exactly, and the 90 published tests were reproduced up to one borderline case (ImageNet$\rightarrow$RiceLeaf at 25\%, $p_{\mathrm{Holm}} = 0.055$ published, 0.042 re-fitted). On Flowers-102 and CUB, which lose 5\% and 0.2\% of their test images, no difference from ImageNet DINO changed by more than 1.7 points (values in \texttt{label\_efficiency\_dedup.json}, which also gives the union with pHash $\leq 8$).
 
 \begin{table}[h]
 \centering\small
@@ -351,6 +389,87 @@ Target & Labels (per class) & ImageNet DINO & DINOv2 ViT-S/14 & FloraBD-full & R
 \hline
 \end{tabular}}
 \end{table}
+
+\begin{table}[h]
+\centering\small
+\caption{\textbf{Label efficiency on de-duplicated test sets: difference from ImageNet DINO (points), mean over 20 shared label subsets.} Full: full test set, re-fitted probes (Section S7; the only change from Table~\ref{tab:s-le} in significance is IN$\rightarrow$RiceLeaf at 25\%, $p_{\mathrm{Holm}} = 0.055$ published); Dedup: cosine $\geq 0.95$ $\cup$ MD5 removed. $^{*}$Significant (paired $t$-test over subsets, Holm over the 90 tests of each test set). The $t$-test treats the test images as fixed. Paired bootstrap intervals over test images (2,000 resamples of subset-averaged per-image correctness) for every cell are in \texttt{label\_efficiency\_dedup\_bootstrap.json}. They exclude zero for far fewer advantages: for IN$\rightarrow$RiceLeaf on the de-duplicated rice set only at 50\% ($+3.01$ $[+0.5, +5.4]$; at 10\% and 25\% $[-0.5, +3.0]$ and $[-0.5, +3.5]$), and for IN$\rightarrow$FloraBD on the full FloraBD set only at 1\% ($+1.46$ $[+1.0, +1.9]$).}
+\label{tab:s-led}
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llcccccccccc}
+\hline
+& & \multicolumn{2}{c}{DINOv2 ViT-S/14} & \multicolumn{2}{c}{FloraBD-full} & \multicolumn{2}{c}{RiceLeaf-full} & \multicolumn{2}{c}{IN$\rightarrow$FloraBD} & \multicolumn{2}{c}{IN$\rightarrow$RiceLeaf} \\
+Target & Labels & Full & Dedup & Full & Dedup & Full & Dedup & Full & Dedup & Full & Dedup \\
+\hline
+""" + "\n".join(led_rows) + r"""
+\hline
+\end{tabular}}
+\end{table}
+
+\section{Holm families}
+Table~\ref{tab:s-fam} defines every Holm family used in the paper. The file \texttt{holm\_families.csv} lists each member comparison (model, reference, target, protocol, test set, raw and adjusted $p$), built from the stored results by \texttt{make\_families.py}. Recomputing Holm over the 75 comparisons of Table~5 reproduces every significance mark in that table.
+
+\begin{table}[h]
+\centering\small
+\caption{\textbf{Holm families.} All comparisons are against ImageNet DINO unless stated otherwise. Targets: FB FloraBD, RL RiceLeafDiseaseBD, PV PlantVillage, PD PlantDoc, FL Flowers-102, CUB.}
+\label{tab:s-fam}
+\setlength{\tabcolsep}{3pt}
+\footnotesize
+\begin{tabular}{r>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{7.6cm}>{\raggedright\arraybackslash}p{2.1cm}l}
+\hline
+Size & Analysis (where reported) & Members & Targets & Test \\
+\hline
+75 & Linear probe, Table 5 & 15 backbones: DINOv2 S/14, B/14, MAE B/16; FloraBD 1k/5k/10k/full; RiceLeaf 1k/5k/full; PlantVillage 5k/10k/full; IN$\rightarrow$FloraBD, IN$\rightarrow$RiceLeaf (seed 42) & FB RL PV FL CUB & McNemar \\
+135 & All other linear-probe comparisons & the 15 above plus 12: ImageNet-996/4,671/6,835/30,829; RiceLeaf-1k/5k step-matched; RiceLeaf-full 400 ep and released recipe; RiceLeaf-full and IN$\rightarrow$RiceLeaf seeds 1, 2 & FB RL PV FL CUB & McNemar \\
+20 & Local vs generic, Table 6 & 4 pairs: RiceLeaf-1k/5k/full and PlantVillage-full vs ImageNet-996/4,671/6,835/30,829 & FB RL PV FL CUB & McNemar \\
+36 ($\times$4) & Forgetting-aware variants, Table 8 & 3 variants vs 2 references (ImageNet DINO, standard recipe); one family per protocol (LP, k-NN) and test set (full, dedup) & all six & McNemar \\
+18 ($\times$2) & Non-DINO references, Table 10 & CLIP ViT-B/16, supervised DeiT-S/16, supervised ResNet-50; one family per protocol & all six & McNemar \\
+90 & Label efficiency, Fig.~4 & 5 backbones (4 domain checkpoints, DINOv2 S/14) $\times$ 18 budget--target pairs (5 budgets on FB and RL, 4 on FL and CUB) & FB RL FL CUB & paired $t$ \\
+21 & Fine-tuning, Table 12 & 7 backbones (DINOv2 S/14, B/14, MAE B/16, FloraBD-full, RiceLeaf-full, IN$\rightarrow$FloraBD, IN$\rightarrow$RiceLeaf) & RL FL CUB & Welch $t$ \\
+8 & Distillation, Section S1 & 2 students $\times$ 4 teachers, each vs the plain fine-tuned student & RL & Welch $t$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Near-duplicate evidence and duplicates within training splits}
+\textbf{Contact sheets.} Figs.~\ref{fig:s-top-FloraBD}--\ref{fig:s-top-CUB} show, for every dataset, the eight test images most similar to a training or validation image, and eight random test images each from nearest cosine 0.93--0.95 (just below the threshold) and 0.95--0.97 (just above it), with their nearest neighbor, cosine similarity, Hamming distance and whether the labels agree. The most similar pairs are the same photograph or the same leaf or flower taken moments apart. Near the threshold most pairs show the same plant re-framed, and some show distinct but similar images, on both sides of 0.95. Identical images do not always share a label: four of the eight most similar RiceLeafDiseaseBD pairs are visually identical (Hamming distance 0) and carry different disease labels.
+
+\textbf{Same-label agreement by similarity.} Table~\ref{tab:s-bins} gives, per cosine bin, the share of test images whose nearest training or validation image has the same label. Agreement rises with similarity on the field datasets (RiceLeafDiseaseBD 71.5\% at 0.90--0.95, 92.1\% at 0.95--0.98, 96.6\% above 0.98; CUB 83.0\%, 100\%, 100\%). FloraBD agrees in every bin because its classes are visually distinct, and PlantDoc disagrees most for its most similar images (35.7\% above 0.98), because identical web images appear under different labels.
+
+\textbf{PlantDoc.} The training split has 28 classes and the test split 27: \emph{Tomato two spotted spider mites leaf} (two training images, none in validation) has no test images. The class is kept in probe fitting and k-NN, so a prediction of it counts as an error, and accuracy is computed over all 236 test images. Of the 21 cosine-flagged test images, 11 are byte-identical (MD5) to a training or validation image, and 8 of these 11 carry a different label (for example, the same photograph as \emph{Potato leaf late blight} in the test split and \emph{Potato leaf early blight} in the training split). Counting resized copies and near-identical photographs, 11 of the 21 flagged images have a nearest neighbor with a different label. File names, labels and similarities are in \texttt{plantdoc\_flagged\_pairs.csv}.
+
+\textbf{Duplicates within training splits.} The training splits of FloraBD, RiceLeafDiseaseBD and PlantVillage are the pretraining sets of the full local arms. Table~\ref{tab:s-within} reports, for each training image, whether another training image lies at cosine $\geq 0.95$ or Hamming distance $\leq 8$, and the number of groups obtained by joining images connected at cosine $\geq 0.95$. The grouping is a rough estimate of distinct scenes: chaining can merge distinct images, and the feature detector misses strongly re-framed shots.
+
+\begin{table}[h]
+\centering\small
+\caption{\textbf{Same-label agreement by nearest-neighbor similarity.} For test images in each bin of nearest training/validation cosine similarity (ImageNet DINO features): percentage whose nearest neighbor has the same label (number of test images in the bin).}
+\label{tab:s-bins}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc}
+\hline
+Dataset & $<0.90$ & 0.90--0.95 & 0.95--0.98 & $\geq 0.98$ \\
+\hline
+""" + "\n".join(bin_rows) + r"""
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\small
+\caption{\textbf{Near-duplicates within the training splits (= pretraining sets of the full local arms).} Extra MD5 copies: images beyond the first of each byte-identical set. Twin: another training image at cosine $\geq 0.95$ or Hamming distance $\leq 8$. Groups: connected components of the graph joining training images at cosine $\geq 0.95$.}
+\label{tab:s-within}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrr}
+\hline
+Dataset & Images & Extra MD5 copies & cos twin (\%) & pHash twin (\%) & Groups (\% of images) \\
+\hline
+""" + "\n".join(within_rows) + r"""
+\hline
+\end{tabular}}
+\end{table}
+
+""" + "\n".join(top_figs) + r"""
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

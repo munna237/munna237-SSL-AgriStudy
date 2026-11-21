@@ -1,0 +1,4 @@
+dataset,train images,MD5 copies (extra),with a cos ≥ 0.95 twin (%),with a pHash ≤ 8 twin (%),components at cos ≥ 0.95,components / images (%)
+FloraBD,13598,0,56.9,0.2,8274,60.8
+RiceLeaf,6835,22,60.3,29.5,3660,53.5
+PlantVillage,30829,8,13.2,26.8,27960,90.7

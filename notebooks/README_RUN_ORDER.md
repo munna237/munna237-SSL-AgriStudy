@@ -73,3 +73,21 @@ All notebooks in this zip carry the updated shared library (new checkpoint names
   which cell 8 of notebook 14 recomputes (it must reproduce p = 0.039 / 0.003 / 0.21).
 * Bring back: `paper_v2/tables/rev_continued_variants_long.csv`, `rev_continued_variants_acc.csv`,
   `rev_lp_family135.csv`, `rev_compute_measured.csv` (and notebook 14/16 outputs).
+
+## Fourth revision round (21 Nov 2026) — CPU only, about 1–2.5 hours in total
+
+| Step | Notebook | Runtime | Why |
+|---|---|---|---|
+| F1 | **03b_label_efficiency_dedup_CPU** | CPU, ~1–2 h (RiceLeaf in minutes) | re-fits the 2,424 label-efficiency probes from the cached features, stores per-image predictions (`results_v2/correct/le/`) and re-scores them on the de-duplicated test sets |
+| F2 | **03c_le_dedup_bootstrap_CPU** | CPU, ~2 min | paired test-image bootstrap on the subset-averaged predictions of F1 |
+| F3 | **14b_detector_scores_CPU** | CPU, ~2–5 min | rebuilds `14_detector_scores.npz` (nearest cosine and Hamming distance per test image) for Fig. 3 |
+| F4 | **17_audit_extras_CPU** | CPU, ~15–30 min (copies images) | PlantDoc training-only class and flagged file list, same-label agreement by cosine bin, contact sheets of top and near-threshold pairs, near-duplicates within the training splits |
+
+* F1 needs only `features_v2/` and `results_v2/03_label_efficiency_runs/`. Built-in checks: every refit must be within 1 pp of
+  its stored accuracy (in our run all were within 3 test images, 0.20 pp), and the 90 published tests are compared with the refit.
+* F2 needs F1. F3 and F4 need notebook 14 to have run (they reuse its hash cache and its input cells).
+* Bring back: `results_v2/03b_label_efficiency_dedup.json`, `03c_le_dedup_bootstrap.json`, `14_detector_scores.npz`, and the
+  folder `results_v2/17_audit/`. These are in `results/supplementary_data/` of this repository (as `label_efficiency_dedup*.json`,
+  `detector_scores.npz`, `same_label_by_cosine_bin.csv`, `within_train_duplicates.csv`, `plantdoc_*`).
+* Then, from `scripts/`: `make_dupgrid.py` (Fig. 3), `make_families.py` (`holm_families.csv`, Table S12) and
+  `make_supplement.py <results/tables>` (supplement; reads `results/supplementary_data/`, override with `SSL_SUPP_DATA`).

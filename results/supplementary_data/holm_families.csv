@@ -1,0 +1,530 @@
+family,family_size,analysis,protocol,test_set,model,reference,target,test,p,p_holm
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,RiceLeaf,exact McNemar,0.3374419437229782,1.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,PlantVillage,exact McNemar,0.7913664277791806,1.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,Flowers102,exact McNemar,2.7086561963416345e-70,1.327241536207401e-68
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,CUB,exact McNemar,4.2286815652701877e-70,2.02976715132969e-68
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vits14,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vits14,imagenet_dino,RiceLeaf,exact McNemar,9.200713177789856e-05,0.0015641212402242755
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vits14,imagenet_dino,PlantVillage,exact McNemar,0.0248119745715521,0.2233077711439689
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vits14,imagenet_dino,Flowers102,exact McNemar,1.26609438755171e-62,5.697424743982695e-61
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,dinov2_vits14,imagenet_dino,CUB,exact McNemar,8.8524176176408e-56,3.8065395755855435e-54
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_10k,imagenet_dino,FloraBD,exact McNemar,6.103515625e-05,0.00115966796875
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_10k,imagenet_dino,RiceLeaf,exact McNemar,1.3793556822028227e-33,4.551873751269315e-32
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_10k,imagenet_dino,PlantVillage,exact McNemar,3.3965749656496885e-25,9.510409903819128e-24
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_10k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_10k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_1k,imagenet_dino,FloraBD,exact McNemar,1.7960978851819555e-48,6.825171963691431e-47
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_1k,imagenet_dino,RiceLeaf,exact McNemar,6.8254488332248725e-53,2.730179533289949e-51
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_1k,imagenet_dino,PlantVillage,exact McNemar,7.110173802752662e-134,3.697290377431384e-132
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_1k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_1k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_5k,imagenet_dino,FloraBD,exact McNemar,8.881784197001252e-16,1.865174681370263e-14
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_5k,imagenet_dino,RiceLeaf,exact McNemar,5.801361707316151e-42,2.0662986635548023e-40
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_5k,imagenet_dino,PlantVillage,exact McNemar,4.193792217558537e-55,1.7613927313745855e-53
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_5k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_5k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_cont_in,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_cont_in,imagenet_dino,RiceLeaf,exact McNemar,0.0064868003602591,0.0778416043231092
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_cont_in,imagenet_dino,PlantVillage,exact McNemar,0.0005216127568115,0.008345804108984
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_cont_in,imagenet_dino,Flowers102,exact McNemar,1.07501293527961e-67,5.052560795814167e-66
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_cont_in,imagenet_dino,CUB,exact McNemar,2.2955784372957937e-201,1.2396123561397286e-199
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,FloraBD,exact McNemar,0.01171875,0.12890625
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,RiceLeaf,exact McNemar,6.953427628291888e-23,1.8774254596388097e-21
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,PlantVillage,exact McNemar,1.4977681814745143e-17,3.2950899992439314e-16
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,mae_vitb16,imagenet_dino,FloraBD,exact McNemar,0.00390625,0.05078125
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,mae_vitb16,imagenet_dino,RiceLeaf,exact McNemar,7.522501974060479e-05,0.0013540503553308863
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,mae_vitb16,imagenet_dino,PlantVillage,exact McNemar,0.0421654439949511,0.3373235519596088
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,mae_vitb16,imagenet_dino,Flowers102,exact McNemar,3.7701478294083514e-116,1.8850739147041757e-114
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,mae_vitb16,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_10k,imagenet_dino,FloraBD,exact McNemar,2.371692252312041e-19,5.692061405548898e-18
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_10k,imagenet_dino,RiceLeaf,exact McNemar,2.6250635063230885e-30,7.875190518969265e-29
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_10k,imagenet_dino,PlantVillage,exact McNemar,0.0124006027979375,0.12890625
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_10k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_10k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_5k,imagenet_dino,FloraBD,exact McNemar,5.739718509874451e-42,2.0662986635548023e-40
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_5k,imagenet_dino,RiceLeaf,exact McNemar,1.640358664715452e-33,5.249147727089446e-32
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_5k,imagenet_dino,PlantVillage,exact McNemar,1.05626467264008e-21,2.746288148864208e-20
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_5k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_5k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_full,imagenet_dino,FloraBD,exact McNemar,1.3358203432289886e-12,2.671640686457977e-11
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_full,imagenet_dino,RiceLeaf,exact McNemar,1.5251246492994724e-19,3.812811623248681e-18
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_full,imagenet_dino,PlantVillage,exact McNemar,0.1770013647703581,1.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_full,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,pv_full,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_1k,imagenet_dino,FloraBD,exact McNemar,4.176194859519057e-53,1.712239892402813e-51
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_1k,imagenet_dino,RiceLeaf,exact McNemar,3.4071791544294864e-51,1.3287998702274996e-49
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_1k,imagenet_dino,PlantVillage,exact McNemar,5.278796836296309e-140,2.797762323237044e-138
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_1k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_1k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_5k,imagenet_dino,FloraBD,exact McNemar,3.820356640172434e-37,1.2989212576586277e-35
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_5k,imagenet_dino,RiceLeaf,exact McNemar,1.97873447238658e-30,6.134076864398398e-29
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_5k,imagenet_dino,PlantVillage,exact McNemar,6.138983561279117e-59,2.7011527669628117e-57
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_5k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_5k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_cont_in,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_cont_in,imagenet_dino,RiceLeaf,exact McNemar,0.0021506382925005,0.0322595743875075
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_cont_in,imagenet_dino,PlantVillage,exact McNemar,0.002626376810684,0.036769275349576004
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_cont_in,imagenet_dino,Flowers102,exact McNemar,1.1067000914372427e-62,5.0908204206113164e-61
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_cont_in,imagenet_dino,CUB,exact McNemar,7.420986654473719e-133,3.7847031937815965e-131
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_full,imagenet_dino,FloraBD,exact McNemar,3.1554436208840472e-30,9.150786500563737e-29
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_full,imagenet_dino,RiceLeaf,exact McNemar,1.4840688825209612e-18,3.4133584297982106e-17
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_full,imagenet_dino,PlantVillage,exact McNemar,2.2641409848318497e-44,8.377321643877845e-43
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_full,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-75,75,Table 5 (original 15 backbones),linear probe,full,rice_full,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,RiceLeaf,exact McNemar,0.3374419437229782,1.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,PlantVillage,exact McNemar,0.7913664277791806,1.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,Flowers102,exact McNemar,2.7086561963416345e-70,2.302357766890389e-68
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vitb14,imagenet_dino,CUB,exact McNemar,4.2286815652701877e-70,3.552092514826957e-68
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vits14,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vits14,imagenet_dino,RiceLeaf,exact McNemar,9.200713177789856e-05,0.0021161640308916
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vits14,imagenet_dino,PlantVillage,exact McNemar,0.0248119745715521,0.2729317202870737
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vits14,imagenet_dino,Flowers102,exact McNemar,1.26609438755171e-62,1.0128755100413681e-60
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,dinov2_vits14,imagenet_dino,CUB,exact McNemar,8.8524176176408e-56,6.55078903705419e-54
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_10k,imagenet_dino,FloraBD,exact McNemar,6.103515625e-05,0.00152587890625
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_10k,imagenet_dino,RiceLeaf,exact McNemar,1.3793556822028227e-33,7.172649547454678e-32
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_10k,imagenet_dino,PlantVillage,exact McNemar,3.3965749656496885e-25,1.460527235229366e-23
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_10k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_10k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_1k,imagenet_dino,FloraBD,exact McNemar,1.7960978851819555e-48,1.1854246042200906e-46
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_1k,imagenet_dino,RiceLeaf,exact McNemar,6.8254488332248725e-53,4.7778141832574105e-51
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_1k,imagenet_dino,PlantVillage,exact McNemar,7.110173802752662e-134,6.470258160504924e-132
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_1k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_1k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_5k,imagenet_dino,FloraBD,exact McNemar,8.881784197001252e-16,2.753353101070388e-14
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_5k,imagenet_dino,RiceLeaf,exact McNemar,5.801361707316151e-42,3.5586254761221594e-40
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_5k,imagenet_dino,PlantVillage,exact McNemar,4.193792217558537e-55,3.061468318817732e-53
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_5k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_5k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_cont_in,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_cont_in,imagenet_dino,RiceLeaf,exact McNemar,0.0064868003602591,0.0973020054038865
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_cont_in,imagenet_dino,PlantVillage,exact McNemar,0.0005216127568115,0.0104322551362303
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_cont_in,imagenet_dino,Flowers102,exact McNemar,1.07501293527961e-67,8.922607362820766e-66
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_cont_in,imagenet_dino,CUB,exact McNemar,2.2955784372957937e-201,2.157843731058046e-199
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,FloraBD,exact McNemar,0.01171875,0.1640625
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,RiceLeaf,exact McNemar,6.953427628291888e-23,2.7813710513167556e-21
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,PlantVillage,exact McNemar,1.4977681814745143e-17,5.092411817013349e-16
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,florabd_full_scratch,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n30829,imagenet_dino,FloraBD,exact McNemar,1.4210854715202004e-14,4.263256414560601e-13
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n30829,imagenet_dino,RiceLeaf,exact McNemar,7.985848003812995e-24,3.3540561616014583e-22
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n30829,imagenet_dino,PlantVillage,exact McNemar,1.0497375514568333e-13,3.044238899224816e-12
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n30829,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n30829,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n4671,imagenet_dino,FloraBD,exact McNemar,1.434929627468613e-42,9.04005665305226e-41
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n4671,imagenet_dino,RiceLeaf,exact McNemar,2.61815214859355e-50,1.7541619395576782e-48
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n4671,imagenet_dino,PlantVillage,exact McNemar,2.809074413597293e-77,2.4158039956936726e-75
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n4671,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n4671,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n6835,imagenet_dino,FloraBD,exact McNemar,1.504632769052528e-36,8.425943506694157e-35
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n6835,imagenet_dino,RiceLeaf,exact McNemar,3.7356094019310685e-40,2.1666534531200197e-38
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n6835,imagenet_dino,PlantVillage,exact McNemar,5.474608946836605e-62,4.324941068000917e-60
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n6835,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n6835,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n996,imagenet_dino,FloraBD,exact McNemar,2.4892061111444567e-60,1.9415807666926762e-58
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n996,imagenet_dino,RiceLeaf,exact McNemar,2.171590665757265e-57,1.6286929993179487e-55
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n996,imagenet_dino,PlantVillage,exact McNemar,7.391970694233528e-137,6.800613038694845e-135
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n996,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,inet_n996,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,mae_vitb16,imagenet_dino,FloraBD,exact McNemar,0.00390625,0.0625
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,mae_vitb16,imagenet_dino,RiceLeaf,exact McNemar,7.522501974060479e-05,0.0018054004737745
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,mae_vitb16,imagenet_dino,PlantVillage,exact McNemar,0.0421654439949511,0.4216544399495113
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,mae_vitb16,imagenet_dino,Flowers102,exact McNemar,3.7701478294083514e-116,3.317730089879349e-114
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,mae_vitb16,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_10k,imagenet_dino,FloraBD,exact McNemar,2.371692252312041e-19,8.538092108323347e-18
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_10k,imagenet_dino,RiceLeaf,exact McNemar,2.6250635063230885e-30,1.2337798479718515e-28
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_10k,imagenet_dino,PlantVillage,exact McNemar,0.0124006027979375,0.1640625
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_10k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_10k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_5k,imagenet_dino,FloraBD,exact McNemar,5.739718509874451e-42,3.5586254761221594e-40
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_5k,imagenet_dino,RiceLeaf,exact McNemar,1.640358664715452e-33,8.365829190048803e-32
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_5k,imagenet_dino,PlantVillage,exact McNemar,1.05626467264008e-21,4.1194322232963126e-20
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_5k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_5k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_full,imagenet_dino,FloraBD,exact McNemar,1.3358203432289886e-12,3.6067149267182685e-11
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_full,imagenet_dino,RiceLeaf,exact McNemar,1.5251246492994724e-19,5.6429612024080485e-18
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_full,imagenet_dino,PlantVillage,exact McNemar,0.1770013647703581,1.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_full,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,pv_full,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k,imagenet_dino,FloraBD,exact McNemar,4.176194859519057e-53,3.00686029885372e-51
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k,imagenet_dino,RiceLeaf,exact McNemar,3.4071791544294864e-51,2.3509536165563458e-49
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k,imagenet_dino,PlantVillage,exact McNemar,5.278796836296309e-140,4.9092810577555676e-138
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k_stepmatch,imagenet_dino,FloraBD,exact McNemar,1.2037062152420224e-35,6.500013562306921e-34
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k_stepmatch,imagenet_dino,RiceLeaf,exact McNemar,6.535495203826079e-26,2.9409728417217353e-24
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k_stepmatch,imagenet_dino,PlantVillage,exact McNemar,8.273517473510381e-51,5.6259918819870586e-49
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k_stepmatch,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_1k_stepmatch,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k,imagenet_dino,FloraBD,exact McNemar,3.820356640172434e-37,2.1776032848982881e-35
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k,imagenet_dino,RiceLeaf,exact McNemar,1.97873447238658e-30,9.497925467455583e-29
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k,imagenet_dino,PlantVillage,exact McNemar,6.138983561279117e-59,4.6656275065721295e-57
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k_stepmatch,imagenet_dino,FloraBD,exact McNemar,6.717643646022679e-31,3.2916453865511125e-29
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k_stepmatch,imagenet_dino,RiceLeaf,exact McNemar,1.1612427896707606e-13,3.2514798110781295e-12
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k_stepmatch,imagenet_dino,PlantVillage,exact McNemar,1.423277833172861e-41,8.539666999037165e-40
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k_stepmatch,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_5k_stepmatch,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in,imagenet_dino,RiceLeaf,exact McNemar,0.0021506382925005,0.0387114892650093
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in,imagenet_dino,PlantVillage,exact McNemar,0.002626376810684,0.0446484057816286
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in,imagenet_dino,Flowers102,exact McNemar,1.1067000914372427e-62,8.964270740641665e-61
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in,imagenet_dino,CUB,exact McNemar,7.420986654473719e-133,6.678887989026348e-131
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s1,imagenet_dino,FloraBD,exact McNemar,0.125,1.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s1,imagenet_dino,RiceLeaf,exact McNemar,0.0001425070952532,0.0029926490003188
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s1,imagenet_dino,PlantVillage,exact McNemar,0.0001206291159979,0.0026538405519538
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s1,imagenet_dino,Flowers102,exact McNemar,1.5740803785206153e-59,1.2120418914608738e-57
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s1,imagenet_dino,CUB,exact McNemar,1.3438863192833706e-110,1.1691810977765322e-108
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s2,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s2,imagenet_dino,RiceLeaf,exact McNemar,0.0171715427997424,0.206058513596909
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s2,imagenet_dino,PlantVillage,exact McNemar,0.0007667649897412,0.0145685348050845
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s2,imagenet_dino,Flowers102,exact McNemar,4.606970113287444e-53,3.2709487804340853e-51
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_cont_in_s2,imagenet_dino,CUB,exact McNemar,5.1669549646557605e-117,4.598589918543627e-115
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full,imagenet_dino,FloraBD,exact McNemar,3.1554436208840472e-30,1.4515040656066615e-28
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full,imagenet_dino,RiceLeaf,exact McNemar,1.4840688825209612e-18,5.1942410888233636e-17
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full,imagenet_dino,PlantVillage,exact McNemar,2.2641409848318497e-44,1.4490502302923838e-42
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_ep400,imagenet_dino,FloraBD,exact McNemar,4.440892098500626e-16,1.4210854715202004e-14
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_ep400,imagenet_dino,RiceLeaf,exact McNemar,2.2273151249533067e-07,5.791019324878596e-06
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_ep400,imagenet_dino,PlantVillage,exact McNemar,3.6193734261160736e-17,1.1943932306183045e-15
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_ep400,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_ep400,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_inrecipe,imagenet_dino,FloraBD,exact McNemar,5.585196838722984e-33,2.792598419361492e-31
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_inrecipe,imagenet_dino,RiceLeaf,exact McNemar,7.985848003812995e-24,3.3540561616014583e-22
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_inrecipe,imagenet_dino,PlantVillage,exact McNemar,6.49252716677609e-63,5.323872276756395e-61
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_inrecipe,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_inrecipe,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s1,imagenet_dino,FloraBD,exact McNemar,6.018531076210112e-36,3.310192091915561e-34
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s1,imagenet_dino,RiceLeaf,exact McNemar,8.171383581806064e-20,3.1051257610863044e-18
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s1,imagenet_dino,PlantVillage,exact McNemar,9.41212620438044e-41,5.5531544605844604e-39
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s1,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s1,imagenet_dino,CUB,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s2,imagenet_dino,FloraBD,exact McNemar,9.629649721936181e-35,5.103714352626175e-33
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s2,imagenet_dino,RiceLeaf,exact McNemar,1.8371981933629423e-25,8.083672050796949e-24
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s2,imagenet_dino,PlantVillage,exact McNemar,1.5848022459047834e-45,1.0301214598381092e-43
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s2,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+LP-135,135,all other linear-probe comparisons (27 backbones),linear probe,full,rice_full_s2,imagenet_dino,CUB,exact McNemar,0.0,0.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_1k,inet_n996,FloraBD,exact McNemar,0.088,0.879
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_1k,inet_n996,RiceLeaf,exact McNemar,0.089,0.879
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_1k,inet_n996,PlantVillage,exact McNemar,0.966,1.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_1k,inet_n996,Flowers102,exact McNemar,0.904,1.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_1k,inet_n996,CUB,exact McNemar,0.783,1.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_5k,inet_n4671,FloraBD,exact McNemar,0.356,1.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_5k,inet_n4671,RiceLeaf,exact McNemar,0.0,0.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_5k,inet_n4671,PlantVillage,exact McNemar,0.001,0.01
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_5k,inet_n4671,Flowers102,exact McNemar,0.0,0.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_5k,inet_n4671,CUB,exact McNemar,0.316,1.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_full,inet_n6835,FloraBD,exact McNemar,0.071,0.78
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_full,inet_n6835,RiceLeaf,exact McNemar,0.0,0.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_full,inet_n6835,PlantVillage,exact McNemar,0.0,0.001
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_full,inet_n6835,Flowers102,exact McNemar,0.0,0.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,rice_full,inet_n6835,CUB,exact McNemar,1.0,1.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,pv_full,inet_n30829,FloraBD,exact McNemar,0.804,1.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,pv_full,inet_n30829,RiceLeaf,exact McNemar,0.237,1.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,pv_full,inet_n30829,PlantVillage,exact McNemar,0.0,0.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,pv_full,inet_n30829,Flowers102,exact McNemar,0.0,0.0
+GEN-20,20,local vs generic (Table 6),linear probe,full,pv_full,inet_n30829,CUB,exact McNemar,0.0,0.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,imagenet_dino,RiceLeaf,exact McNemar,0.913202362224597,1.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,rice_cont_in,RiceLeaf,exact McNemar,0.0220185883739233,0.2201858837392332
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,imagenet_dino,PlantDoc,exact McNemar,0.0144538335338277,0.1734460024059327
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,rice_cont_in,PlantDoc,exact McNemar,0.2912152365458951,1.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,imagenet_dino,FloraBD,exact McNemar,0.00390625,0.05859375
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,rice_cont_in,FloraBD,exact McNemar,0.7744140625,1.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,imagenet_dino,PlantVillage,exact McNemar,5.044015549363912e-08,1.0592432653664217e-06
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,rice_cont_in,PlantVillage,exact McNemar,0.471286103219606,1.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,imagenet_dino,Flowers102,exact McNemar,2.0736264506854115e-98,6.428241997124775e-97
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,rice_cont_in,Flowers102,exact McNemar,0.0020668718050583,0.0330699488809339
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,imagenet_dino,CUB,exact McNemar,0.0,0.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead,rice_cont_in,CUB,exact McNemar,1.6364814625472012e-44,4.254851802622724e-43
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,RiceLeaf,exact McNemar,0.6487911623106449,1.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,RiceLeaf,exact McNemar,0.1253456971884924,1.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,PlantDoc,exact McNemar,0.3240086000878364,1.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,PlantDoc,exact McNemar,0.6587380770236564,1.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,FloraBD,exact McNemar,0.015625,0.1734460024059327
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,FloraBD,exact McNemar,0.4239501953125,1.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,PlantVillage,exact McNemar,0.0096828499230575,0.1258770489997484
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,PlantVillage,exact McNemar,7.952538678129076e-06,0.0001431456962063
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,Flowers102,exact McNemar,5.614972199020354e-13,1.2914436057746814e-11
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,Flowers102,exact McNemar,6.501639290232256e-83,1.885475394167354e-81
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,CUB,exact McNemar,1.2207394241228272e-56,3.2959964451316326e-55
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,CUB,exact McNemar,1.7396683606808613e-93,5.219005082042584e-92
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,imagenet_dino,RiceLeaf,exact McNemar,1.596947064385474e-06,3.1938941287709485e-05
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,rice_cont_in,RiceLeaf,exact McNemar,0.0042258039216827,0.0591612549035586
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,imagenet_dino,PlantDoc,exact McNemar,5.805322444984995e-09,1.277170937896699e-07
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,rice_cont_in,PlantDoc,exact McNemar,7.333218396948782e-05,0.0012466471274812
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,imagenet_dino,FloraBD,exact McNemar,1.1368683772161605e-13,2.7284841053187847e-12
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,rice_cont_in,FloraBD,exact McNemar,1.96465377655386e-06,3.732842175452333e-05
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,imagenet_dino,PlantVillage,exact McNemar,7.761815164609147e-105,2.483780852674927e-103
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,rice_cont_in,PlantVillage,exact McNemar,4.4807522622647626e-64,1.2546106334341336e-62
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,rice_cont_in,Flowers102,exact McNemar,3.91421655818561e-119,1.2916914642012514e-117
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,imagenet_dino,CUB,exact McNemar,1.0044623258496473e-300,3.4151719078888e-299
+CPT-36-knn-cos0.95,36,forgetting-aware variants (Table 8),k-NN,dedup cos0.95,rice_cont_replay,rice_cont_in,CUB,exact McNemar,9.564418165147452e-21,2.391104541286863e-19
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,imagenet_dino,RiceLeaf,exact McNemar,0.0009661330574741,0.0135258628046385
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,rice_cont_in,RiceLeaf,exact McNemar,2.4035023924559373e-25,6.008755981139843e-24
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,imagenet_dino,PlantDoc,exact McNemar,0.0144538335338277,0.1156306682706218
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,rice_cont_in,PlantDoc,exact McNemar,0.2912152365458951,1.0
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,imagenet_dino,FloraBD,exact McNemar,0.00341796875,0.03759765625
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,rice_cont_in,FloraBD,exact McNemar,0.0639146566390991,0.3195732831954956
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,imagenet_dino,PlantVillage,exact McNemar,9.736635202617726e-09,1.9473270405235454e-07
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,rice_cont_in,PlantVillage,exact McNemar,0.6343339062839174,1.0
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,imagenet_dino,Flowers102,exact McNemar,1.3464460998432116e-98,4.1739829095139565e-97
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,rice_cont_in,Flowers102,exact McNemar,0.0016580945111016,0.01989713413322
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,imagenet_dino,CUB,exact McNemar,0.0,0.0
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead,rice_cont_in,CUB,exact McNemar,1.1479797011989134e-44,2.9847472231171753e-43
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,imagenet_dino,RiceLeaf,exact McNemar,0.0009833332636449,0.0135258628046385
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,rice_cont_in,RiceLeaf,exact McNemar,8.480599149911663e-08,1.5265078469840994e-06
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,imagenet_dino,PlantDoc,exact McNemar,0.3240086000878364,1.0
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,rice_cont_in,PlantDoc,exact McNemar,0.6587380770236564,1.0
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,imagenet_dino,FloraBD,exact McNemar,0.015625,0.1156306682706218
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,rice_cont_in,FloraBD,exact McNemar,0.0066107511520385,0.0661075115203857
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,imagenet_dino,PlantVillage,exact McNemar,0.008036706377857,0.072330357400713
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,rice_cont_in,PlantVillage,exact McNemar,6.671865694009476e-06,0.0001067498511041
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,imagenet_dino,Flowers102,exact McNemar,6.439160268213617e-13,1.3522236563248596e-11
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,rice_cont_in,Flowers102,exact McNemar,1.521157507027738e-83,4.4113567703804395e-82
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,imagenet_dino,CUB,exact McNemar,1.2207394241228272e-56,3.2959964451316326e-55
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_fullhead_lowlr,rice_cont_in,CUB,exact McNemar,1.7396683606808613e-93,5.219005082042584e-92
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,imagenet_dino,RiceLeaf,exact McNemar,2.5451596002705466e-23,6.108383040649311e-22
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,rice_cont_in,RiceLeaf,exact McNemar,0.0323476056387056,0.1940856338322339
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,imagenet_dino,PlantDoc,exact McNemar,2.7168525665310913e-08,5.162019876409073e-07
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,rice_cont_in,PlantDoc,exact McNemar,0.0001345140809284,0.0020177112139274
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,imagenet_dino,FloraBD,exact McNemar,4.336808689942019e-19,9.54097911787244e-18
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,rice_cont_in,FloraBD,exact McNemar,1.5256583158538735e-06,2.5936191369515853e-05
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,imagenet_dino,PlantVillage,exact McNemar,2.895526653567077e-110,9.265685291414649e-109
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,rice_cont_in,PlantVillage,exact McNemar,1.4610972551859135e-68,4.0910723145205575e-67
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,imagenet_dino,Flowers102,exact McNemar,0.0,0.0
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,rice_cont_in,Flowers102,exact McNemar,1.6509784837429792e-121,5.448228996351831e-120
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,imagenet_dino,CUB,exact McNemar,9.316838201730158e-301,3.167724988588254e-299
+CPT-36-knn-none,36,forgetting-aware variants (Table 8),k-NN,full,rice_cont_replay,rice_cont_in,CUB,exact McNemar,6.551443983475364e-21,1.5068321161993336e-19
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,imagenet_dino,RiceLeaf,exact McNemar,0.7546517496104984,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,rice_cont_in,RiceLeaf,exact McNemar,1.0,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,imagenet_dino,PlantDoc,exact McNemar,0.0540760318588695,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,rice_cont_in,PlantDoc,exact McNemar,0.7492586247608418,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,rice_cont_in,FloraBD,exact McNemar,0.5,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,imagenet_dino,PlantVillage,exact McNemar,0.0098534481952592,0.2364827566862224
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,rice_cont_in,PlantVillage,exact McNemar,0.8013064925040663,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,imagenet_dino,Flowers102,exact McNemar,1.476242554094032e-55,4.5763519176914987e-54
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,rice_cont_in,Flowers102,exact McNemar,0.5097898280948499,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,imagenet_dino,CUB,exact McNemar,4.756498864947021e-213,1.7123395913809275e-211
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead,rice_cont_in,CUB,exact McNemar,4.3243292119233895e-24,1.2972987635770168e-22
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,RiceLeaf,exact McNemar,0.2370471147627195,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,RiceLeaf,exact McNemar,0.1605784191339797,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,PlantDoc,exact McNemar,0.2631759643554687,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,PlantDoc,exact McNemar,0.0988717495929449,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,FloraBD,exact McNemar,0.5,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,PlantVillage,exact McNemar,0.720100131817162,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,PlantVillage,exact McNemar,0.0046013097117665,0.1196340525059298
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,Flowers102,exact McNemar,1.0,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,Flowers102,exact McNemar,1.8069463566239222e-66,5.78222834119655e-65
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,imagenet_dino,CUB,exact McNemar,9.403843853309916e-20,2.727114717459875e-18
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_fullhead_lowlr,rice_cont_in,CUB,exact McNemar,2.4297541161579753e-84,8.261163994937115e-83
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,imagenet_dino,RiceLeaf,exact McNemar,0.0143896330070956,0.3309615591632003
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,rice_cont_in,RiceLeaf,exact McNemar,0.0314181102338461,0.6911984251446144
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,imagenet_dino,PlantDoc,exact McNemar,0.0046013097117665,0.1196340525059298
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,rice_cont_in,PlantDoc,exact McNemar,0.651587827208914,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,imagenet_dino,FloraBD,exact McNemar,0.375,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,rice_cont_in,FloraBD,exact McNemar,0.125,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,imagenet_dino,PlantVillage,exact McNemar,4.713242239575157e-06,0.0001319707827081
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,rice_cont_in,PlantVillage,exact McNemar,0.0929118822205462,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,imagenet_dino,Flowers102,exact McNemar,3.934283813064833e-75,1.2983136583113948e-73
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,rice_cont_in,Flowers102,exact McNemar,0.1154570521133575,1.0
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,imagenet_dino,CUB,exact McNemar,2.1273916262130746e-110,7.44587069174576e-109
+CPT-36-lp-cos0.95,36,forgetting-aware variants (Table 8),linear probe,dedup cos0.95,rice_cont_replay,rice_cont_in,CUB,exact McNemar,0.0005075798022645,0.0137046546611421
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,imagenet_dino,RiceLeaf,exact McNemar,0.5246223557223147,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,rice_cont_in,RiceLeaf,exact McNemar,3.427994870106989e-05,0.0009255586149288
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,imagenet_dino,PlantDoc,exact McNemar,0.0399860568260521,0.799721136521043
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,rice_cont_in,PlantDoc,exact McNemar,1.0,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,imagenet_dino,FloraBD,exact McNemar,0.625,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,rice_cont_in,FloraBD,exact McNemar,0.625,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,imagenet_dino,PlantVillage,exact McNemar,0.0098534481952592,0.2069224121004446
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,rice_cont_in,PlantVillage,exact McNemar,0.7079807541347641,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,imagenet_dino,Flowers102,exact McNemar,1.476242554094032e-55,4.5763519176914987e-54
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,rice_cont_in,Flowers102,exact McNemar,0.5097898280948499,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,imagenet_dino,CUB,exact McNemar,4.756498864947021e-213,1.7123395913809275e-211
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead,rice_cont_in,CUB,exact McNemar,4.3243292119233895e-24,1.2972987635770168e-22
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,imagenet_dino,RiceLeaf,exact McNemar,0.6890542729314683,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,rice_cont_in,RiceLeaf,exact McNemar,0.0060301897613154,0.1326641747489391
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,imagenet_dino,PlantDoc,exact McNemar,0.383310317993164,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,rice_cont_in,PlantDoc,exact McNemar,0.1081290214060573,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,rice_cont_in,FloraBD,exact McNemar,1.0,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,imagenet_dino,PlantVillage,exact McNemar,0.720100131817162,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,rice_cont_in,PlantVillage,exact McNemar,0.0031852534477767,0.0764460827466422
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,imagenet_dino,Flowers102,exact McNemar,1.0,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,rice_cont_in,Flowers102,exact McNemar,1.8069463566239222e-66,5.78222834119655e-65
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,imagenet_dino,CUB,exact McNemar,9.403843853309916e-20,2.727114717459875e-18
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_fullhead_lowlr,rice_cont_in,CUB,exact McNemar,2.4297541161579753e-84,8.261163994937115e-83
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,imagenet_dino,RiceLeaf,exact McNemar,0.0007459375982855,0.0186484399571395
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,rice_cont_in,RiceLeaf,exact McNemar,1.0,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,imagenet_dino,PlantDoc,exact McNemar,0.0031852534477767,0.0764460827466422
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,rice_cont_in,PlantDoc,exact McNemar,0.4613911821367651,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,imagenet_dino,FloraBD,exact McNemar,0.375,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,rice_cont_in,FloraBD,exact McNemar,0.375,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,imagenet_dino,PlantVillage,exact McNemar,4.713242239575157e-06,0.0001319707827081
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,rice_cont_in,PlantVillage,exact McNemar,0.1192736683117644,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,imagenet_dino,Flowers102,exact McNemar,3.934283813064833e-75,1.2983136583113948e-73
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,rice_cont_in,Flowers102,exact McNemar,0.1154570521133575,1.0
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,imagenet_dino,CUB,exact McNemar,2.1273916262130746e-110,7.44587069174576e-109
+CPT-36-lp-none,36,forgetting-aware variants (Table 8),linear probe,full,rice_cont_replay,rice_cont_in,CUB,exact McNemar,0.0005075798022645,0.0131970748588776
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,clip_vitb16,imagenet_dino,FloraBD,exact McNemar,0.25,0.5
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,clip_vitb16,imagenet_dino,RiceLeaf,exact McNemar,2.8565326244680102e-09,2.2852260995744085e-08
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,clip_vitb16,imagenet_dino,PlantVillage,exact McNemar,6.00268999061841e-43,7.803496987803931e-42
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,clip_vitb16,imagenet_dino,Flowers102,exact McNemar,8.0202538062614e-06,5.614177664382981e-05
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,clip_vitb16,imagenet_dino,CUB,exact McNemar,0.02485388978124,0.0745616693437201
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,clip_vitb16,imagenet_dino,PlantDoc,exact McNemar,0.6487911623106449,0.6487911623106449
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,deit_s16_sup,imagenet_dino,FloraBD,exact McNemar,2.8376234695315356e-10,2.553861122578382e-09
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,deit_s16_sup,imagenet_dino,RiceLeaf,exact McNemar,1.22846769651801e-05,7.37080617910806e-05
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,deit_s16_sup,imagenet_dino,PlantVillage,exact McNemar,1.7092854267812653e-36,2.0511425121375185e-35
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,deit_s16_sup,imagenet_dino,Flowers102,exact McNemar,4.09082637355781e-178,7.363487472404058e-177
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,deit_s16_sup,imagenet_dino,CUB,exact McNemar,9.771862254109296e-59,1.4657793381163945e-57
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,deit_s16_sup,imagenet_dino,PlantDoc,exact McNemar,0.0001136106032069,0.0005680530160345
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,resnet50_sup,imagenet_dino,FloraBD,exact McNemar,1.5820678100908479e-15,1.7402745910999332e-14
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,resnet50_sup,imagenet_dino,RiceLeaf,exact McNemar,3.8969016321315214e-13,3.896901632131521e-12
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,resnet50_sup,imagenet_dino,PlantVillage,exact McNemar,1.6236986946160992e-46,2.2731781724625392e-45
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,resnet50_sup,imagenet_dino,Flowers102,exact McNemar,1.457637748025835e-138,2.332220396841336e-137
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,resnet50_sup,imagenet_dino,CUB,exact McNemar,1.7684683042753952e-140,3.006396117268172e-139
+REF-18-knn,18,non-DINO references (Table 10),k-NN,full,resnet50_sup,imagenet_dino,PlantDoc,exact McNemar,0.0098534481952592,0.039413792781037
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,clip_vitb16,imagenet_dino,FloraBD,exact McNemar,1.0,1.0
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,clip_vitb16,imagenet_dino,RiceLeaf,exact McNemar,0.0038503684758028,0.02695257933062
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,clip_vitb16,imagenet_dino,PlantVillage,exact McNemar,4.271012269463366e-06,4.6981134964097023e-05
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,clip_vitb16,imagenet_dino,Flowers102,exact McNemar,9.777526107172708e-05,0.0007822020885738
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,clip_vitb16,imagenet_dino,CUB,exact McNemar,0.0749233016989712,0.3746165084948563
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,clip_vitb16,imagenet_dino,PlantDoc,exact McNemar,0.8919231511047488,1.0
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,deit_s16_sup,imagenet_dino,FloraBD,exact McNemar,0.375,1.0
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,deit_s16_sup,imagenet_dino,RiceLeaf,exact McNemar,6.028716125105369e-11,7.83733096263698e-10
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,deit_s16_sup,imagenet_dino,PlantVillage,exact McNemar,2.952378329881733e-09,3.54285399585808e-08
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,deit_s16_sup,imagenet_dino,Flowers102,exact McNemar,3.8993809958112087e-88,6.628947692879055e-87
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,deit_s16_sup,imagenet_dino,CUB,exact McNemar,2.2510228048097744e-31,3.3765342072146615e-30
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,deit_s16_sup,imagenet_dino,PlantDoc,exact McNemar,8.699371704778969e-06,8.699371704778969e-05
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,resnet50_sup,imagenet_dino,FloraBD,exact McNemar,0.00634765625,0.0380859375
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,resnet50_sup,imagenet_dino,RiceLeaf,exact McNemar,0.1391137741959632,0.5564550967838529
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,resnet50_sup,imagenet_dino,PlantVillage,exact McNemar,9.20254356955225e-14,1.288356099737315e-12
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,resnet50_sup,imagenet_dino,Flowers102,exact McNemar,1.6249459551944462e-59,2.599913528311113e-58
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,resnet50_sup,imagenet_dino,CUB,exact McNemar,4.5665330836426824e-113,8.219759550556829e-112
+REF-18-lp,18,non-DINO references (Table 10),linear probe,full,resnet50_sup,imagenet_dino,PlantDoc,exact McNemar,6.57466324582856e-05,0.0005917196921245
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,CUB @ 1%,paired t over 20 subsets,1.4628138636816979e-25,8.484320409353848e-24
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,CUB @ 1%,paired t over 20 subsets,6.646241795648893e-27,4.369164020510005e-25
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,CUB @ 1%,paired t over 20 subsets,4.804060738679754e-29,3.651086161396613e-27
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,CUB @ 1%,paired t over 20 subsets,4.25219680658464e-26,2.636362020082477e-24
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,CUB @ 1%,paired t over 20 subsets,1.9295052020128144e-28,1.369948693429098e-26
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,CUB @ 10%,paired t over 20 subsets,5.877019257698281e-35,4.995466369043539e-33
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,CUB @ 10%,paired t over 20 subsets,6.096316144273981e-29,4.511273946762746e-27
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,CUB @ 10%,paired t over 20 subsets,2.02559879838147e-26,1.2761272429803262e-24
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,CUB @ 10%,paired t over 20 subsets,8.38730390055646e-31,6.542097042434039e-29
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,CUB @ 10%,paired t over 20 subsets,7.832896731212191e-34,6.501304286906118e-32
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,CUB @ 25%,paired t over 20 subsets,8.125298944942097e-29,5.9314682298077305e-27
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,CUB @ 25%,paired t over 20 subsets,2.0270550403700068e-37,1.763537885121906e-35
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,CUB @ 25%,paired t over 20 subsets,6.61994548562122e-27,4.369164020510005e-25
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,CUB @ 25%,paired t over 20 subsets,5.542155772851403e-38,4.8770970801092346e-36
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,CUB @ 25%,paired t over 20 subsets,5.191000674249016e-29,3.893250505686762e-27
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,CUB @ 50%,paired t over 20 subsets,4.2056616988935685e-43,3.785095529004212e-41
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,CUB @ 50%,paired t over 20 subsets,2.4648991692770094e-28,1.7254294184939066e-26
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,CUB @ 50%,paired t over 20 subsets,9.323060895619013e-26,5.593836537371408e-24
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,CUB @ 50%,paired t over 20 subsets,3.4460015745809964e-31,2.722341243918987e-29
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,CUB @ 50%,paired t over 20 subsets,2.0451258752848455e-42,1.8201620290035125e-40
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,FloraBD @ 1%,paired t over 20 subsets,1.6188644986300501e-25,9.227527642191285e-24
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,FloraBD @ 1%,paired t over 20 subsets,5.294462899361595e-10,1.111837208865935e-08
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,FloraBD @ 1%,paired t over 20 subsets,1.493755173102348e-13,4.630641036617279e-12
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,FloraBD @ 1%,paired t over 20 subsets,2.8566713815181535e-08,4.856341348580861e-07
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,FloraBD @ 1%,paired t over 20 subsets,2.426537925946806e-15,8.49288274081382e-14
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,FloraBD @ 5%,paired t over 20 subsets,4.3075037804008655e-10,9.476508316881904e-09
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,FloraBD @ 5%,paired t over 20 subsets,4.591054533203871e-15,1.5609585412893162e-13
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,FloraBD @ 5%,paired t over 20 subsets,0.313961611629502,0.627923223259004
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,FloraBD @ 5%,paired t over 20 subsets,9.400801053456783e-29,6.768576758488883e-27
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,FloraBD @ 5%,paired t over 20 subsets,1.4476063150518597e-16,5.356143365691881e-15
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,FloraBD @ 10%,paired t over 20 subsets,0.0005127196410533256,0.0030763178463199536
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,FloraBD @ 10%,paired t over 20 subsets,4.774597956639465e-28,3.294472590081231e-26
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,FloraBD @ 10%,paired t over 20 subsets,1.0336885594347539e-11,2.6875902545303603e-10
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,FloraBD @ 10%,paired t over 20 subsets,1.760974149094055e-07,2.465363808731677e-06
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,FloraBD @ 10%,paired t over 20 subsets,9.80808804176419e-13,2.942426412529257e-11
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,FloraBD @ 25%,paired t over 20 subsets,8.581613339186503e-14,2.746116268539681e-12
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,FloraBD @ 25%,paired t over 20 subsets,1.3617582871087415e-07,2.042637430663112e-06
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,FloraBD @ 25%,paired t over 20 subsets,1.3630290697707158e-25,8.041871511647223e-24
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,FloraBD @ 25%,paired t over 20 subsets,0.0035288367675529388,0.017644183837764695
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,FloraBD @ 25%,paired t over 20 subsets,7.42243911306757e-11,1.8556097782668926e-09
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,FloraBD @ 50%,paired t over 20 subsets,4.3539260550926857e-26,2.6558948936065383e-24
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,FloraBD @ 50%,paired t over 20 subsets,9.59733692294608e-06,8.766667229012457e-05
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,FloraBD @ 50%,paired t over 20 subsets,7.63843061293458e-15,2.520682102268411e-13
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,FloraBD @ 50%,paired t over 20 subsets,7.98440376170025e-07,1.0379724890210325e-05
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,FloraBD @ 50%,paired t over 20 subsets,0.007706092783476628,0.03082437113390651
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,Flowers102 @ 1%,paired t over 20 subsets,6.192310126557169e-25,3.4676936708720143e-23
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,Flowers102 @ 1%,paired t over 20 subsets,1.441067412111767e-24,7.925870766614719e-23
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,Flowers102 @ 1%,paired t over 20 subsets,5.298952916392566e-21,2.3315392832127287e-19
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,Flowers102 @ 1%,paired t over 20 subsets,2.1899893176346273e-23,1.0730947656409673e-21
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,Flowers102 @ 1%,paired t over 20 subsets,5.3643711894960136e-27,3.594128696962329e-25
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,Flowers102 @ 10%,paired t over 20 subsets,1.421739684559702e-22,6.3978285805186595e-21
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,Flowers102 @ 10%,paired t over 20 subsets,3.292802520518669e-33,2.7000980668253086e-31
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,Flowers102 @ 10%,paired t over 20 subsets,1.2543444975342191e-23,6.522591387177939e-22
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,Flowers102 @ 10%,paired t over 20 subsets,5.724271920437219e-23,2.690407802605493e-21
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,Flowers102 @ 10%,paired t over 20 subsets,3.407158724790085e-30,2.6235122180883654e-28
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,Flowers102 @ 25%,paired t over 20 subsets,4.9964075995074566e-33,4.04709015560104e-31
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,Flowers102 @ 25%,paired t over 20 subsets,1.3298838352440415e-23,6.782407559744612e-22
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,Flowers102 @ 25%,paired t over 20 subsets,4.0744912597606715e-23,1.9557558046851223e-21
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,Flowers102 @ 25%,paired t over 20 subsets,1.8152151319485478e-32,1.4521721055588382e-30
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,Flowers102 @ 25%,paired t over 20 subsets,1.335745269475291e-23,6.782407559744612e-22
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,Flowers102 @ 50%,paired t over 20 subsets,2.2135349260996824e-37,1.9036400364457268e-35
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,Flowers102 @ 50%,paired t over 20 subsets,7.309195368915974e-27,4.677885036106223e-25
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,Flowers102 @ 50%,paired t over 20 subsets,6.797324289238851e-34,5.709752402960635e-32
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,Flowers102 @ 50%,paired t over 20 subsets,1.6077215500954568e-27,1.0932506540649106e-25
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,Flowers102 @ 50%,paired t over 20 subsets,1.07903846998983e-23,5.7189038909461e-22
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,RiceLeaf @ 1%,paired t over 20 subsets,2.3430710939311706e-06,2.811685312717405e-05
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,RiceLeaf @ 1%,paired t over 20 subsets,4.1932808649168455e-16,1.5095811113700643e-14
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,RiceLeaf @ 1%,paired t over 20 subsets,3.6807391814292737e-09,6.993404444715621e-08
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,RiceLeaf @ 1%,paired t over 20 subsets,8.65558726569085e-11,2.0016097574293417e-09
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,RiceLeaf @ 1%,paired t over 20 subsets,8.340040655955591e-11,2.0016097574293417e-09
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,RiceLeaf @ 5%,paired t over 20 subsets,6.433081980647232e-17,2.444571152645948e-15
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,RiceLeaf @ 5%,paired t over 20 subsets,4.103662312808123e-06,4.514028544088935e-05
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,RiceLeaf @ 5%,paired t over 20 subsets,1.7373764964893554e-05,0.00013899011971914844
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,RiceLeaf @ 5%,paired t over 20 subsets,5.381550439518808e-19,2.2064356802027115e-17
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,RiceLeaf @ 5%,paired t over 20 subsets,6.9579289119090285e-12,1.8786408062154376e-10
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,RiceLeaf @ 10%,paired t over 20 subsets,0.00023295666239224155,0.0016306966367456907
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,RiceLeaf @ 10%,paired t over 20 subsets,5.211356373874823e-17,2.032428985811181e-15
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,RiceLeaf @ 10%,paired t over 20 subsets,4.784763571261206e-19,2.0096006999297066e-17
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,RiceLeaf @ 10%,paired t over 20 subsets,3.775002508675334e-12,1.0570007024290935e-10
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,RiceLeaf @ 10%,paired t over 20 subsets,1.1845998289688873e-08,2.132279692143997e-07
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,RiceLeaf @ 25%,paired t over 20 subsets,1.0497762095869634e-22,4.828970564100032e-21
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,RiceLeaf @ 25%,paired t over 20 subsets,2.5108833476315757e-18,1.0043533390526302e-16
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,RiceLeaf @ 25%,paired t over 20 subsets,1.5662407180918609e-09,3.132481436183722e-08
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,RiceLeaf @ 25%,paired t over 20 subsets,0.018207910096355036,0.05462373028906511
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,RiceLeaf @ 25%,paired t over 20 subsets,1.0368578428938833e-12,3.0068877443922616e-11
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_full,imagenet_dino,RiceLeaf @ 50%,paired t over 20 subsets,3.163945429422535e-19,1.36049653465169e-17
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_cont_in,imagenet_dino,RiceLeaf @ 50%,paired t over 20 subsets,8.766667229012457e-06,8.766667229012457e-05
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,florabd_full_scratch,imagenet_dino,RiceLeaf @ 50%,paired t over 20 subsets,2.6033230575100413e-24,1.4057944510554223e-22
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,rice_cont_in,imagenet_dino,RiceLeaf @ 50%,paired t over 20 subsets,0.9489772704237165,0.9489772704237165
+LE-90,90,"label efficiency (Fig. 4, Table S10)",label-efficiency probe,full,dinov2_vits14,imagenet_dino,RiceLeaf @ 50%,paired t over 20 subsets,4.724803687970395e-08,7.559685900752633e-07
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,dinov2_vitb14,imagenet_dino,CUB,Welch's t over 3 seeds,0.0008147133242769468,0.012624555582591207
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,dinov2_vits14,imagenet_dino,CUB,Welch's t over 3 seeds,0.46531113026089305,1.0
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,florabd_cont_in,imagenet_dino,CUB,Welch's t over 3 seeds,0.003513724197640686,0.04567841456932892
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,florabd_full_scratch,imagenet_dino,CUB,Welch's t over 3 seeds,5.367786022365931e-08,1.1272350646968454e-06
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,mae_vitb16,imagenet_dino,CUB,Welch's t over 3 seeds,0.7150661572713357,1.0
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,rice_cont_in,imagenet_dino,CUB,Welch's t over 3 seeds,0.0029331640585407394,0.04106429681957035
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,rice_full,imagenet_dino,CUB,Welch's t over 3 seeds,6.486486466268587e-07,1.2972972932537174e-05
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,dinov2_vitb14,imagenet_dino,Flowers102,Welch's t over 3 seeds,0.01035690163923951,0.12428281967087412
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,dinov2_vits14,imagenet_dino,Flowers102,Welch's t over 3 seeds,0.016169388168693618,0.1778632698556298
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,florabd_cont_in,imagenet_dino,Flowers102,Welch's t over 3 seeds,0.2668265586688827,1.0
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,florabd_full_scratch,imagenet_dino,Flowers102,Welch's t over 3 seeds,0.00024789684429005123,0.004462143197220922
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,mae_vitb16,imagenet_dino,Flowers102,Welch's t over 3 seeds,0.02156728456038558,0.2156728456038558
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,rice_cont_in,imagenet_dino,Flowers102,Welch's t over 3 seeds,0.048242207916516434,0.43417987124864793
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,rice_full,imagenet_dino,Flowers102,Welch's t over 3 seeds,7.117941298924984e-07,1.3524088467957469e-05
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,dinov2_vitb14,imagenet_dino,RiceLeaf,Welch's t over 3 seeds,0.9503057015551324,1.0
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,dinov2_vits14,imagenet_dino,RiceLeaf,Welch's t over 3 seeds,0.43052902028820134,1.0
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,florabd_cont_in,imagenet_dino,RiceLeaf,Welch's t over 3 seeds,0.8649222411440738,1.0
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,florabd_full_scratch,imagenet_dino,RiceLeaf,Welch's t over 3 seeds,0.0006143560972807083,0.01044405365377204
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,mae_vitb16,imagenet_dino,RiceLeaf,Welch's t over 3 seeds,0.6118781880209437,1.0
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,rice_cont_in,imagenet_dino,RiceLeaf,Welch's t over 3 seeds,0.7752470494836576,1.0
+FT-21,21,"fine-tuning (Table 12, Table S9)",fine-tuning,full,rice_full,imagenet_dino,RiceLeaf,Welch's t over 3 seeds,0.0007890347239119504,0.012624555582591207
+KD-8,8,distillation (Section S1),distillation,full,EfficientNet-B0 <- ImageNet→FloraBD (cont.),EfficientNet-B0 (plain fine-tuning),RiceLeaf,Welch's t over 3 seeds,0.026,0.18
+KD-8,8,distillation (Section S1),distillation,full,EfficientNet-B0 <- ImageNet DINO,EfficientNet-B0 (plain fine-tuning),RiceLeaf,Welch's t over 3 seeds,0.02,0.159
+KD-8,8,distillation (Section S1),distillation,full,EfficientNet-B0 <- ImageNet→RiceLeaf (cont.),EfficientNet-B0 (plain fine-tuning),RiceLeaf,Welch's t over 3 seeds,0.114,0.571
+KD-8,8,distillation (Section S1),distillation,full,EfficientNet-B0 <- RiceLeaf-full (scratch),EfficientNet-B0 (plain fine-tuning),RiceLeaf,Welch's t over 3 seeds,0.536,1.0
+KD-8,8,distillation (Section S1),distillation,full,MobileNetV3-Small <- ImageNet→FloraBD (cont.),MobileNetV3-Small (plain fine-tuning),RiceLeaf,Welch's t over 3 seeds,0.25,0.999
+KD-8,8,distillation (Section S1),distillation,full,MobileNetV3-Small <- ImageNet DINO,MobileNetV3-Small (plain fine-tuning),RiceLeaf,Welch's t over 3 seeds,0.035,0.211
+KD-8,8,distillation (Section S1),distillation,full,MobileNetV3-Small <- ImageNet→RiceLeaf (cont.),MobileNetV3-Small (plain fine-tuning),RiceLeaf,Welch's t over 3 seeds,0.313,0.999
+KD-8,8,distillation (Section S1),distillation,full,MobileNetV3-Small <- RiceLeaf-full (scratch),MobileNetV3-Small (plain fine-tuning),RiceLeaf,Welch's t over 3 seeds,0.646,1.0
