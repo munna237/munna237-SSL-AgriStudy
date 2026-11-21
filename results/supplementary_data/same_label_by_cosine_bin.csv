@@ -1,0 +1,25 @@
+dataset,cosine bin,test images,same label (%)
+FloraBD,< 0.90,266,100.0
+FloraBD,0.90–0.95,791,100.0
+FloraBD,0.95–0.98,1345,100.0
+FloraBD,≥ 0.98,513,100.0
+RiceLeaf,< 0.90,128,75.8
+RiceLeaf,0.90–0.95,411,71.5
+RiceLeaf,0.95–0.98,495,92.1
+RiceLeaf,≥ 0.98,438,96.6
+PlantVillage,< 0.90,1978,97.5
+PlantVillage,0.90–0.95,3679,99.9
+PlantVillage,0.95–0.98,924,100.0
+PlantVillage,≥ 0.98,32,100.0
+PlantDoc,< 0.90,205,46.8
+PlantDoc,0.90–0.95,10,60.0
+PlantDoc,0.95–0.98,7,71.4
+PlantDoc,≥ 0.98,14,35.7
+Flowers102,< 0.90,4904,86.2
+Flowers102,0.90–0.95,947,98.9
+Flowers102,0.95–0.98,259,100.0
+Flowers102,≥ 0.98,39,100.0
+CUB,< 0.90,5645,67.2
+CUB,0.90–0.95,135,83.0
+CUB,0.95–0.98,12,100.0
+CUB,≥ 0.98,2,100.0

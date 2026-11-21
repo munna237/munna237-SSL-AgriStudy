@@ -1,0 +1,5647 @@
+{
+ "n_test": {
+  "RiceLeaf": {
+   "none": 1472,
+   "cos0.95": 539,
+   "cos0.95+phash8": 533
+  },
+  "FloraBD": {
+   "none": 2915,
+   "cos0.95": 1057,
+   "cos0.95+phash8": 1057
+  },
+  "Flowers102": {
+   "none": 6149,
+   "cos0.95": 5851,
+   "cos0.95+phash8": 5847
+  },
+  "CUB": {
+   "none": 5794,
+   "cos0.95": 5780,
+   "cos0.95+phash8": 5710
+  }
+ },
+ "reproduction_vs_stored": {
+  "imagenet_dino__RiceLeaf": {
+   "max_abs_diff": 0.06793478260870245,
+   "mean_abs_diff": null,
+   "mean_signed_diff": null,
+   "n_exact": null
+  },
+  "florabd_full_scratch__RiceLeaf": {
+   "max_abs_diff": 0.20380434782609314,
+   "mean_abs_diff": 0.009416702539819157,
+   "mean_signed_diff": -0.004035729659922777,
+   "n_exact": 92.0
+  },
+  "florabd_cont_in__RiceLeaf": {
+   "max_abs_diff": 0.1358695652173907,
+   "mean_abs_diff": 0.00807145931984471,
+   "mean_signed_diff": -0.002690486439948049,
+   "n_exact": 91.0
+  },
+  "rice_full__RiceLeaf": {
+   "max_abs_diff": 0.1358695652173907,
+   "mean_abs_diff": 0.019506026689625606,
+   "mean_signed_diff": 0.0020178648299618808,
+   "n_exact": 75.0
+  },
+  "rice_cont_in__RiceLeaf": {
+   "max_abs_diff": 0.20380434782609314,
+   "mean_abs_diff": 0.03295845888936698,
+   "mean_signed_diff": -0.0020178648299618808,
+   "n_exact": 64.0
+  },
+  "dinov2_vits14__RiceLeaf": {
+   "max_abs_diff": 0.1358695652173907,
+   "mean_abs_diff": 0.006053594489883673,
+   "mean_signed_diff": -0.004708351269909649,
+   "n_exact": 94.0
+  },
+  "imagenet_dino__FloraBD": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "florabd_full_scratch__FloraBD": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "florabd_cont_in__FloraBD": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "rice_full__FloraBD": {
+   "max_abs_diff": 0.13722126929673095,
+   "mean_abs_diff": 0.003396566071701402,
+   "mean_signed_diff": -0.0013586264286803637,
+   "n_exact": 95.0
+  },
+  "rice_cont_in__FloraBD": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "dinov2_vits14__FloraBD": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "imagenet_dino__Flowers102": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "florabd_full_scratch__Flowers102": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "florabd_cont_in__Flowers102": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "rice_full__Flowers102": {
+   "max_abs_diff": 0.08131403480240351,
+   "mean_abs_diff": 0.0014491610162805008,
+   "mean_signed_diff": -0.001127125234884787,
+   "n_exact": 97.0
+  },
+  "rice_cont_in__Flowers102": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "dinov2_vits14__Flowers102": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "imagenet_dino__CUB": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "florabd_full_scratch__CUB": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "florabd_cont_in__CUB": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "rice_full__CUB": {
+   "max_abs_diff": 0.05177770107007351,
+   "mean_abs_diff": 0.0017088350188142838,
+   "mean_signed_diff": 0.0006835340075256994,
+   "n_exact": 96.0
+  },
+  "rice_cont_in__CUB": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  },
+  "dinov2_vits14__CUB": {
+   "max_abs_diff": 0.0,
+   "mean_abs_diff": 0.0,
+   "mean_signed_diff": 0.0,
+   "n_exact": 101.0
+  }
+ },
+ "sklearn": "1.6.1",
+ "numpy": "2.4.6",
+ "means": {
+  "none": [
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 58.97825336555057,
+    "std": 1.3837852224700589
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 16.088194684156022,
+    "std": 0.6821052847357923
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 3.2516396272005523,
+    "std": 0.3347813699562592
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 35.376251294442525,
+    "std": 1.1091391090488352
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 20.47117707973766,
+    "std": 0.8991538549190093
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 2.4525371073524336,
+    "std": 0.23537790435045067
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 58.97825336555057,
+    "std": 1.3837852224700589
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 16.088194684156022,
+    "std": 0.6821052847357923
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 3.2516396272005523,
+    "std": 0.3347813699562592
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 35.376251294442525,
+    "std": 1.1091391090488352
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 20.47117707973766,
+    "std": 0.8991538549190093
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 2.4525371073524336,
+    "std": 0.23537790435045067
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 70.98118743527786,
+    "std": 0.871265662474149
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 25.044011045909564,
+    "std": 0.6308349635970089
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 4.54263030721436,
+    "std": 0.2971290981320489
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 49.48049706593027,
+    "std": 0.8660971687997134
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 30.93717638936831,
+    "std": 0.7971862463698203
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 3.258543320676562,
+    "std": 0.2826900651148221
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 82.03486365205384,
+    "std": 0.4186602474792332
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 42.0719710044874,
+    "std": 0.836658809639383
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 7.902140144977563,
+    "std": 0.5282172966304031
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 67.95909561615464,
+    "std": 0.7013523069513259
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 49.01967552640663,
+    "std": 0.7322601171486288
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 5.5514325163962726,
+    "std": 0.3075864173862469
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 85.5039696237487,
+    "std": 0.27057885151999844
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 52.61477390403866,
+    "std": 0.5304157849266312
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 10.82758025543666,
+    "std": 0.3550484222771786
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 75.72575077666552,
+    "std": 0.4177821090248938
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 58.85053503624439,
+    "std": 0.5476087868725723
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 7.7752847773558855,
+    "std": 0.33600142102056935
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 87.41801863997239,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 60.700724887814985,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 14.152571625819812,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 80.47980669658267,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 66.15464273386262,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 10.562651018294787,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 98.21269296740995,
+    "std": 0.4096880153259776
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 96.4631217838765,
+    "std": 0.6316671020930538
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 92.67409948542024,
+    "std": 0.881774509318658
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 95.0,
+    "std": 1.0183218598022359
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 87.44768439108061,
+    "std": 1.6043549705861926
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 66.15094339622642,
+    "std": 1.7285788316051713
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 99.81303602058318,
+    "std": 0.0966943724383911
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 99.34819897084049,
+    "std": 0.21117907761615407
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 98.02744425385934,
+    "std": 0.30673513657698565
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 99.28816466552315,
+    "std": 0.1604725557342018
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 97.72898799313893,
+    "std": 0.259262397601653
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 83.53344768439108,
+    "std": 0.6152849796514981
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 99.90566037735849,
+    "std": 0.04434620959037804
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 99.72727272727272,
+    "std": 0.1271344624284054
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 98.68953687821612,
+    "std": 0.24551933015989985
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 99.61234991423672,
+    "std": 0.17424940101818703
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 98.87650085763293,
+    "std": 0.25980534360191204
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 87.9794168096055,
+    "std": 0.4322727909868649
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 99.93996569468268,
+    "std": 0.02190965261263647
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 99.88164665523155,
+    "std": 0.0324018264627229
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 99.20240137221269,
+    "std": 0.13069001294618737
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 99.84905660377358,
+    "std": 0.049023069817585696
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 99.56775300171526,
+    "std": 0.09664631758289365
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 92.10806174957119,
+    "std": 0.41188567942914006
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 99.9433962264151,
+    "std": 0.016787666721417495
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 99.91080617495712,
+    "std": 0.03412428536225583
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 99.41166380789022,
+    "std": 0.08496514039264
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 99.87307032590051,
+    "std": 0.04028425033361266
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 99.77015437392797,
+    "std": 0.06687337457844696
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 94.33619210977702,
+    "std": 0.27756194151289054
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 99.93138936535163,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 99.93138936535163,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 99.5540308747856,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 99.93138936535163,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 99.86277873070325,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 96.32933104631218,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 93.98520084566596,
+    "std": 0.7938458614159676
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 42.860627744348676,
+    "std": 1.8499876429905064
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 24.6048137908603,
+    "std": 1.2985450583414546
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 60.37079199869898,
+    "std": 2.002704460070215
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 45.45129289315336,
+    "std": 1.9819326884845305
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 15.535046348999836,
+    "std": 1.1608557470522278
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 93.98520084566596,
+    "std": 0.7938458614159676
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 42.860627744348676,
+    "std": 1.8499876429905064
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 24.6048137908603,
+    "std": 1.2985450583414546
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 60.37079199869898,
+    "std": 2.002704460070215
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 45.45129289315336,
+    "std": 1.9819326884845305
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 15.535046348999836,
+    "std": 1.1608557470522278
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 97.59147828915272,
+    "std": 0.7346246330642062
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 57.98097251585624,
+    "std": 1.2711394494879487
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 33.56724670678159,
+    "std": 1.4967128730072068
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 77.14099853634738,
+    "std": 1.0225699528175627
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 61.973491624654415,
+    "std": 1.24849973143912
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 21.718978695722882,
+    "std": 1.252791816047586
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 98.9697511790535,
+    "std": 0.36636557260579944
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 71.15953813628232,
+    "std": 0.9074925456306563
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 43.22247519921938,
+    "std": 0.8373600288104234
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 87.51260367539437,
+    "std": 0.7360325691274873
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 74.64465766791349,
+    "std": 0.7481430794949114
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 29.33810375670841,
+    "std": 1.060572864174407
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 99.43324117742722,
+    "std": 0.06658976943866678
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 80.6586436818995,
+    "std": 0.5282178463886584
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 52.45731013172874,
+    "std": 0.7567178161317577
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 92.88420881444138,
+    "std": 0.4554953714590365
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 83.47048300536673,
+    "std": 0.41194080151241724
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 37.122296308342825,
+    "std": 0.6249364265684791
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 99.49585298422508,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 87.10359408033827,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 60.64400715563506,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 95.91803545291917,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 88.87624003903073,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 45.064238087493905,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 55.19701086956521,
+    "std": 2.202165967832717
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 49.44972826086957,
+    "std": 2.461383504448172
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 45.23097826086956,
+    "std": 1.924593079145948
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 58.02989130434783,
+    "std": 1.9351656329658793
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 52.79551630434783,
+    "std": 2.7149118944655872
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 49.14741847826087,
+    "std": 2.986486228393259
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 67.05163043478261,
+    "std": 1.2017879411721135
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 63.858695652173914,
+    "std": 1.5676991651210248
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 55.1664402173913,
+    "std": 1.2780855341749044
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 69.50747282608695,
+    "std": 1.410151743995719
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 66.95991847826087,
+    "std": 1.9639065110880065
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 60.1664402173913,
+    "std": 1.1095765176840728
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 70.41440217391303,
+    "std": 1.3904156323411516
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 69.30027173913044,
+    "std": 1.3620703227981064
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 59.779211956521735,
+    "std": 1.0504717268988149
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 73.08763586956522,
+    "std": 1.2612116200763541
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 71.99728260869566,
+    "std": 1.13539797837436
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 64.2493206521739,
+    "std": 1.2889483163634778
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 74.30366847826087,
+    "std": 0.6874781649873297
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 75.03736413043478,
+    "std": 0.847208799422944
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 65.89334239130434,
+    "std": 0.8078768845158412
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 77.38111413043478,
+    "std": 0.728177547297202
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 76.76290760869566,
+    "std": 1.005095292969384
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 68.68885869565217,
+    "std": 0.8296596854358107
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 77.77173913043478,
+    "std": 0.6062664782359077
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 78.5054347826087,
+    "std": 0.8135471065877835
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 69.67391304347827,
+    "std": 0.5467756094212733
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 79.5991847826087,
+    "std": 0.6623664224275326
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 79.55842391304347,
+    "std": 0.6980060758811255
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 71.44021739130434,
+    "std": 0.7646019317712037
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 80.77445652173914,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 81.4538043478261,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 73.2336956521739,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 82.8125,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 80.91032608695652,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 74.72826086956522,
+    "std": NaN
+   }
+  ],
+  "cos0.95": [
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 58.94290657439446,
+    "std": 1.3887294528022833
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 16.044117647058822,
+    "std": 0.685138467870162
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 3.2430795847750864,
+    "std": 0.33224608360595914
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 35.34169550173011,
+    "std": 1.1027594916794268
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 20.42993079584775,
+    "std": 0.8990632209978946
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 2.4377162629757785,
+    "std": 0.22889875240431554
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 58.94290657439446,
+    "std": 1.3887294528022833
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 16.044117647058822,
+    "std": 0.685138467870162
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 3.2430795847750864,
+    "std": 0.33224608360595914
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 35.34169550173011,
+    "std": 1.1027594916794268
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 20.42993079584775,
+    "std": 0.8990632209978946
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 2.4377162629757785,
+    "std": 0.22889875240431554
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 70.93685121107266,
+    "std": 0.8664762449750765
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 24.988754325259514,
+    "std": 0.6326319396796908
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 4.52076124567474,
+    "std": 0.2859482267983001
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 49.438581314878896,
+    "std": 0.8668252629800571
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 30.887543252595158,
+    "std": 0.7950178977346865
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 3.2318339100346023,
+    "std": 0.2761670579824901
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 81.99653979238755,
+    "std": 0.4187535972154779
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 41.99307958477509,
+    "std": 0.8322614247471982
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 7.841695501730103,
+    "std": 0.5167458644029203
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 67.91868512110726,
+    "std": 0.702684056733483
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 48.95934256055363,
+    "std": 0.7329098864150726
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 5.499134948096886,
+    "std": 0.3078712437759606
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 85.46885813148789,
+    "std": 0.2712342328212586
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 52.53373702422145,
+    "std": 0.5413601334098149
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 10.745674740484429,
+    "std": 0.3494593306211177
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 75.68166089965398,
+    "std": 0.42066790077312743
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 58.79065743944636,
+    "std": 0.55020508022156
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 7.71280276816609,
+    "std": 0.32631948706798025
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 87.38754325259515,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 60.60553633217993,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 14.013840830449828,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 80.4325259515571,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 66.08996539792388,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 10.449826989619378,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 97.35572374645223,
+    "std": 0.5094532133982923
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 95.52034058656575,
+    "std": 0.632991876700066
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 90.73793755912962,
+    "std": 0.9855337009856578
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 93.0558183538316,
+    "std": 1.101763975570531
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 83.98770104068117,
+    "std": 1.954814226164645
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 62.52601702932829,
+    "std": 1.870840547016645
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 99.57426679280984,
+    "std": 0.18288470519550812
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 98.94039735099338,
+    "std": 0.3652538789009915
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 96.98202459791864,
+    "std": 0.4218705304367876
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 98.70860927152317,
+    "std": 0.3149385583114308
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 96.7833491012299,
+    "std": 0.38337651854643684
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 79.78240302743613,
+    "std": 1.0960625343198864
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 99.75875118259225,
+    "std": 0.1084135304228853
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 99.50804162724693,
+    "std": 0.20953480314508913
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 97.80983916745507,
+    "std": 0.3750220037866033
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 99.23841059602648,
+    "std": 0.3014883977016541
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 98.24976348155157,
+    "std": 0.4389447572853537
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 84.74929044465469,
+    "std": 0.8862210532877651
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 99.83443708609272,
+    "std": 0.060422551907141714
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 99.77767265846737,
+    "std": 0.07689003792689453
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 98.56196783349102,
+    "std": 0.26153602599102954
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 99.6972563859981,
+    "std": 0.09510400945128611
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 99.33774834437085,
+    "std": 0.1867084923492788
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 89.50331125827815,
+    "std": 0.5680383368884796
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 99.84389782403028,
+    "std": 0.04629711304915389
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 99.82970671712394,
+    "std": 0.07885607885208021
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 98.9120151371807,
+    "std": 0.22660081169113253
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 99.73036896877957,
+    "std": 0.08279034814715884
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 99.65468306527909,
+    "std": 0.1347598141638126
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 91.88741721854305,
+    "std": 0.5667098817496881
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 99.81078524124882,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 99.81078524124882,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 99.05392620624409,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 99.81078524124882,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 99.81078524124882,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 93.94512771996216,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 93.74380447786703,
+    "std": 0.820287781930135
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 41.339087335498206,
+    "std": 1.9638277847269117
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 22.88497692702102,
+    "std": 1.4178617240431182
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 59.102717484190734,
+    "std": 2.0415842734219702
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 43.89933344727397,
+    "std": 2.0545748910696306
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 14.271064775252094,
+    "std": 1.1236287949654271
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 93.74380447786703,
+    "std": 0.820287781930135
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 41.339087335498206,
+    "std": 1.9638277847269117
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 22.88497692702102,
+    "std": 1.4178617240431182
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 59.102717484190734,
+    "std": 2.0415842734219702
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 43.89933344727397,
+    "std": 2.0545748910696306
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 14.271064775252094,
+    "std": 1.1236287949654271
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 97.48077251751837,
+    "std": 0.7746741792362136
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 56.59972654247137,
+    "std": 1.2908172768413542
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 31.56127157750812,
+    "std": 1.5000683651047004
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 76.24508631003248,
+    "std": 1.0673371339249917
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 60.57767902922577,
+    "std": 1.3039721288145902
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 19.971799692360282,
+    "std": 1.2073835443743175
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 98.920697316698,
+    "std": 0.38669852296175783
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 70.09998290890447,
+    "std": 0.9453265798695406
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 41.18184925653735,
+    "std": 0.8773940612667843
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 86.9492394462485,
+    "std": 0.7383586481091781
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 73.60622115877628,
+    "std": 0.777837085742003
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 27.371389506067338,
+    "std": 1.083996480917482
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 99.40437532045804,
+    "std": 0.06998128393067209
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 79.89061698854896,
+    "std": 0.5767526740524686
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 50.54776961203213,
+    "std": 0.7757267763478053
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 92.53375491368998,
+    "std": 0.47507728368850405
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 82.72944795761408,
+    "std": 0.4202756380226213
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 35.052127841394636,
+    "std": 0.6304323567778685
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 99.47017603828405,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 86.56639890616988,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 58.964279610323025,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 95.72722611519399,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 88.36096393778841,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 42.98410528114852,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 56.679035250463826,
+    "std": 2.221049588643928
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 49.24860853432282,
+    "std": 2.9870008569617506
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 42.95918367346938,
+    "std": 3.103599851923247
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 60.62152133580705,
+    "std": 1.9999050684738375
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 57.94990723562152,
+    "std": 2.9243593296759482
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 49.85157699443414,
+    "std": 3.0091320713636125
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 66.45640074211502,
+    "std": 1.4825202533318784
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 62.47680890538034,
+    "std": 1.6603746325795772
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 50.55658627087199,
+    "std": 2.2308160685331355
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 69.25788497217069,
+    "std": 2.059901352048776
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 68.97031539888683,
+    "std": 2.4008634534733937
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 57.968460111317256,
+    "std": 1.8615994574561905
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 67.81076066790352,
+    "std": 1.7616235838802579
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 65.92764378478664,
+    "std": 1.8555560786071323
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 54.44341372912802,
+    "std": 1.341214143083591
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 71.09461966604823,
+    "std": 1.8023901255797623
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 72.38404452690168,
+    "std": 1.4336602841775508
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 61.03896103896104,
+    "std": 1.326989745482603
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 69.36920222634508,
+    "std": 1.2319827085590713
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 69.32282003710574,
+    "std": 1.4833448683506756
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 60.30612244897959,
+    "std": 1.2210154495479153
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 73.57142857142857,
+    "std": 1.1057838306700614
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 75.09276437847866,
+    "std": 1.0578907295779099
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 64.28571428571429,
+    "std": 1.3014882145644475
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 71.41929499072356,
+    "std": 1.2298854646835318
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 71.6048237476809,
+    "std": 1.1909717183953556
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 64.11873840445269,
+    "std": 0.9934659433081526
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 73.94248608534323,
+    "std": 1.184871560640288
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 76.94805194805194,
+    "std": 0.9438579075120163
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 66.14100185528757,
+    "std": 1.316710816527141
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 74.02597402597402,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 74.02597402597402,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 67.71799628942486,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 76.80890538033395,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 77.92207792207793,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 68.46011131725417,
+    "std": NaN
+   }
+  ],
+  "cos0.95+phash8": [
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 58.98073555166375,
+    "std": 1.4003777533594879
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 16.049912434325744,
+    "std": 0.6823732389823975
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 3.24430823117338,
+    "std": 0.33378491335456945
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 35.3800350262697,
+    "std": 1.1177485231160154
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 20.452714535901926,
+    "std": 0.9052475574140108
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 2.4238178633975482,
+    "std": 0.2277345571663044
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 58.98073555166375,
+    "std": 1.4003777533594879
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 16.049912434325744,
+    "std": 0.6823732389823975
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 3.24430823117338,
+    "std": 0.33378491335456945
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 35.3800350262697,
+    "std": 1.1177485231160154
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 20.452714535901926,
+    "std": 0.9052475574140108
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 2.4238178633975482,
+    "std": 0.2277345571663044
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 70.97460595446584,
+    "std": 0.8854694906967163
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 25.006129597197898,
+    "std": 0.6410677412671754
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 4.510507880910683,
+    "std": 0.2846384238246406
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 49.48949211908932,
+    "std": 0.8749610103658267
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 30.903677758318736,
+    "std": 0.8076534788653998
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 3.219789842381787,
+    "std": 0.2760472291935789
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 82.00175131348512,
+    "std": 0.41123396937955164
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 42.02626970227671,
+    "std": 0.8263586326915127
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 7.852889667250437,
+    "std": 0.5144150445295025
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 67.96497373029771,
+    "std": 0.7202405932630359
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 48.952714535901926,
+    "std": 0.7369242205317115
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 5.495621716287216,
+    "std": 0.30874817332453963
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 85.46234676007006,
+    "std": 0.2734989944179851
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 52.566549912434326,
+    "std": 0.5541191932490693
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 10.753940455341507,
+    "std": 0.3607730388918853
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 75.71015761821366,
+    "std": 0.41496094209484474
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 58.75306479859895,
+    "std": 0.5477647454318182
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 7.7338003502626975,
+    "std": 0.3253863162870359
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 87.30297723292469,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 60.665499124343256,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 14.010507880910684,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 80.4553415061296,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 65.98949211908932,
+    "std": NaN
+   },
+   {
+    "target": "CUB",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 10.472854640980737,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 97.35572374645223,
+    "std": 0.5094532133982923
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 95.52034058656575,
+    "std": 0.632991876700066
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 90.73793755912962,
+    "std": 0.9855337009856578
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 93.0558183538316,
+    "std": 1.101763975570531
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 83.98770104068117,
+    "std": 1.954814226164645
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 62.52601702932829,
+    "std": 1.870840547016645
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 99.57426679280984,
+    "std": 0.18288470519550812
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 98.94039735099338,
+    "std": 0.3652538789009915
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 96.98202459791864,
+    "std": 0.4218705304367876
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 98.70860927152317,
+    "std": 0.3149385583114308
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 96.7833491012299,
+    "std": 0.38337651854643684
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 79.78240302743613,
+    "std": 1.0960625343198864
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 99.75875118259225,
+    "std": 0.1084135304228853
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 99.50804162724693,
+    "std": 0.20953480314508913
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 97.80983916745507,
+    "std": 0.3750220037866033
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 99.23841059602648,
+    "std": 0.3014883977016541
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 98.24976348155157,
+    "std": 0.4389447572853537
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 84.74929044465469,
+    "std": 0.8862210532877651
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 99.83443708609272,
+    "std": 0.060422551907141714
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 99.77767265846737,
+    "std": 0.07689003792689453
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 98.56196783349102,
+    "std": 0.26153602599102954
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 99.6972563859981,
+    "std": 0.09510400945128611
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 99.33774834437085,
+    "std": 0.1867084923492788
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 89.50331125827815,
+    "std": 0.5680383368884796
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 99.84389782403028,
+    "std": 0.04629711304915389
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 99.82970671712394,
+    "std": 0.07885607885208021
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 98.9120151371807,
+    "std": 0.22660081169113253
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 99.73036896877957,
+    "std": 0.08279034814715884
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 99.65468306527909,
+    "std": 0.1347598141638126
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 91.88741721854305,
+    "std": 0.5667098817496881
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 99.81078524124882,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 99.81078524124882,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 99.05392620624409,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 99.81078524124882,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 99.81078524124882,
+    "std": NaN
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 93.94512771996216,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 93.74551051821447,
+    "std": 0.8229211061392183
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 41.33829314178211,
+    "std": 1.96568510069133
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 22.88609543355567,
+    "std": 1.4190299784082758
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 59.09526252779203,
+    "std": 2.0472055366069015
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 43.893449632290064,
+    "std": 2.05821811995306
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 14.270566102274671,
+    "std": 1.1224570500156132
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 93.74551051821447,
+    "std": 0.8229211061392183
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 41.33829314178211,
+    "std": 1.96568510069133
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 22.88609543355567,
+    "std": 1.4190299784082758
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 59.09526252779203,
+    "std": 2.0472055366069015
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 43.893449632290064,
+    "std": 2.05821811995306
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 14.270566102274671,
+    "std": 1.1224570500156132
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 97.48075936377629,
+    "std": 0.7766465725290167
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 56.59397981871045,
+    "std": 1.2927749336785623
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 31.563194800752523,
+    "std": 1.5024398018196465
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 76.24166239096972,
+    "std": 1.068173608786879
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 60.57465366854798,
+    "std": 1.3025993352976488
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 19.968359842654355,
+    "std": 1.2064115680989078
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 98.91995895330939,
+    "std": 0.3869630678722866
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 70.08893449632289,
+    "std": 0.9403652354241677
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 41.181802633829314,
+    "std": 0.8765276422439294
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 86.94202154951257,
+    "std": 0.7384281654563725
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 73.59500598597572,
+    "std": 0.7803800725008494
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 27.364460407046344,
+    "std": 1.084475464510536
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 99.40396784675902,
+    "std": 0.07002915893250514
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 79.88199076449462,
+    "std": 0.5759643520000783
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 50.556695741405846,
+    "std": 0.7745698748516978
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 92.52864716948862,
+    "std": 0.47540228952649843
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 82.71763297417479,
+    "std": 0.4205631534240394
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 35.047887805712335,
+    "std": 0.6334444805677808
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 99.46981357961347,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 86.55720882503847,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 58.98751496493928,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 95.72430306139901,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 88.3530015392509,
+    "std": NaN
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 42.97930562681717,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean": 56.594746716697934,
+    "std": 2.2721103006272503
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean": 49.19324577861163,
+    "std": 3.0699789417649384
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean": 42.870544090056285,
+    "std": 3.102335528142577
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "imagenet_dino",
+    "mean": 60.57223264540338,
+    "std": 2.055491994556667
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean": 57.851782363977485,
+    "std": 2.8624134658002487
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean": 49.71857410881801,
+    "std": 3.0581280314850368
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean": 66.40712945590994,
+    "std": 1.4829011531061516
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean": 62.5422138836773,
+    "std": 1.6817115513771226
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean": 50.38461538461538,
+    "std": 2.2771600743409617
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "imagenet_dino",
+    "mean": 69.30581613508443,
+    "std": 2.1124982689624296
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean": 68.94934333958724,
+    "std": 2.4138279703221266
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean": 57.78611632270169,
+    "std": 1.8210526657404174
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean": 67.84240150093808,
+    "std": 1.7572669310786477
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean": 66.14446529080675,
+    "std": 1.8667433636715909
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean": 54.23076923076924,
+    "std": 1.3535775974054594
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "imagenet_dino",
+    "mean": 71.25703564727955,
+    "std": 1.803263929434899
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean": 72.3639774859287,
+    "std": 1.4328643036317992
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean": 60.91932457786116,
+    "std": 1.252081218251769
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean": 69.32457786116323,
+    "std": 1.3034088285460863
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean": 69.57786116322703,
+    "std": 1.5147911611061304
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean": 60.075046904315194,
+    "std": 1.252820825628134
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "imagenet_dino",
+    "mean": 73.65853658536585,
+    "std": 1.0997299768330815
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean": 75.02814258911819,
+    "std": 1.0382043613405443
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean": 64.11819887429644,
+    "std": 1.279560143321562
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean": 71.45403377110694,
+    "std": 1.267047230012835
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean": 71.91369606003752,
+    "std": 1.171036767166181
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean": 63.88367729831144,
+    "std": 1.0158359729771307
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "imagenet_dino",
+    "mean": 74.09943714821763,
+    "std": 1.1652877073267527
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean": 76.99812382739212,
+    "std": 0.9398620499261781
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean": 65.92870544090056,
+    "std": 1.2975680688489555
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "dinov2_vits14",
+    "mean": 73.92120075046904,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "florabd_cont_in",
+    "mean": 74.29643527204503,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "florabd_full_scratch",
+    "mean": 67.3545966228893,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "imagenet_dino",
+    "mean": 76.73545966228893,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "rice_cont_in",
+    "mean": 78.04878048780488,
+    "std": NaN
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 1.0,
+    "backbone": "rice_full",
+    "mean": 68.29268292682927,
+    "std": NaN
+   }
+  ]
+ },
+ "tests": {
+  "none": [
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -32.12461166724198,
+    "std_diff": 1.2552440506405096,
+    "p_paired_t": 1.9295052020128144e-28,
+    "p_holm": 1.369948693429098e-26
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -19.288056610286503,
+    "std_diff": 0.9082717310122421,
+    "p_paired_t": 6.646241795648893e-27,
+    "p_holm": 4.369164020510005e-25
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -32.923714187090084,
+    "std_diff": 1.1955764584255066,
+    "p_paired_t": 4.804060738679754e-29,
+    "p_holm": 3.651086161396613e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -14.905074214704864,
+    "std_diff": 0.8262146869587121,
+    "p_paired_t": 1.4628138636816979e-25,
+    "p_holm": 8.630601795722018e-24
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 23.60200207110804,
+    "std_diff": 1.2257254026254498,
+    "p_paired_t": 4.25219680658464e-26,
+    "p_holm": 2.5938400520166304e-24
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -44.93786675871591,
+    "std_diff": 0.9131028363090022,
+    "p_paired_t": 7.832896731212191e-34,
+    "p_holm": 6.501304286906118e-32
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -24.436486020020713,
+    "std_diff": 0.8985848141623292,
+    "p_paired_t": 6.096316144273981e-29,
+    "p_holm": 4.511273946762746e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -46.221953745253714,
+    "std_diff": 0.8194793436480056,
+    "p_paired_t": 5.877019257698198e-35,
+    "p_holm": 4.995466369043468e-33
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -18.54332067656196,
+    "std_diff": 0.9260651641509764,
+    "p_paired_t": 2.02559879838147e-26,
+    "p_holm": 1.2761272429803262e-24
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 21.5006903693476,
+    "std_diff": 0.6308200517978806,
+    "p_paired_t": 8.38730390055646e-31,
+    "p_holm": 6.542097042434039e-29
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -60.05695547117708,
+    "std_diff": 0.7900070718727855,
+    "p_paired_t": 2.0270550403700068e-37,
+    "p_holm": 1.763537885121906e-35
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -25.887124611667247,
+    "std_diff": 0.9438981400693263,
+    "p_paired_t": 5.191000674248942e-29,
+    "p_holm": 3.893250505686707e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -62.40766309975837,
+    "std_diff": 0.7668004263142363,
+    "p_paired_t": 5.547614969851672e-38,
+    "p_holm": 4.881901173469471e-36
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -18.939420089748012,
+    "std_diff": 0.7070694847207964,
+    "p_paired_t": 8.125298944942097e-29,
+    "p_holm": 5.9314682298077305e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 14.075768035899207,
+    "std_diff": 0.662687269676638,
+    "p_paired_t": 6.61994548562122e-27,
+    "p_holm": 4.369164020510005e-25
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -64.89817052122883,
+    "std_diff": 0.42871412810844167,
+    "p_paired_t": 4.205661698893688e-43,
+    "p_holm": 3.7850955290043193e-41
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -23.110976872626853,
+    "std_diff": 0.6470298695383143,
+    "p_paired_t": 3.4460015745809964e-31,
+    "p_holm": 2.722341243918987e-29
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -67.95046599930963,
+    "std_diff": 0.49687017984040394,
+    "p_paired_t": 2.897247045738769e-42,
+    "p_holm": 2.578549870707504e-40
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -16.87521574042113,
+    "std_diff": 0.6679515908700586,
+    "p_paired_t": 2.464899169276992e-28,
+    "p_holm": 1.7254294184938945e-26
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 9.77821884708319,
+    "std_diff": 0.5292906539995896,
+    "p_paired_t": 9.323060895619013e-26,
+    "p_holm": 5.593836537371408e-24
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -2.325900514579761,
+    "std_diff": 0.9044613596572715,
+    "p_paired_t": 5.294462899361595e-10,
+    "p_holm": 1.111837208865935e-08
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 1.4631217838765018,
+    "std_diff": 0.7280894472380373,
+    "p_paired_t": 2.8566713815181535e-08,
+    "p_holm": 4.856341348580861e-07
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -28.84905660377358,
+    "std_diff": 1.607732444991558,
+    "p_paired_t": 1.6188644986300618e-25,
+    "p_holm": 9.227527642191353e-24
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -7.552315608919386,
+    "std_diff": 1.466908365594105,
+    "p_paired_t": 2.426537925946806e-15,
+    "p_holm": 8.49288274081382e-14
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 3.212692967409951,
+    "std_diff": 0.7823825410836132,
+    "p_paired_t": 1.493755173102353e-13,
+    "p_holm": 4.630641036617294e-12
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -1.2607204116638067,
+    "std_diff": 0.2535309661652443,
+    "p_paired_t": 4.591054533203871e-15,
+    "p_holm": 1.5609585412893162e-13
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.060034305317323344,
+    "std_diff": 0.2595668259077466,
+    "p_paired_t": 0.313961611629502,
+    "p_holm": 0.627923223259004
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean_diff": -15.754716981132077,
+    "std_diff": 0.5927112633908512,
+    "p_paired_t": 9.400801053456717e-29,
+    "p_holm": 6.768576758488836e-27
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean_diff": -1.559176672384217,
+    "std_diff": 0.2599483491685955,
+    "p_paired_t": 1.4476063150518597e-16,
+    "p_holm": 5.356143365691881e-15
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.5248713550600315,
+    "std_diff": 0.20160567525469028,
+    "p_paired_t": 4.3075037804008655e-10,
+    "p_holm": 9.476508316881904e-09
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -0.922813036020586,
+    "std_diff": 0.24959762930449023,
+    "p_paired_t": 9.808088041764222e-13,
+    "p_holm": 2.9424264125292666e-11
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.11492281303601928,
+    "std_diff": 0.1230746116314009,
+    "p_paired_t": 0.0005127196410533256,
+    "p_holm": 0.0030763178463199536
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -11.632933104631224,
+    "std_diff": 0.4790994021494449,
+    "p_paired_t": 5.234687476182351e-28,
+    "p_holm": 3.6119343585658217e-26
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.7358490566037744,
+    "std_diff": 0.22741278403582207,
+    "p_paired_t": 1.0336885594347539e-11,
+    "p_holm": 2.6875902545303603e-10
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.29331046312177805,
+    "std_diff": 0.1645131099277294,
+    "p_paired_t": 1.760974149094055e-07,
+    "p_holm": 2.465363808731677e-06
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -0.6466552315608893,
+    "std_diff": 0.15272001793827777,
+    "p_paired_t": 8.581613339186503e-14,
+    "p_holm": 2.746116268539681e-12
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.032590051457975736,
+    "std_diff": 0.04378395281515007,
+    "p_paired_t": 0.0035288367675529388,
+    "p_holm": 0.017644183837764695
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -7.740994854202398,
+    "std_diff": 0.4292351481391538,
+    "p_paired_t": 1.471758604299193e-25,
+    "p_holm": 8.630601795722018e-24
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.28130360205831695,
+    "std_diff": 0.09741235057771415,
+    "p_paired_t": 7.422439113067515e-11,
+    "p_holm": 1.8556097782668788e-09
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.09090909090909136,
+    "std_diff": 0.05011642340680011,
+    "p_paired_t": 1.3617582871087415e-07,
+    "p_holm": 2.042637430663112e-06
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -0.4614065180102898,
+    "std_diff": 0.09540462649516944,
+    "p_paired_t": 7.63843061293458e-15,
+    "p_holm": 2.520682102268411e-13
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.037735849056603855,
+    "std_diff": 0.05664342692843312,
+    "p_paired_t": 0.007706092783476628,
+    "p_holm": 0.03082437113390651
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -5.536878216123497,
+    "std_diff": 0.2765559144931084,
+    "p_paired_t": 2.0312602451914664e-26,
+    "p_holm": 1.2761272429803262e-24
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.10291595197255247,
+    "std_diff": 0.07711169632233368,
+    "p_paired_t": 9.59733692294608e-06,
+    "p_holm": 8.637603230651472e-05
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.07032590051458101,
+    "std_diff": 0.04378395281514914,
+    "p_paired_t": 7.98440376170025e-07,
+    "p_holm": 1.0379724890210325e-05
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -35.76597820783867,
+    "std_diff": 2.237085067821441,
+    "p_paired_t": 1.441067412111767e-24,
+    "p_holm": 7.925870766614719e-23
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -17.5101642543503,
+    "std_diff": 1.6912915955984866,
+    "p_paired_t": 5.298952916392566e-21,
+    "p_holm": 2.3315392832127287e-19
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -44.83574564969914,
+    "std_diff": 2.0875854132391476,
+    "p_paired_t": 5.3643711894960136e-27,
+    "p_holm": 3.594128696962329e-25
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -14.919499105545615,
+    "std_diff": 1.0775053523364282,
+    "p_paired_t": 2.1899893176346273e-23,
+    "p_holm": 1.0730947656409673e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 33.61440884696698,
+    "std_diff": 2.0107847071000307,
+    "p_paired_t": 6.192310126557169e-25,
+    "p_holm": 3.4676936708720143e-23
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -43.573751829565786,
+    "std_diff": 1.3764025089539598,
+    "p_paired_t": 3.407158724790085e-30,
+    "p_holm": 2.6235122180883654e-28
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -19.160026020491138,
+    "std_diff": 1.4559027583719082,
+    "p_paired_t": 5.724271920437219e-23,
+    "p_holm": 2.690407802605493e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -55.422019840624486,
+    "std_diff": 1.214580086272578,
+    "p_paired_t": 3.292802520518669e-33,
+    "p_holm": 2.7000980668253086e-31
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -15.167506911692959,
+    "std_diff": 1.2093700504648024,
+    "p_paired_t": 1.421739684559692e-22,
+    "p_holm": 6.3978285805186136e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 20.450479752805336,
+    "std_diff": 1.4340759849174924,
+    "p_paired_t": 1.2543444975342103e-23,
+    "p_holm": 6.522591387177894e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -44.290128476174985,
+    "std_diff": 0.9921701292640189,
+    "p_paired_t": 4.9964075995074566e-33,
+    "p_holm": 4.04709015560104e-31
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -16.35306553911205,
+    "std_diff": 1.220463229211987,
+    "p_paired_t": 4.0744912597606715e-23,
+    "p_holm": 1.9557558046851223e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -58.17449991868597,
+    "std_diff": 1.3948069875954612,
+    "p_paired_t": 1.8152151319485478e-32,
+    "p_holm": 1.4521721055588382e-30
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -12.86794600748089,
+    "std_diff": 0.9051499556387342,
+    "p_paired_t": 1.3298838352440415e-23,
+    "p_holm": 6.782407559744612e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 11.457147503659133,
+    "std_diff": 0.8060997416086086,
+    "p_paired_t": 1.335745269475291e-23,
+    "p_holm": 6.782407559744612e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -40.42689868271264,
+    "std_diff": 0.815333297860416,
+    "p_paired_t": 6.797324289238851e-34,
+    "p_holm": 5.709752402960635e-32
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -12.225565132541874,
+    "std_diff": 0.5785940850754798,
+    "p_paired_t": 7.309195368915974e-27,
+    "p_holm": 4.677885036106223e-25
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -55.76191250609857,
+    "std_diff": 0.7358306544738684,
+    "p_paired_t": 2.152483739485167e-37,
+    "p_holm": 1.851136015957244e-35
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -9.413725809074645,
+    "std_diff": 0.41132788146199284,
+    "p_paired_t": 1.6077215500954568e-27,
+    "p_holm": 1.0932506540649106e-25
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 6.5490323629858525,
+    "std_diff": 0.45560613801521915,
+    "p_paired_t": 1.0790384699898223e-23,
+    "p_holm": 5.718903890946058e-22
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -12.798913043478263,
+    "std_diff": 2.2600738731396706,
+    "p_paired_t": 4.1932808649168455e-16,
+    "p_holm": 1.5095811113700643e-14
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -8.58016304347826,
+    "std_diff": 2.991494215671956,
+    "p_paired_t": 8.34004065595565e-11,
+    "p_holm": 2.001609757429356e-09
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -8.882472826086959,
+    "std_diff": 3.1036195118065,
+    "p_paired_t": 8.65558726569085e-11,
+    "p_holm": 2.001609757429356e-09
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -5.234375000000002,
+    "std_diff": 2.2896589175582704,
+    "p_paired_t": 3.6807391814292998e-09,
+    "p_holm": 6.99340444471567e-08
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -2.832880434782611,
+    "std_diff": 1.9063959967235957,
+    "p_paired_t": 2.3430710939311706e-06,
+    "p_holm": 2.811685312717405e-05
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -14.341032608695652,
+    "std_diff": 1.7712344283673502,
+    "p_paired_t": 5.381550439518808e-19,
+    "p_holm": 2.2064356802027115e-17
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -5.648777173913041,
+    "std_diff": 1.7067549002907374,
+    "p_paired_t": 6.9579289119090285e-12,
+    "p_holm": 1.8786408062154376e-10
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean_diff": -9.341032608695652,
+    "std_diff": 1.490741024869357,
+    "p_paired_t": 6.433081980647232e-17,
+    "p_holm": 2.444571152645948e-15
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean_diff": -2.547554347826087,
+    "std_diff": 2.008691670346588,
+    "p_paired_t": 1.8139663337684315e-05,
+    "p_holm": 0.00014511730670147452
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -2.4558423913043477,
+    "std_diff": 1.7233256560724897,
+    "p_paired_t": 4.103662312808123e-06,
+    "p_holm": 4.514028544088935e-05
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -13.308423913043478,
+    "std_diff": 1.6305688589037002,
+    "p_paired_t": 4.630434334011342e-19,
+    "p_holm": 1.9447824202847637e-17
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -3.787364130434784,
+    "std_diff": 1.1031216710977083,
+    "p_paired_t": 3.648003081085065e-12,
+    "p_holm": 1.0214408627038183e-10
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -8.838315217391301,
+    "std_diff": 1.3983243959937217,
+    "p_paired_t": 5.4753050846198424e-17,
+    "p_holm": 2.1353689830017384e-15
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -1.0903532608695656,
+    "std_diff": 1.0731194763399858,
+    "p_paired_t": 0.00022192028856439858,
+    "p_holm": 0.00155344201995079
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -2.6732336956521743,
+    "std_diff": 1.2577401499875929,
+    "p_paired_t": 1.1843255091169148e-08,
+    "p_holm": 2.1317859164104468e-07
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -11.487771739130435,
+    "std_diff": 0.9004208537038101,
+    "p_paired_t": 1.0288315588429486e-22,
+    "p_holm": 4.7326251706775634e-21
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -2.343749999999998,
+    "std_diff": 0.9552916618046644,
+    "p_paired_t": 1.1574482935590002e-09,
+    "p_holm": 2.3148965871180003e-08
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -8.692255434782606,
+    "std_diff": 1.1753172072261946,
+    "p_paired_t": 2.9308344844396096e-18,
+    "p_holm": 1.1723337937758437e-16
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.6182065217391305,
+    "std_diff": 1.0210220641553205,
+    "p_paired_t": 0.013953018331891802,
+    "p_holm": 0.0418590549956754
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -3.0774456521739126,
+    "std_diff": 0.8364244367242146,
+    "p_paired_t": 1.0694829366939938e-12,
+    "p_holm": 3.101500516412582e-11
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -9.925271739130437,
+    "std_diff": 0.6418044219257022,
+    "p_paired_t": 2.7051643386620514e-24,
+    "p_holm": 1.4607887428775076e-22
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -1.0937500000000007,
+    "std_diff": 0.7989351773113493,
+    "p_paired_t": 6.931257302239304e-06,
+    "p_holm": 6.931257302239305e-05
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -8.15896739130435,
+    "std_diff": 0.9866620176110587,
+    "p_paired_t": 3.6236104977439424e-19,
+    "p_holm": 1.5581525140298954e-17
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.04076086956521792,
+    "std_diff": 0.9315791124867522,
+    "p_paired_t": 0.8469408756489626,
+    "p_holm": 0.8469408756489626
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -1.8274456521739153,
+    "std_diff": 0.9154030359693265,
+    "p_paired_t": 3.1647418011941814e-08,
+    "p_holm": 5.06358688191069e-07
+   }
+  ],
+  "cos0.95": [
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -32.09861591695501,
+    "std_diff": 1.2448030601165112,
+    "p_paired_t": 1.6722000439916085e-28,
+    "p_holm": 1.2039840316739581e-26
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -19.29757785467128,
+    "std_diff": 0.9044114435420524,
+    "p_paired_t": 6.073468650868799e-27,
+    "p_holm": 4.129958682590783e-25
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -32.903979238754324,
+    "std_diff": 1.1834569654904263,
+    "p_paired_t": 4.0047616576136956e-29,
+    "p_holm": 3.0436188597864085e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -14.911764705882353,
+    "std_diff": 0.8210805932333158,
+    "p_paired_t": 1.2888502553892874e-25,
+    "p_holm": 7.990871583413582e-24
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 23.601211072664356,
+    "std_diff": 1.2261243676781555,
+    "p_paired_t": 4.2812254018066707e-26,
+    "p_holm": 2.7399842571562693e-24
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -44.917820069204154,
+    "std_diff": 0.9158784394197101,
+    "p_paired_t": 8.368318617448789e-34,
+    "p_holm": 6.945704452482495e-32
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -24.44982698961938,
+    "std_diff": 0.8988235664295302,
+    "p_paired_t": 6.06399397143467e-29,
+    "p_holm": 4.4873555388616556e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -46.206747404844286,
+    "std_diff": 0.8129235342480213,
+    "p_paired_t": 5.077058580733192e-35,
+    "p_holm": 4.3154997936232134e-33
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -18.551038062283737,
+    "std_diff": 0.9366453828738576,
+    "p_paired_t": 2.4926068313769702e-26,
+    "p_holm": 1.6201944403950306e-24
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 21.49826989619377,
+    "std_diff": 0.6350707777533526,
+    "p_paired_t": 9.548241065435492e-31,
+    "p_holm": 7.447628031039683e-29
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -60.07698961937716,
+    "std_diff": 0.7835886638786794,
+    "p_paired_t": 1.7250846249147788e-37,
+    "p_holm": 1.4835727774267097e-35
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -25.925605536332178,
+    "std_diff": 0.9426245862918614,
+    "p_paired_t": 4.919051187405383e-29,
+    "p_holm": 3.6892883905540374e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -62.419550173010386,
+    "std_diff": 0.7685219339504806,
+    "p_paired_t": 5.76815509839717e-38,
+    "p_holm": 5.07597648658951e-36
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -18.95934256055363,
+    "std_diff": 0.7158813759002238,
+    "p_paired_t": 1.0075005937075465e-28,
+    "p_holm": 7.35475433406509e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 14.077854671280278,
+    "std_diff": 0.6618838741300178,
+    "p_paired_t": 6.451251708871297e-27,
+    "p_holm": 4.322338644943769e-25
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -64.93598615916956,
+    "std_diff": 0.4268282522410896,
+    "p_paired_t": 3.825173173560606e-43,
+    "p_holm": 3.442655856204545e-41
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -23.14792387543253,
+    "std_diff": 0.6538466129217038,
+    "p_paired_t": 4.079072061606724e-31,
+    "p_holm": 3.222466928669312e-29
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -67.9688581314879,
+    "std_diff": 0.4993033456032918,
+    "p_paired_t": 3.16271343755997e-42,
+    "p_holm": 2.8148149594283733e-40
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -16.891003460207614,
+    "std_diff": 0.668279447913643,
+    "p_paired_t": 2.444203357424708e-28,
+    "p_holm": 1.735384383771543e-26
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 9.787197231833911,
+    "std_diff": 0.5335816346494594,
+    "p_paired_t": 1.0677127638934503e-25,
+    "p_holm": 6.726590412528737e-24
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -2.317880794701987,
+    "std_diff": 1.0388689276586593,
+    "p_paired_t": 5.452663986820986e-09,
+    "p_holm": 1.0360061574959873e-07
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 2.4645222327341534,
+    "std_diff": 0.8624469705442187,
+    "p_paired_t": 8.885459724939313e-11,
+    "p_holm": 2.132510333985435e-09
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -30.529801324503307,
+    "std_diff": 2.045312091154357,
+    "p_paired_t": 5.2866912721003236e-24,
+    "p_holm": 3.0134140250971846e-22
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -9.068117313150427,
+    "std_diff": 2.019158715385143,
+    "p_paired_t": 2.9496637736346296e-14,
+    "p_holm": 1.0618789585084667e-12
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 4.299905392620625,
+    "std_diff": 0.8930386970309846,
+    "p_paired_t": 8.28372635911125e-15,
+    "p_holm": 3.064978752871163e-13
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -1.7265846736045418,
+    "std_diff": 0.45926781276631384,
+    "p_paired_t": 7.282070547439234e-13,
+    "p_holm": 2.2574418697061626e-11
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.23178807947019778,
+    "std_diff": 0.43024601722912553,
+    "p_paired_t": 0.026291718196143208,
+    "p_holm": 0.07560550955760895
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean_diff": -18.92620624408704,
+    "std_diff": 1.1242282696539934,
+    "p_paired_t": 5.421310060983919e-25,
+    "p_holm": 3.3069991372001907e-23
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean_diff": -1.9252601702932821,
+    "std_diff": 0.4698142478767665,
+    "p_paired_t": 1.5497848792797511e-13,
+    "p_holm": 5.424247077479129e-12
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.8656575212866556,
+    "std_diff": 0.3449227965846454,
+    "p_paired_t": 7.94711655460192e-10,
+    "p_holm": 1.589423310920384e-08
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -1.428571428571427,
+    "std_diff": 0.4082508771379225,
+    "p_paired_t": 2.6064603762952554e-12,
+    "p_holm": 7.037443015997189e-11
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.2696310312204361,
+    "std_diff": 0.24799141709776523,
+    "p_paired_t": 0.00010818912965032522,
+    "p_holm": 0.000973702166852927
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -14.489120151371802,
+    "std_diff": 0.9799612346626658,
+    "p_paired_t": 6.329330097277907e-24,
+    "p_holm": 3.544424854475628e-22
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.9886471144749265,
+    "std_diff": 0.39004602530219756,
+    "p_paired_t": 6.739153107571411e-10,
+    "p_holm": 1.4826136836657105e-08
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.5203405865657565,
+    "std_diff": 0.27195562026433073,
+    "p_paired_t": 6.084158786744475e-08,
+    "p_holm": 9.126238180116713e-07
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -1.1352885525070888,
+    "std_diff": 0.30386189916630835,
+    "p_paired_t": 8.134176435700105e-13,
+    "p_holm": 2.4402529307100315e-11
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.080416272469256,
+    "std_diff": 0.10306743909712715,
+    "p_paired_t": 0.0024542507536779935,
+    "p_holm": 0.012271253768389967
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -10.19394512771996,
+    "std_diff": 0.6176233270887244,
+    "p_paired_t": 7.884849265658622e-25,
+    "p_holm": 4.652061066738587e-23
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.35950804162724664,
+    "std_diff": 0.18055156593591967,
+    "p_paired_t": 3.2944223956452507e-08,
+    "p_holm": 5.271075833032401e-07
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.13718070009461414,
+    "std_diff": 0.08935792255329546,
+    "p_paired_t": 1.501098887632883e-06,
+    "p_holm": 1.951428553922748e-05
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -0.8183538315988613,
+    "std_diff": 0.22820627689631007,
+    "p_paired_t": 1.688377950634018e-12,
+    "p_holm": 4.72745826177525e-11
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.09933774834437514,
+    "std_diff": 0.12074760875702097,
+    "p_paired_t": 0.001593604954346852,
+    "p_holm": 0.011155234680427964
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -7.842951750236518,
+    "std_diff": 0.5798778019470511,
+    "p_paired_t": 3.413141419923303e-23,
+    "p_holm": 1.7065707099616515e-21
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.07568590350047373,
+    "std_diff": 0.13931466027278097,
+    "p_paired_t": 0.025201836519202984,
+    "p_holm": 0.07560550955760895
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.11352885525071557,
+    "std_diff": 0.09993466079213187,
+    "p_paired_t": 6.644218796143675e-05,
+    "p_holm": 0.0006644218796143676
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -36.21774055716971,
+    "std_diff": 2.2563101261661225,
+    "p_paired_t": 1.3360908614964791e-24,
+    "p_holm": 7.749326996679578e-23
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -17.763630148692535,
+    "std_diff": 1.6768196696906663,
+    "p_paired_t": 3.437486706367195e-21,
+    "p_holm": 1.5812438849289096e-19
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -44.83165270893864,
+    "std_diff": 2.0443009456192325,
+    "p_paired_t": 3.611711807030407e-27,
+    "p_holm": 2.492081146850981e-25
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -15.203384036916765,
+    "std_diff": 1.0945252735086217,
+    "p_paired_t": 2.062296341506237e-23,
+    "p_holm": 1.051771134168181e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 34.641086993676296,
+    "std_diff": 2.060356946864746,
+    "p_paired_t": 5.55534149618318e-25,
+    "p_holm": 3.333204897709908e-23
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -44.68381473252435,
+    "std_diff": 1.40333868092655,
+    "p_paired_t": 3.0533628618864555e-30,
+    "p_holm": 2.3510894036525706e-28
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -19.645359767561104,
+    "std_diff": 1.4830323275125075,
+    "p_paired_t": 5.0574562496448077e-23,
+    "p_holm": 2.478153562325956e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -56.273286617672184,
+    "std_diff": 1.2521638025113067,
+    "p_paired_t": 4.397403816799837e-33,
+    "p_holm": 3.6058711297758664e-31
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -15.6674072808067,
+    "std_diff": 1.2731263219635662,
+    "p_paired_t": 2.0336059327860474e-22,
+    "p_holm": 9.557947884094424e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 21.235686207485898,
+    "std_diff": 1.4805425169838895,
+    "p_paired_t": 1.1242416424947963e-23,
+    "p_holm": 5.95848070522242e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -45.76739018971116,
+    "std_diff": 1.0430105500987361,
+    "p_paired_t": 6.921592710721967e-33,
+    "p_holm": 5.606490095684793e-31
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -16.84925653734404,
+    "std_diff": 1.2848244121839487,
+    "p_paired_t": 6.117549648178948e-23,
+    "p_holm": 2.9364238311258952e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -59.57784994018117,
+    "std_diff": 1.4053029583416714,
+    "p_paired_t": 1.3309659712282984e-32,
+    "p_holm": 1.0647727769826388e-30
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -13.343018287472228,
+    "std_diff": 0.9322850648299049,
+    "p_paired_t": 1.1712307675194628e-23,
+    "p_holm": 6.090399991101207e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 11.971457870449495,
+    "std_diff": 0.8172270975444955,
+    "p_paired_t": 7.54374893221724e-24,
+    "p_holm": 4.1490619127194817e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -41.985985301657834,
+    "std_diff": 0.8490390406855056,
+    "p_paired_t": 7.150599828627044e-34,
+    "p_holm": 6.006503856046717e-32
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -12.643137925141001,
+    "std_diff": 0.6296753141522873,
+    "p_paired_t": 1.9228773943363142e-26,
+    "p_holm": 1.2690990802619674e-24
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -57.481627072295325,
+    "std_diff": 0.7337315947314316,
+    "p_paired_t": 1.1449137042604514e-37,
+    "p_holm": 9.960749227065928e-36
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -9.804306956075882,
+    "std_diff": 0.4311021680672654,
+    "p_paired_t": 1.8118321717954792e-27,
+    "p_holm": 1.2682825202568355e-25
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 6.870620406768071,
+    "std_diff": 0.47467988619965434,
+    "p_paired_t": 9.46543882065332e-24,
+    "p_holm": 5.111336963152793e-22
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -17.662337662337656,
+    "std_diff": 3.4492490683814876,
+    "p_paired_t": 2.680540914064566e-15,
+    "p_holm": 1.0186055473445352e-13
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -11.372912801484228,
+    "std_diff": 2.977661259858912,
+    "p_paired_t": 5.487321123280631e-13,
+    "p_holm": 1.755942759449802e-11
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -10.769944341372913,
+    "std_diff": 3.2384286544958796,
+    "p_paired_t": 6.392537815461e-12,
+    "p_holm": 1.66205983201986e-10
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -2.6716141001855296,
+    "std_diff": 3.3456962015138716,
+    "p_paired_t": 0.0020380975078683632,
+    "p_holm": 0.01222858504721018
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -3.942486085343225,
+    "std_diff": 2.4729741260690976,
+    "p_paired_t": 8.872617319555521e-07,
+    "p_holm": 1.2421664247377729e-05
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -18.701298701298697,
+    "std_diff": 2.3153763528606843,
+    "p_paired_t": 5.632019386324068e-19,
+    "p_holm": 2.5344087238458307e-17
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -6.781076066790351,
+    "std_diff": 1.7241780362493826,
+    "p_paired_t": 3.246196265356131e-13,
+    "p_holm": 1.0712447675675233e-11
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean_diff": -11.289424860853432,
+    "std_diff": 1.5087744520571231,
+    "p_paired_t": 2.3561761869450885e-18,
+    "p_holm": 1.036717522255839e-16
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.28756957328385757,
+    "std_diff": 2.2718353241381206,
+    "p_paired_t": 0.5779620365277764,
+    "p_holm": 0.5779620365277764
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -2.8014842300556584,
+    "std_diff": 2.343606579831074,
+    "p_paired_t": 3.693405350144891e-05,
+    "p_holm": 0.00040627458851593806
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -16.65120593692022,
+    "std_diff": 2.4204028475537775,
+    "p_paired_t": 1.1311712917976654e-17,
+    "p_holm": 4.750919425550194e-16
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -5.1669758812615925,
+    "std_diff": 1.4336602841775499,
+    "p_paired_t": 1.5445826223637883e-12,
+    "p_holm": 4.479289604854986e-11
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -10.055658627087197,
+    "std_diff": 1.7148275467855882,
+    "p_paired_t": 2.2005072888339513e-16,
+    "p_holm": 8.802029155335805e-15
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": 1.289424860853434,
+    "std_diff": 1.9620442243466139,
+    "p_paired_t": 0.008423416026342126,
+    "p_holm": 0.033693664105368504
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -3.2838589981447113,
+    "std_diff": 1.514556882758748,
+    "p_paired_t": 8.626803090488985e-09,
+    "p_holm": 1.5528245562880172e-07
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -13.26530612244898,
+    "std_diff": 1.901104038211426,
+    "p_paired_t": 8.685117359994886e-18,
+    "p_holm": 3.734600464797801e-16
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -4.248608534322818,
+    "std_diff": 1.6139262078686658,
+    "p_paired_t": 3.575926914311509e-10,
+    "p_holm": 8.224631902916471e-09
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -9.285714285714281,
+    "std_diff": 1.5885547890389677,
+    "p_paired_t": 2.3335272304615447e-16,
+    "p_holm": 9.100756198800024e-15
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": 1.5213358070500953,
+    "std_diff": 1.5031505684573847,
+    "p_paired_t": 0.00023101561365556606,
+    "p_holm": 0.0018481249092445284
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -4.202226345083487,
+    "std_diff": 1.4574716634447171,
+    "p_paired_t": 7.624990325751515e-11,
+    "p_holm": 1.9062475814378786e-09
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -9.823747680890536,
+    "std_diff": 1.5457832622482957,
+    "p_paired_t": 4.947936500394057e-17,
+    "p_holm": 2.0286539651615635e-15
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -2.337662337662338,
+    "std_diff": 1.0874880846976591,
+    "p_paired_t": 9.896185829824653e-09,
+    "p_holm": 1.682351591070191e-07
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -7.801484230055658,
+    "std_diff": 1.938823398551432,
+    "p_paired_t": 2.1528757195417046e-13,
+    "p_holm": 7.319777446441795e-12
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": 3.005565862708721,
+    "std_diff": 1.1896399817399945,
+    "p_paired_t": 7.115024470422264e-10,
+    "p_holm": 1.4941551387886756e-08
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -2.5231910946196656,
+    "std_diff": 1.7656297303275246,
+    "p_paired_t": 3.954224077482003e-06,
+    "p_holm": 4.745068892978403e-05
+   }
+  ],
+  "cos0.95+phash8": [
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -32.13572679509632,
+    "std_diff": 1.2541355383424224,
+    "p_paired_t": 1.8850163635049787e-28,
+    "p_holm": 1.3383616180885348e-26
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -19.330122591943958,
+    "std_diff": 0.9206765180802569,
+    "p_paired_t": 8.247900206969883e-27,
+    "p_holm": 5.60857214073952e-25
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -32.956217162872164,
+    "std_diff": 1.1948392868884565,
+    "p_paired_t": 4.6600732634396094e-29,
+    "p_holm": 3.541655680214103e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -14.927320490367777,
+    "std_diff": 0.8327835089891583,
+    "p_paired_t": 1.6522639776252354e-25,
+    "p_holm": 1.0244036661276459e-23
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 23.600700525394046,
+    "std_diff": 1.2309051534869941,
+    "p_paired_t": 4.6108277792573903e-26,
+    "p_holm": 2.9509297787247298e-24
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -44.97898423817863,
+    "std_diff": 0.916339488358914,
+    "p_paired_t": 8.233133533654258e-34,
+    "p_holm": 6.833500832933034e-32
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -24.48336252189142,
+    "std_diff": 0.913797435506495,
+    "p_paired_t": 8.084027213422632e-29,
+    "p_holm": 5.982180137932747e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -46.26970227670753,
+    "std_diff": 0.8297682088195159,
+    "p_paired_t": 7.304105969375711e-35,
+    "p_holm": 6.208490073969354e-33
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -18.58581436077058,
+    "std_diff": 0.947974656213973,
+    "p_paired_t": 3.021440064041464e-26,
+    "p_holm": 1.9639360416269514e-24
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 21.48511383537653,
+    "std_diff": 0.6494069066903647,
+    "p_paired_t": 1.4757829464213022e-30,
+    "p_holm": 1.1511106982086157e-28
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -60.11208406304729,
+    "std_diff": 0.8088518140133816,
+    "p_paired_t": 3.1173555205750494e-37,
+    "p_holm": 2.6809257476945427e-35
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -25.938704028021014,
+    "std_diff": 0.9448708060489515,
+    "p_paired_t": 5.0972340489075e-29,
+    "p_holm": 3.822925536680625e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -62.46935201401052,
+    "std_diff": 0.7856395129723145,
+    "p_paired_t": 8.633867684011402e-38,
+    "p_holm": 7.597803561930034e-36
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -19.012259194395792,
+    "std_diff": 0.719720427903508,
+    "p_paired_t": 1.0576743050630715e-28,
+    "p_holm": 7.721022426960422e-27
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 14.03677758318739,
+    "std_diff": 0.6774115638071959,
+    "p_paired_t": 1.0584248032816011e-26,
+    "p_holm": 7.091446181986727e-25
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -64.95621716287215,
+    "std_diff": 0.4390250031382967,
+    "p_paired_t": 6.4946729161242724e-43,
+    "p_holm": 5.845205624511845e-41
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -23.143607705779335,
+    "std_diff": 0.6633976260275519,
+    "p_paired_t": 5.3910586195295465e-31,
+    "p_holm": 4.258936309428342e-29
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -67.97635726795096,
+    "std_diff": 0.4867489223084486,
+    "p_paired_t": 1.945492015114123e-42,
+    "p_holm": 1.7314878934515695e-40
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -16.95709281961471,
+    "std_diff": 0.6526866492751148,
+    "p_paired_t": 1.4501489576103908e-28,
+    "p_holm": 1.0441072494794814e-26
+   },
+   {
+    "target": "CUB",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 9.752189141856391,
+    "std_diff": 0.5331190769782076,
+    "p_paired_t": 1.1241029644359165e-25,
+    "p_holm": 7.081848675946275e-24
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -2.317880794701987,
+    "std_diff": 1.0388689276586593,
+    "p_paired_t": 5.452663986820986e-09,
+    "p_holm": 1.0360061574959873e-07
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 2.4645222327341534,
+    "std_diff": 0.8624469705442187,
+    "p_paired_t": 8.885459724939313e-11,
+    "p_holm": 2.132510333985435e-09
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -30.529801324503307,
+    "std_diff": 2.045312091154357,
+    "p_paired_t": 5.2866912721003236e-24,
+    "p_holm": 3.0134140250971846e-22
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -9.068117313150427,
+    "std_diff": 2.019158715385143,
+    "p_paired_t": 2.9496637736346296e-14,
+    "p_holm": 1.0618789585084667e-12
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 4.299905392620625,
+    "std_diff": 0.8930386970309846,
+    "p_paired_t": 8.28372635911125e-15,
+    "p_holm": 3.064978752871163e-13
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -1.7265846736045418,
+    "std_diff": 0.45926781276631384,
+    "p_paired_t": 7.282070547439234e-13,
+    "p_holm": 2.2574418697061626e-11
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.23178807947019778,
+    "std_diff": 0.43024601722912553,
+    "p_paired_t": 0.026291718196143208,
+    "p_holm": 0.08994158523959021
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean_diff": -18.92620624408704,
+    "std_diff": 1.1242282696539934,
+    "p_paired_t": 5.421310060983919e-25,
+    "p_holm": 3.3069991372001907e-23
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean_diff": -1.9252601702932821,
+    "std_diff": 0.4698142478767665,
+    "p_paired_t": 1.5497848792797511e-13,
+    "p_holm": 5.269268589551154e-12
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.8656575212866556,
+    "std_diff": 0.3449227965846454,
+    "p_paired_t": 7.94711655460192e-10,
+    "p_holm": 1.7483656420124225e-08
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -1.428571428571427,
+    "std_diff": 0.4082508771379225,
+    "p_paired_t": 2.6064603762952554e-12,
+    "p_holm": 7.298089053626715e-11
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.2696310312204361,
+    "std_diff": 0.24799141709776523,
+    "p_paired_t": 0.00010818912965032522,
+    "p_holm": 0.000973702166852927
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -14.489120151371802,
+    "std_diff": 0.9799612346626658,
+    "p_paired_t": 6.329330097277907e-24,
+    "p_holm": 3.544424854475628e-22
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.9886471144749265,
+    "std_diff": 0.39004602530219756,
+    "p_paired_t": 6.739153107571411e-10,
+    "p_holm": 1.5500052147414246e-08
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.5203405865657565,
+    "std_diff": 0.27195562026433073,
+    "p_paired_t": 6.084158786744475e-08,
+    "p_holm": 9.126238180116713e-07
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -1.1352885525070888,
+    "std_diff": 0.30386189916630835,
+    "p_paired_t": 8.134176435700105e-13,
+    "p_holm": 2.4402529307100315e-11
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.080416272469256,
+    "std_diff": 0.10306743909712715,
+    "p_paired_t": 0.0024542507536779935,
+    "p_holm": 0.012271253768389967
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -10.19394512771996,
+    "std_diff": 0.6176233270887244,
+    "p_paired_t": 7.884849265658622e-25,
+    "p_holm": 4.652061066738587e-23
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.35950804162724664,
+    "std_diff": 0.18055156593591967,
+    "p_paired_t": 3.2944223956452507e-08,
+    "p_holm": 5.271075833032401e-07
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.13718070009461414,
+    "std_diff": 0.08935792255329546,
+    "p_paired_t": 1.501098887632883e-06,
+    "p_holm": 2.077215808278089e-05
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -0.8183538315988613,
+    "std_diff": 0.22820627689631007,
+    "p_paired_t": 1.688377950634018e-12,
+    "p_holm": 4.896296056838652e-11
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": 0.09933774834437514,
+    "std_diff": 0.12074760875702097,
+    "p_paired_t": 0.001593604954346852,
+    "p_holm": 0.011155234680427964
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -7.842951750236518,
+    "std_diff": 0.5798778019470511,
+    "p_paired_t": 3.413141419923303e-23,
+    "p_holm": 1.7065707099616515e-21
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.07568590350047373,
+    "std_diff": 0.13931466027278097,
+    "p_paired_t": 0.025201836519202984,
+    "p_holm": 0.08994158523959021
+   },
+   {
+    "target": "FloraBD",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 0.11352885525071557,
+    "std_diff": 0.09993466079213187,
+    "p_paired_t": 6.644218796143675e-05,
+    "p_holm": 0.0006644218796143676
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -36.209167094236356,
+    "std_diff": 2.2614671275000537,
+    "p_paired_t": 1.4013766124577717e-24,
+    "p_holm": 8.127984352255076e-23
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -17.75696938600992,
+    "std_diff": 1.6772748783626563,
+    "p_paired_t": 3.479627641746984e-21,
+    "p_holm": 1.6006287152036126e-19
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -44.82469642551737,
+    "std_diff": 2.048699970326708,
+    "p_paired_t": 3.773069932111299e-27,
+    "p_holm": 2.603418253156796e-25
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -15.201812895501968,
+    "std_diff": 1.0907923068892493,
+    "p_paired_t": 1.937047040566514e-23,
+    "p_holm": 9.87893990688922e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 34.650247990422436,
+    "std_diff": 2.0663589073808946,
+    "p_paired_t": 5.840655657873312e-25,
+    "p_holm": 3.5043933947239873e-23
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -44.6784675902172,
+    "std_diff": 1.4063122365793848,
+    "p_paired_t": 3.185776895491482e-30,
+    "p_holm": 2.4530482095284413e-28
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -19.647682572259278,
+    "std_diff": 1.4831246401745568,
+    "p_paired_t": 5.052106892782034e-23,
+    "p_holm": 2.4755323774631965e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -56.273302548315385,
+    "std_diff": 1.2486465348924467,
+    "p_paired_t": 4.168630784217418e-33,
+    "p_holm": 3.418277243058283e-31
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": -15.667008722421752,
+    "std_diff": 1.2755476260653555,
+    "p_paired_t": 2.1089226404213534e-22,
+    "p_holm": 9.911936409980361e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 21.239096972806568,
+    "std_diff": 1.481137331416232,
+    "p_paired_t": 1.1293802381498774e-23,
+    "p_holm": 5.9857152621943505e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -45.760218915683254,
+    "std_diff": 1.0427076786549292,
+    "p_paired_t": 6.904037421651713e-33,
+    "p_holm": 5.592270311537888e-31
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -16.85308705318967,
+    "std_diff": 1.2822757377578624,
+    "p_paired_t": 5.866949966396428e-23,
+    "p_holm": 2.8161359838702853e-21
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -59.57756114246622,
+    "std_diff": 1.4079776703111213,
+    "p_paired_t": 1.3800326099289447e-32,
+    "p_holm": 1.1040260879431558e-30
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": -13.347015563536853,
+    "std_diff": 0.9359921106530602,
+    "p_paired_t": 1.255402580592908e-23,
+    "p_holm": 6.528093419083121e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 11.97793740379682,
+    "std_diff": 0.8172362902217722,
+    "p_paired_t": 7.468500816505701e-24,
+    "p_holm": 4.1076754490781355e-22
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -41.971951428082775,
+    "std_diff": 0.8485229165922313,
+    "p_paired_t": 7.113515351820025e-34,
+    "p_holm": 5.975352895528821e-32
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -12.646656404994015,
+    "std_diff": 0.628310183136456,
+    "p_paired_t": 1.8356584508029132e-26,
+    "p_holm": 1.2115345775299227e-24
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -57.4807593637763,
+    "std_diff": 0.7375186166719196,
+    "p_paired_t": 1.262904693977763e-37,
+    "p_holm": 1.0987270837606538e-35
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": -9.811014195313835,
+    "std_diff": 0.4313970900225023,
+    "p_paired_t": 1.8118321717954918e-27,
+    "p_holm": 1.2682825202568442e-25
+   },
+   {
+    "target": "Flowers102",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": 6.875320677270392,
+    "std_diff": 0.47500462017345374,
+    "p_paired_t": 9.465438820653724e-24,
+    "p_holm": 5.111336963153011e-22
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -17.701688555347097,
+    "std_diff": 3.5080308711501433,
+    "p_paired_t": 3.5091908926628023e-15,
+    "p_holm": 1.333492539211865e-13
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -11.378986866791745,
+    "std_diff": 3.0198895449258094,
+    "p_paired_t": 6.991320276458748e-13,
+    "p_holm": 2.2372224884667995e-11
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_full",
+    "mean_diff": -10.853658536585368,
+    "std_diff": 3.3353101358977244,
+    "p_paired_t": 9.358982897843727e-12,
+    "p_holm": 2.4333355534393693e-10
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "rice_cont_in",
+    "mean_diff": -2.72045028142589,
+    "std_diff": 3.3581310580127264,
+    "p_paired_t": 0.0018114737850482502,
+    "p_holm": 0.011155234680427964
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.01,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -3.97748592870544,
+    "std_diff": 2.5887031464941592,
+    "p_paired_t": 1.4837255773414924e-06,
+    "p_holm": 2.077215808278089e-05
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -18.921200750469044,
+    "std_diff": 2.4840136009767635,
+    "p_paired_t": 1.687753557337889e-18,
+    "p_holm": 7.594891008020501e-17
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -6.763602251407127,
+    "std_diff": 1.7457109712192167,
+    "p_paired_t": 4.2477966201223025e-13,
+    "p_holm": 1.4017728846403598e-11
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_full",
+    "mean_diff": -11.51969981238274,
+    "std_diff": 1.5452144266114682,
+    "p_paired_t": 2.523661328198937e-18,
+    "p_holm": 1.1104109844075324e-16
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "rice_cont_in",
+    "mean_diff": -0.35647279549718364,
+    "std_diff": 2.338511202445191,
+    "p_paired_t": 0.5036459592652776,
+    "p_holm": 0.5036459592652776
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.05,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -2.8986866791744825,
+    "std_diff": 2.3727816104867694,
+    "p_paired_t": 2.854668491897913e-05,
+    "p_holm": 0.0003140135341087704
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -17.026266416510317,
+    "std_diff": 2.3597849031873306,
+    "p_paired_t": 4.6501991966353494e-18,
+    "p_holm": 1.9995856545532002e-16
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -5.112570356472798,
+    "std_diff": 1.4933587142967262,
+    "p_paired_t": 3.836277929506857e-12,
+    "p_holm": 1.0357950409668514e-10
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_full",
+    "mean_diff": -10.337711069418384,
+    "std_diff": 1.7973983023452642,
+    "p_paired_t": 3.1487853228474803e-16,
+    "p_holm": 1.2280262759105174e-14
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "rice_cont_in",
+    "mean_diff": 1.1069418386491576,
+    "std_diff": 1.9929120072797362,
+    "p_paired_t": 0.022485396309897553,
+    "p_holm": 0.08994158523959021
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.1,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -3.414634146341465,
+    "std_diff": 1.6419401909285287,
+    "p_paired_t": 1.6706588721015832e-08,
+    "p_holm": 3.00718596978285e-07
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -13.583489681050656,
+    "std_diff": 1.9339384078016364,
+    "p_paired_t": 7.681919437001616e-18,
+    "p_holm": 3.2264061635406785e-16
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -4.0806754221388335,
+    "std_diff": 1.6977193371325345,
+    "p_paired_t": 1.6232763966580614e-09,
+    "p_holm": 3.246552793316123e-08
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_full",
+    "mean_diff": -9.540337711069418,
+    "std_diff": 1.5735791612052283,
+    "p_paired_t": 1.186123298848289e-16,
+    "p_holm": 4.744493195393156e-15
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "rice_cont_in",
+    "mean_diff": 1.3696060037523459,
+    "std_diff": 1.5243313750017227,
+    "p_paired_t": 0.0007349970080801307,
+    "p_holm": 0.005879976064641045
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.25,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -4.333958724202624,
+    "std_diff": 1.4846803916551816,
+    "p_paired_t": 6.166335141700685e-11,
+    "p_holm": 1.5415837854251712e-09
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_full_scratch",
+    "mean_diff": -10.215759849906192,
+    "std_diff": 1.5631841995343896,
+    "p_paired_t": 2.9432547535005107e-17,
+    "p_holm": 1.2067344489352093e-15
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "florabd_cont_in",
+    "mean_diff": -2.18574108818011,
+    "std_diff": 1.079110468973852,
+    "p_paired_t": 2.5254341232680813e-08,
+    "p_holm": 4.293238009555738e-07
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_full",
+    "mean_diff": -8.17073170731707,
+    "std_diff": 1.9215168271519336,
+    "p_paired_t": 7.948392422086829e-14,
+    "p_holm": 2.78193734773039e-12
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "rice_cont_in",
+    "mean_diff": 2.898686679174486,
+    "std_diff": 1.1826468659234555,
+    "p_paired_t": 1.1765073773565512e-09,
+    "p_holm": 2.4706654924487575e-08
+   },
+   {
+    "target": "RiceLeaf",
+    "fraction": 0.5,
+    "backbone": "dinov2_vits14",
+    "mean_diff": -2.6454033771106937,
+    "std_diff": 1.834129501246064,
+    "p_paired_t": 3.497726012911814e-06,
+    "p_holm": 4.1972712154941765e-05
+   }
+  ]
+ },
+ "reproduces_published": {
+  "n": 90,
+  "max_diff_mean": 0.03736413043478337,
+  "max_diff_pholm": 0.1020363947747539
+ }
+}

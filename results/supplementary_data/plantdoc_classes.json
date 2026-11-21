@@ -1,0 +1,15 @@
+{
+ "n_classes_model": 28,
+ "n_classes_test": 27,
+ "train_only_classes": [
+  "Tomato two spotted spider mites leaf"
+ ],
+ "train_only_counts": {
+  "Tomato two spotted spider mites leaf": [
+   2,
+   0
+  ]
+ },
+ "test_classes_missing_from_train": [],
+ "n_test": 236
+}

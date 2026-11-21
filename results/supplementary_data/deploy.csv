@@ -1,0 +1,4 @@
+target,model,params_M,size_MB,GMACs,cpu_ms_1thread_median,cpu_ms_allthreads_median,threads
+RiceLeaf,MobileNetV3-Small,1.524,6.231,0.055,10.326,11.034,12
+RiceLeaf,EfficientNet-B0,4.015,16.359,0.385,36.95,23.857,12
+RiceLeaf,ViT-S/16 (teacher),21.668,86.73,4.599,106.072,32.112,12
