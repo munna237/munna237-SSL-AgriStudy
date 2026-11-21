@@ -84,7 +84,7 @@
 \foreach \v [count=\k] in {0.10,0.32,0.18,0.06,0.24}{\fill[cB!70] (8.05+\k*0.09,5.72) rectangle ++(0.065,\v);}
 \foreach \v [count=\k] in {0.06,0.38,0.12,0.04,0.30}{\fill[cO!75] (8.05+\k*0.09,4.72) rectangle ++(0.065,\v);}
 \node[sml] at (8.32,5.56) {$P_s$}; \node[sml] at (8.32,4.56) {$P_t$};
-\node[chip=cV, font=\fontsize{6}{7.2}\selectfont, text width=3.85cm, align=center] at (6.68,4.03) {\mbox{$\mathcal{L}=\sum -P_t^{\top}\log P_s$}\\\mbox{centring $c$, \ $\tau_s=0.1$, \ $\tau_t=0.04$}};
+\node[chip=cV, font=\fontsize{6}{7.2}\selectfont, text width=3.85cm, align=center] at (6.68,4.03) {\mbox{$\mathcal{L}=\sum -P_t^{\top}\log P_s$}\\\mbox{centering $c$, \ $\tau_s=0.1$, \ $\tau_t=0.04$}};
 % arms
 \node[chip=cB, text width=3.85cm] at (6.68,3.24) {\textbf{From scratch, budget-matched}\\local vs.\ ImageNet-$N$, equal $N$ and $S$};
 \node[chip=cT, text width=3.85cm] at (6.68,2.33) {\textbf{Budget \& recipe controls}\\400 epochs \textbullet{} released recipe \textbullet{} step-matched 1K/5K \textbullet{} seeds 42, 1, 2};

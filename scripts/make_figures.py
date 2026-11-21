@@ -94,29 +94,36 @@ ARMS = [('RiceLeaf (scratch)', ['rice_1k', 'rice_5k', 'rice_full'], [996, 4671, 
         ('PlantVillage (scratch)', ['pv_5k', 'pv_10k', 'pv_full'], [4920, 9444, 30829], COL['pv'], '^', (0, (4, 1.3, 1, 1.3))),
         ('ImageNet subset, same N (scratch)', ['inet_n996', 'inet_n4671', 'inet_n6835', 'inet_n30829'], [996, 4671, 6835, 30829], COL['inet_sub'], 's', (0, (3, 1.3)))]
 fig, axes = plt.subplots(1, 5, figsize=(183 * MM, 50 * MM))
+YLIM = {'FloraBD': (-23.5, 2), 'RiceLeaf': (-23.5, 2), 'PlantVillage': (-23.5, 2),   # agricultural targets share one axis
+        'Flowers102': (-78, 4), 'CUB': (-78, 4)}                                     # natural-image targets share another
 for k, (ax, (t, ttl)) in enumerate(zip(axes, T2)):
-    if ('imagenet_dino', t) in acc:
-        ax.axhline(acc[('imagenet_dino', t)], color=INK, lw=0.7, ls=(0, (4, 2)), zorder=1, label='ImageNet DINO (1.28M images)')
+    ref = acc[('imagenet_dino', t)]
+    g = lambda b: acc[(b, t)] - ref                                                   # gap to ImageNet DINO (pp)
+    ax.axhline(0, color=INK, lw=0.7, ls=(0, (4, 2)), zorder=1, label='ImageNet DINO (1.28M images) = 0')
     for lab, names, n, col, mk, ls in ARMS:
-        pts = [(m, acc[(b, t)]) for b, m in zip(names, n) if (b, t) in acc]
+        pts = [(m, g(b)) for b, m in zip(names, n) if (b, t) in acc]
         if pts:
             ax.plot(*zip(*pts), ls=ls, marker=mk, ms=3.2, lw=1.0, color=col, label=lab, mec='white', mew=0.4, zorder=3)
     for b0, b1, m in [('rice_1k', 'rice_1k_stepmatch', 996), ('rice_5k', 'rice_5k_stepmatch', 4671)]:
         if (b0, t) in acc and (b1, t) in acc:
-            ax.annotate('', xy=(m, acc[(b1, t)]), xytext=(m, acc[(b0, t)]),
+            ax.annotate('', xy=(m, g(b1)), xytext=(m, g(b0)),
                         arrowprops=dict(arrowstyle='-|>', color=COL['rice'], lw=0.6, shrinkA=2.2, shrinkB=2.8,
                                         mutation_scale=4.5), zorder=2)
-    sm = [(m, acc[(b, t)]) for b, m in zip(['rice_1k_stepmatch', 'rice_5k_stepmatch'], [996, 4671]) if (b, t) in acc]
+    sm = [(m, g(b)) for b, m in zip(['rice_1k_stepmatch', 'rice_5k_stepmatch'], [996, 4671]) if (b, t) in acc]
     if sm:
         ax.plot(*zip(*sm), ls='none', marker='o', ms=3.8, mfc='white', mec=COL['rice'], mew=0.9, zorder=4,
                 label='RiceLeaf, step-matched (≈10.6K steps)')
     ax.set_xscale('log'); ax.set_xlim(700, 45000)
     ax.set_xticks([1e3, 1e4]); ax.set_xticklabels(['10$^3$', '10$^4$'])
     style(ax); panel(ax, 'abcde'[k], ttl, dx=-0.28)
-axes[0].set_ylabel('Accuracy (%)')
+    ax.set_ylim(*YLIM[t])
+    ax.yaxis.set_major_locator(matplotlib.ticker.MultipleLocator(5 if YLIM[t][0] > -30 else 20))
+    if k in (1, 2, 4): ax.tick_params(labelleft=False)
+axes[0].set_ylabel('Difference from\nImageNet DINO (pp)')
+axes[3].set_ylabel('Difference (pp)')
 h, l = axes[1].get_legend_handles_labels()
 order = [l.index(x) for x in ['RiceLeaf (scratch)', 'FloraBD (scratch)', 'PlantVillage (scratch)',
-                               'ImageNet subset, same N (scratch)', 'RiceLeaf, step-matched (≈10.6K steps)', 'ImageNet DINO (1.28M images)']]
+                               'ImageNet subset, same N (scratch)', 'RiceLeaf, step-matched (≈10.6K steps)', 'ImageNet DINO (1.28M images) = 0']]
 fig.legend([h[i] for i in order], [l[i] for i in order], loc='upper center', ncol=3, bbox_to_anchor=(0.5, 1.0), markerscale=1.5)
 fig.tight_layout(rect=(0, 0.08, 1, 0.86), w_pad=1.6)
 fig.text(0.5, axes[0].get_position().y0 - 0.15, 'Pretraining images (log scale)', ha='center', va='top', fontsize=6.5)
@@ -149,7 +156,7 @@ axes[0].set_ylabel('Accuracy (%)')
 h, l = axes[0].get_legend_handles_labels()
 fig.legend(h, l, loc='upper center', ncol=3, bbox_to_anchor=(0.5, 1.0))
 fig.tight_layout(rect=(0, 0.08, 1, 0.86), w_pad=1.6)
-fig.text(0.5, axes[0].get_position().y0 - 0.15, 'Labelled images per class (log scale)', ha='center', va='top', fontsize=6.5)
+fig.text(0.5, axes[0].get_position().y0 - 0.15, 'Labeled images per class (log scale)', ha='center', va='top', fontsize=6.5)
 save(fig, 'fig_label_efficiency')
 
 # ---------------- Supplementary Fig. S1: deployment Pareto ----------------

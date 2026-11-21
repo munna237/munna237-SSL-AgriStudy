@@ -2,8 +2,8 @@
 
 Code, splits and results for
 
-> **Domain Match Helps, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and
-> Near-Duplicate Inflation in Agricultural and Botanical Recognition** (IEEE Access, under review).
+> **Does Local Data Beat ImageNet at Laboratory Scale? A Budget-Matched Study of Self-Supervised Pretraining and
+> Near-Duplicate Inflation in Agricultural Vision** (IEEE Access, under review).
 
 The study holds the self-supervised method fixed (DINO, ViT-S/16) and asks whether a laboratory should pretrain on its
 own unlabeled images or reuse ImageNet-scale representations. Local data and ImageNet subsets are compared at

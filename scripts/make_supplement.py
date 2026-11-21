@@ -21,18 +21,53 @@ ORDER = list(NAME)
 # ---- Table S1/S2: distillation and deployment ----
 K = pd.read_csv(f'{TAB}/tab_kd.csv'); D = pd.read_csv(f'{TAB}/tab_deploy.csv'); TT = pd.read_csv(f'{TAB}/tab_kd_teachers.csv')
 TEACH = ['ImageNet DINO', 'ImageNet→RiceLeaf (cont.)', 'ImageNet→FloraBD (cont.)', 'RiceLeaf-full (scratch)']
+import json as _json, os as _os
+RS = _json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'supplementary_data', 'ft_kd_dedup_rescore.json')))
+_SK = {'MobileNetV3-Small': 'mobilenet_v3_small', 'EfficientNet-B0': 'efficientnet_b0'}
+CE_SD = {k: RS['none']['kd_ce'][v]['sd'] for k, v in _SK.items()}
+_FT = [('imagenet_dino', 'ImageNet DINO'), ('dinov2_vits14', 'DINOv2 ViT-S/14'), ('dinov2_vitb14', 'DINOv2 ViT-B/14'),
+       ('mae_vitb16', 'MAE ViT-B/16'), ('florabd_full_scratch', 'FloraBD-full (scratch)'), ('rice_full', 'RiceLeaf-full (scratch)'),
+       ('florabd_cont_in', r'ImageNet$\rightarrow$FloraBD (cont.)'), ('rice_cont_in', r'ImageNet$\rightarrow$RiceLeaf (cont.)')]
+_DET = ['none', 'cos0.95', 'cos0.95+phash8']
+def _ftcell(d, b):
+    v = RS[d]['ft'][b]
+    base = f"{v['mean']:.2f} $\\pm$ {v['sd']:.2f}"
+    return base if b == 'imagenet_dino' else base + f" ({v['diff']:+.2f}; {v['p_holm7']:.3f})"
+ftdd_rows = [r'\multicolumn{4}{l}{\textit{Full fine-tuning}} \\'] + [f"{n} & " + ' & '.join(_ftcell(d, b) for d in _DET) + r' \\' for b, n in _FT]
+_TN = {'imagenet_dino': 'ImageNet DINO', 'rice_cont_in': r'IN$\rightarrow$RiceLeaf', 'florabd_cont_in': r'IN$\rightarrow$FloraBD', 'rice_full': 'RiceLeaf-full'}
+_SN = {'mobilenet_v3_small': 'MobileNetV3-S', 'efficientnet_b0': 'EfficientNet-B0'}
+ftdd_rows.append('\\hline\n' + r'\multicolumn{4}{l}{\textit{Distillation (student $\leftarrow$ teacher)}} \\')
+for st in ('mobilenet_v3_small', 'efficientnet_b0'):
+    ftdd_rows.append(f"{_SN[st]}, plain & " + ' & '.join(f"{RS[d]['kd_ce'][st]['mean']:.2f} $\\pm$ {RS[d]['kd_ce'][st]['sd']:.2f}" for d in _DET) + r' \\')
+    for t in ('imagenet_dino', 'rice_cont_in', 'florabd_cont_in', 'rice_full'):
+        cells = []
+        for d in _DET:
+            v = [r for r in RS[d]['kd'] if r['student'] == st and r['teacher'] == t][0]
+            cells.append(f"{v['mean']:.2f} $\\pm$ {v['sd']:.2f} ({v['gain']:+.2f}; {v['p_holm']:.2f})")
+        ftdd_rows.append(f"{_SN[st]} $\\leftarrow$ {_TN[t]} & " + ' & '.join(cells) + r' \\')
 kd_rows = []
 for st in ['MobileNetV3-Small', 'EfficientNet-B0']:
     k = K[K.student == st].set_index('teacher')
     ce = k['CE mean'].iloc[0]
-    cells = [f'{ce:.2f}'] + [f"{k.loc[t, 'KD mean ± std'].replace('±', '$\\pm$')} ({k.loc[t, 'gain_pp']:+.2f}; {k.loc[t, 'p_holm']:.2f})" for t in TEACH]
+    cells = [f"{ce:.2f} $\\pm$ {CE_SD[st]:.2f}"] + [f"{k.loc[t, 'KD mean ± std'].replace('±', '$\\pm$')} ({k.loc[t, 'gain_pp']:+.2f}; {k.loc[t, 'p_holm']:.2f})" for t in TEACH]
     kd_rows.append(f'{st} & ' + ' & '.join(cells) + ' \\\\')
 teach_row = 'Teacher (fine-tuned ViT-S/16) & & ' + ' & '.join(f"{TT.set_index('teacher').loc[t, 'test_acc']:.2f}" for t in TEACH) + ' \\\\'
+_LE = pd.read_csv(f'{TAB}/tab_label_efficiency.csv')
+_LEC = ['ImageNet DINO', 'DINOv2 ViT-S/14', 'FloraBD-full (scratch)', 'RiceLeaf-full (scratch)', 'ImageNet→FloraBD (cont.)', 'ImageNet→RiceLeaf (cont.)']
+_TGT = {'FloraBD': 'FloraBD', 'RiceLeaf': 'RiceLeafDiseaseBD', 'Flowers102': 'Flowers-102', 'CUB': 'CUB-200-2011'}
+le_rows = []
+for _t, _tn in _TGT.items():
+    _d = _LE[_LE.target == _t]
+    for _k, (_, _r) in enumerate(_d.iterrows()):
+        _lab = str(_r['labels']).replace('%', '\\%').replace('~', '$\\approx$').replace('/class', '')
+        le_rows.append((_tn if _k == 0 else '') + ' & ' + _lab + ' & ' + ' & '.join(str(_r[c]).replace('±', '$\\pm$') for c in _LEC) + ' \\\\')
+    le_rows.append('\\hline')
+le_rows = le_rows[:-1]
 dep_rows = [f"{r.model} & {r.params_M:.2f} & {r.size_MB:.1f} & {r.GMACs:.3f} & {r.cpu_ms_1thread_median:.1f} & {r.cpu_ms_allthreads_median:.1f} \\\\" for r in D.itertuples()]
 
 # ---- Table S3: detector agreement ----
 A = pd.read_csv(f'{TAB}/rev_dup_detectors.csv').set_index('dataset')
-agr_cols = [('n_test', 'Test'), ('exact (MD5)', 'MD5'), ('cos≥0.95', 'cos $\\geq$ 0.95'), ('pHash≤8', 'pHash $\\leq$ 8'),
+agr_cols = [('n_test', 'Test'), ('exact (MD5)', 'MD5'), ('cos≥0.9', 'cos $\\geq$ 0.90'), ('cos≥0.95', 'cos $\\geq$ 0.95'), ('cos≥0.98', 'cos $\\geq$ 0.98'), ('pHash≤8', 'pHash $\\leq$ 8'),
             ('both (cos≥0.95 & pHash≤8)', 'Both'), ('Jaccard', 'Jaccard'), ("Cohen's κ", '$\\kappa$'),
             ('same label, cos-flagged pairs (%)', 'Same label, cos (\\%)'), ('same label, pHash-flagged pairs (%)', 'Same label, pHash (\\%)')]
 DS = {'FloraBD': 'FloraBD', 'RiceLeaf': 'RiceLeafDiseaseBD', 'PlantVillage': 'PlantVillage', 'PlantDoc': 'PlantDoc',
@@ -101,22 +136,24 @@ tex = r"""\documentclass[10pt]{article}
 \renewcommand{\theequation}{S\arabic{equation}}
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thesubsection}{S\arabic{section}.\arabic{subsection}}
-\title{Supplementary Material for\\ ``Domain Match Helps, Scale Decides: A Budget-Matched Study of Laboratory-Scale Self-Supervised Pretraining and Near-Duplicate Inflation in Agricultural and Botanical Recognition''}
+\title{Supplementary Material for\\ ``Does Local Data Beat ImageNet at Laboratory Scale? A Budget-Matched Study of Self-Supervised Pretraining and Near-Duplicate Inflation in Agricultural Vision''}
 \author{Mohammad Mehedi Hasan Munna, Acramul Haque Kabir, Reefka Fabliha Tulona, Tanvir Bin Zahid,\\Nahid Hossain Antu, Md.\ Mansur ul Mulk and Arvid Chowdhury}
 \date{}
 \begin{document}
 \maketitle
 All values come from the released notebooks and their result files; the main paper's protocols, splits and statistics apply unless stated. Machine-readable versions of every table are provided as CSV files in the folder \emph{supplementary\_data}.
 
-\section{Distillation and deployment}
+\section{Distillation and deployment (exploratory)}
 \label{sec:s1}
-\textbf{Protocol.} ViT-S/16 teachers are fine-tuned on RiceLeafDiseaseBD (seed 0), one per pretraining source. MobileNetV3-Small \cite{howard2019searching} and EfficientNet-B0 \cite{tan2019efficientnet} students with ImageNet weights are trained for 50 epochs (AdamW, learning rate $10^{-3}$, weight decay $10^{-4}$, batch 64) with
+This section is exploratory: none of its gains is significant, and distillation methods for rice disease are the subject of a separate paper \cite{agrikd}, with which no results are shared. It tests only whether the pretraining source changes what a small deployable student reaches.
+
+\textbf{Protocol.} One ViT-S/16 teacher per pretraining source is fine-tuned on RiceLeafDiseaseBD (one seed). MobileNetV3-Small \cite{howard2019searching} and EfficientNet-B0 \cite{tan2019efficientnet} students with ImageNet weights are trained for 50 epochs (AdamW, learning rate $10^{-3}$, weight decay $10^{-4}$, batch 64) with
 \begin{equation}
 \mathcal{L} = \alpha\, T^{2}\, \mathrm{KL}\!\left(p^{T}_{\mathrm{teacher}} \,\|\, p^{T}_{\mathrm{student}}\right) + (1-\alpha)\,\mathcal{L}_{\mathrm{CE}},
 \end{equation}
-where $p^{T}$ is the softmax at temperature $T = 4$ and $\alpha = 0.5$ \cite{hinton2015distilling}, and compared with a plain fine-tuned student, with three seeds each (Welch's $t$-test, Holm over the eight student--teacher pairs). Deployment cost (parameters, fp32 size, MACs, PyTorch CPU latency at batch 1, median of 200 runs) was measured on an Intel Xeon CPU at 2.20~GHz. Distillation methods for rice disease are the subject of a separate paper \cite{agrikd}; here distillation only tests whether the pretraining source changes what a deployable student can reach.
+where $p^{T}$ is the softmax at temperature $T = 4$ and $\alpha = 0.5$ \cite{hinton2015distilling}, against a plain fine-tuned student, three seeds each (Welch's $t$-test, Holm over the eight student--teacher pairs). Latency is PyTorch fp32 at batch 1 on an Intel Xeon CPU at 2.20~GHz (median of 200 runs).
 
-\textbf{Results.} Students distilled from the ImageNet DINO teacher gained $+1.40$ points (MobileNetV3-Small) and $+1.02$ points (EfficientNet-B0) over plain fine-tuning (Table~\ref{tab:s-kd}); the gains were consistent in direction but not significant after Holm correction with three seeds ($p_{\mathrm{Holm}} = 0.21$ and $0.16$), and each teacher was trained with one seed. The from-scratch RiceLeaf-full teacher (82.81\%) gave no gain. The distilled MobileNetV3-Small came within 0.2 points of the ViT-S/16 teacher at one tenth of its single-thread latency and one fourteenth of its size (Table~\ref{tab:s-deploy}, Fig.~\ref{fig:s-pareto}); the distilled EfficientNet-B0 exceeded its teacher by 0.45 points. Latency was measured on a server CPU, not on a phone or embedded board.
+\textbf{Results.} Distillation from the ImageNet DINO teacher (91.17\%) gave $+1.40$ points for MobileNetV3-Small and $+1.02$ for EfficientNet-B0 over plain fine-tuning, not significant ($p_{\mathrm{Holm}} = 0.21$ and $0.16$); the RiceLeaf-full teacher (82.81\%) gave none (Table~\ref{tab:s-kd}). The distilled MobileNetV3-Small came within 0.2 points of the ViT-S/16 teacher at one tenth of its single-thread server-CPU latency (Table~\ref{tab:s-deploy}); phones and embedded boards were not measured.
 
 \begin{table}[h]
 \centering\small
@@ -146,25 +183,19 @@ Model & Params (M) & Size (MB) & GMACs & 1 thread (ms) & 12 threads (ms) \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.55\textwidth]{figures/supp/fig_pareto.pdf}
-\caption{\textbf{Test accuracy against single-thread CPU latency} for plain fine-tuned (open) and best distilled (filled) students on RiceLeafDiseaseBD, and the ViT-S/16 teacher.}
-\label{fig:s-pareto}
-\end{figure}
 
 \clearpage
 \section{Near-duplicate detector agreement}
 \label{sec:s2}
-Table~\ref{tab:s-agree} reports, for each dataset, how many test images each detector flags and how well the two detectors agree, together with how often a flagged test image shares its label with its nearest training or validation image. A detector that finds true near-duplicates should flag pairs that almost always share a label; the cosine detector did so in 94--100\% of cases on every dataset except PlantDoc, whereas pHash-flagged pairs did so on FloraBD (100\%) and RiceLeafDiseaseBD (95.8\%) but in only 47.8\% of cases on PlantVillage and 14.5\% on CUB, because there pHash flags different objects on similar uniform backgrounds (Figs.~\ref{fig:s-PlantVillage}--\ref{fig:s-CUB}). Pairs flagged only by the cosine detector were the same scene photographed with a small shift in framing or scale, which changes 14--18 of the 64 hash bits. The six RiceLeafDiseaseBD images flagged only by pHash were same-scene pairs just below the cosine threshold. On PlantDoc, flagged pairs included resized copies of the same stock photograph, and 11 of the 21 cosine-flagged pairs carried different labels in training and test (10 of 21, 47.6\%, shared a label; Table~\ref{tab:s-agree}), i.e., the same image appears under two classes. Exact-copy (MD5) counts are included in every de-duplicated set.
+Table~\ref{tab:s-agree} reports, for each dataset, how many test images each detector flags and how well the two detectors agree, together with how often a flagged test image shares its label with its nearest training or validation image. A detector that finds true near-duplicates should flag pairs that almost always share a label; the cosine detector did so in 94--100\% of cases on every dataset except PlantDoc, whereas pHash-flagged pairs did so on FloraBD (100\%) and RiceLeafDiseaseBD (95.8\%) but in only 47.8\% of cases on PlantVillage and 14.5\% on CUB, because there pHash flags different objects on similar uniform backgrounds (Figs.~\ref{fig:s-PlantVillage}--\ref{fig:s-CUB}). Pairs flagged only by the cosine detector were the same scene photographed with a small shift in framing or scale, which changes 14--18 of the 64 hash bits. The six RiceLeafDiseaseBD images flagged only by pHash were same-scene pairs just below the cosine threshold. On PlantDoc, flagged pairs included resized copies of the same stock photograph, and only 10 of the 21 cosine-flagged pairs shared a label (47.6\%, Table~\ref{tab:s-agree}); the other 11 carried different labels in training and test, i.e., the same image appears under two classes. Exact-copy (MD5) counts are included in every de-duplicated set.
 
 \begin{table}[h]
 \centering\small
-\caption{\textbf{Agreement of the two near-duplicate detectors.} Counts of test images flagged at cosine $\geq 0.95$ (ImageNet DINO features) and at pHash Hamming $\leq 8$; Jaccard index and Cohen's $\kappa$ of the two flags; percentage of flagged test images whose nearest training/validation image has the same label.}
+\caption{\textbf{Near-duplicate audit and agreement of the two detectors.} Counts of test images that are exact (MD5) copies of a training or validation image, or are flagged at cosine $\geq$ 0.90, 0.95 and 0.98 (ImageNet DINO features) and at pHash Hamming $\leq 8$; Jaccard index and Cohen's $\kappa$ of the two flags; percentage of flagged test images whose nearest training/validation image has the same label, out of the test images flagged by that detector (for the small sets: PlantDoc 10 of 21 cosine-flagged and 6 of 15 pHash-flagged, Flowers-102 12 of 15 and CUB 11 of 76 pHash-flagged). $\kappa$ also counts the test images that neither detector flags, so it can exceed the Jaccard index; it is highest on PlantDoc because there the two flagged sets largely coincide (14 of the 22 flagged images are flagged by both).}
 \label{tab:s-agree}
 \setlength{\tabcolsep}{3.5pt}
 \resizebox{\linewidth}{!}{%
-\begin{tabular}{lrrrrrrrrr}
+\begin{tabular}{lrrrrrrrrrrr}
 \hline
 Dataset & """ + ' & '.join(h for _, h in agr_cols) + r""" \\
 \hline
@@ -237,13 +268,32 @@ Comparison & """ + det_head + r""" & Same sign \\
 \end{table}
 \end{landscape}
 
-\section{Full fine-tuning on Flowers-102 and CUB}
-\label{sec:s5}
-Table~\ref{tab:s-ft} gives the full fine-tuning results on the two natural-image targets, moved here from Table~14 of the main paper; RiceLeafDiseaseBD remains the headline fine-tuning result there. The recipe and statistics are those of the main paper (30 epochs, AdamW, learning rate $5\times10^{-5}$, three seeds; Welch's $t$-test, Holm over the same 21 tests as Table~14). With this single untuned recipe, fine-tuned ImageNet DINO scored below its own linear probe on Flowers-102 (93.99 vs 95.72\%) and CUB (76.77 vs 81.86\%), a known effect of full fine-tuning on small fine-grained datasets \cite{kumar2022finetuning}, and DINOv2 ViT-S/14 had one unstable CUB seed (53.56\% against 80.05\% and 74.92\%). These results are therefore indicative only. Under this recipe the continued checkpoints trailed ImageNet DINO on CUB by 5.0--6.1 points ($p_{\mathrm{Holm}} < 0.05$); on Flowers-102 their deficits (0.9--2.4 points) were not significant.
+\section{Fine-tuning and distillation on the de-duplicated rice test set}
+\label{sec:s6dd}
+Table~\ref{tab:s-ftdd} re-scores the RiceLeafDiseaseBD fine-tuning and distillation runs from their saved per-image predictions on the de-duplicated test set (cosine $\geq 0.95$ $\cup$ MD5, $n = 539$) and on its union with pHash $\leq 8$ ($n = 533$), with the protocols used on the full test set: Welch's $t$-test over three seeds, Holm over the seven fine-tuning comparisons with ImageNet DINO and, separately, over the eight student--teacher pairs. On the full test set the same code reproduces the published values (e.g., $90.90 \pm 0.49$\% for ImageNet DINO; $p_{\mathrm{Holm}} = 0.21$ and $0.16$ for the two ImageNet DINO students). Label-efficiency runs could not be re-scored, because the per-image predictions of the 20 label subsets were not stored.
 
 \begin{table}[h]
 \centering\small
-\caption{\textbf{Full fine-tuning test accuracy (\%) on Flowers-102 and CUB-200-2011, mean $\pm$ s.d. over three seeds.} $^{*}$Significantly different from ImageNet DINO (Welch, Holm over the 21 tests of Table~14 of the main paper).}
+\caption{\textbf{RiceLeafDiseaseBD fine-tuning and distillation re-scored on de-duplicated test sets}: test accuracy (\%), mean $\pm$ s.d. over three seeds; in parentheses, the difference from ImageNet DINO (fine-tuning) or from the plain student (distillation), and the Holm-adjusted $p$-value.}
+\label{tab:s-ftdd}
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lccc}
+\hline
+ & Full test ($n = 1{,}472$) & cos $\geq 0.95$ ($n = 539$) & cos $\cup$ pHash ($n = 533$) \\
+\hline
+""" + "\n".join(ftdd_rows) + r"""
+\hline
+\end{tabular}}
+\end{table}
+
+\section{Full fine-tuning on Flowers-102 and CUB}
+\label{sec:s5}
+Table~\ref{tab:s-ft} gives the full fine-tuning results on the two natural-image targets, moved here from Table~12 of the main paper; RiceLeafDiseaseBD remains the headline fine-tuning result there. The recipe and statistics are those of the main paper (30 epochs, AdamW, learning rate $5\times10^{-5}$, three seeds; Welch's $t$-test, Holm over the same 21 tests as Table~12 of the main paper). With this single untuned recipe, fine-tuned ImageNet DINO scored below its own linear probe on Flowers-102 (93.99 vs 95.72\%) and CUB (76.77 vs 81.86\%), a known effect of full fine-tuning on small fine-grained datasets \cite{kumar2022finetuning}, and DINOv2 ViT-S/14 had one unstable CUB seed (53.56\% against 80.05\% and 74.92\%). These results are therefore indicative only. Under this recipe the continued checkpoints trailed ImageNet DINO on CUB by 5.0--6.1 points ($p_{\mathrm{Holm}} < 0.05$); on Flowers-102 their deficits (0.9--2.4 points) were not significant.
+
+\begin{table}[h]
+\centering\small
+\caption{\textbf{Full fine-tuning test accuracy (\%) on Flowers-102 and CUB-200-2011, mean $\pm$ s.d. over three seeds.} $^{*}$Significantly different from ImageNet DINO (Welch, Holm over the 21 tests of Table~12 of the main paper).}
 \label{tab:s-ft}
 \begin{tabular}{lcc}
 \hline
@@ -258,7 +308,48 @@ RiceLeaf-full (scratch) & 48.92 $\pm$ 0.86$^{*}$ & 18.58 $\pm$ 0.30$^{*}$ \\
 ImageNet$\rightarrow$FloraBD (cont.) & 93.04 $\pm$ 0.71 & 70.69 $\pm$ 1.12$^{*}$ \\
 ImageNet$\rightarrow$RiceLeaf (cont.) & 91.63 $\pm$ 1.03 & 71.74 $\pm$ 0.95$^{*}$ \\
 \hline
+\multicolumn{3}{l}{\textit{Supervised ImageNet baselines, learning rate tuned per architecture (not tested)}} \\
+ResNet-50 & 93.73 $\pm$ 0.21 & 79.17 $\pm$ 0.44 \\
+EfficientNet-B0 & 94.96 $\pm$ 0.40 & 75.56 $\pm$ 0.50 \\
+ViT-S/16 (ImageNet-21k) & 98.11 $\pm$ 0.40 & 83.06 $\pm$ 0.52 \\
+Swin-T & 95.87 $\pm$ 0.25 & 82.21 $\pm$ 0.61 \\
+\hline
 \end{tabular}
+\end{table}
+
+\clearpage
+\section{Compute, linear-probe differences and label efficiency}
+\label{sec:s7}
+\textbf{Compute.} Table~4 of the main paper gives two measures of pretraining compute. Because wall-clock time was not logged consistently across resumed sessions, the analytic estimate of training floating-point operations is
+\begin{equation}
+F = 2\,S\,B\,\big[\,3\,(2M_{224} + n_\ell M_{96}) + 2M_{224}\big],
+\end{equation}
+which counts the student's forward and backward passes ($3\times$ forward) over 2 global and $n_\ell$ local crops ($n_\ell = 8$; 10 for the released recipe) and the teacher's forward pass over the 2 global crops, with $M_{224} = 4.60$ and $M_{96} = 0.81$ GMACs for ViT-S/16 (plus 0.02 GMACs of projection head per crop) and 2 FLOPs per multiply--accumulate; it ignores data loading and the optimizer. In addition, the exact training code and settings were timed on one NVIDIA L4 GPU for each configuration (two short epochs, warm epoch used), with GPU board power sampled once per second; multiplying the measured seconds and joules per step by each arm's step count gives GPU-hours and GPU energy. One optimizer step took 0.835~s with 8 local crops and 0.922~s with 10, at a mean board power of 62--63~W, and continued pretraining cost the same per step as training from scratch (0.838~s). RiceLeaf-full therefore took 2.5 GPU-hours, the 400-epoch run 9.8, and all laboratory-scale pretraining 87.8 GPU-hours and 5.5~kWh of GPU energy, whereas the released ImageNet DINO corresponds to about 4,100 L4-hours at the same per-image cost; the largest laboratory-scale run, PlantVillage-full or ImageNet-30,829, used 0.28\% of its compute. For RiceLeaf runs completed in a single session, the logged wall-clock time was 4--10\% above these estimates; the exception is the step-matched RiceLeaf-1k run, whose 707 short epochs each restart the data loader (5.25~h logged against 2.46~h estimated). GPU energy excludes the host and is therefore a lower bound.
+
+\textbf{Linear-probe differences.} Fig.~\ref{fig:s-heatmap} shows the differences of Table~5 of the main paper as a heatmap.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.62\textwidth]{figures/fig_domain_vs_imagenet.pdf}
+\caption{\textbf{Linear-probe accuracy difference from ImageNet DINO (percentage points) for each domain checkpoint and target.} Rows are grouped by pretraining source; the color scale covers deficits only, so the one positive value (PlantVillage-full on PlantVillage, $+0.2$, not significant) is white.}
+\label{fig:s-heatmap}
+\end{figure}
+
+\textbf{Label efficiency.} Table~\ref{tab:s-le} gives the values plotted in Fig.~4 of the main paper.
+
+\begin{table}[h]
+\centering\small
+\caption{\textbf{Label efficiency: linear-probe test accuracy (\%), mean $\pm$ s.d. over 20 shared label subsets.} All differences from ImageNet DINO are significant (paired $t$-test, Holm over 90 tests) except those marked n.s. The 100\% rows use the label-efficiency protocol (fixed $C = 0.316$, training split only, no refit on train plus validation) and are not comparable with Table~5 of the main paper (e.g., 82.81 vs 85.12\% for ImageNet DINO on RiceLeafDiseaseBD).}
+\label{tab:s-le}
+\setlength{\tabcolsep}{2.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llcccccc}
+\hline
+Target & Labels (per class) & ImageNet DINO & DINOv2 ViT-S/14 & FloraBD-full & RiceLeaf-full & IN$\rightarrow$FloraBD & IN$\rightarrow$RiceLeaf \\
+\hline
+""" + "\n".join(le_rows) + r"""
+\hline
+\end{tabular}}
 \end{table}
 
 \bibliographystyle{IEEEtran}
